@@ -1,6 +1,6 @@
 export const Projects = () => {
   return (
-    <div>
+    <div className="border-2 p-2 flex-1">
       Projects
     </div>
   )
