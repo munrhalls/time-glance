@@ -1,10 +1,13 @@
 import "./App.css";
-import { Projects } from "./pages/Projects";
+import { TimeDeck } from "./components/TimeDeck";
+import { Day } from "./components/Day";
 
 function App() {
   return (
     <div className="App container h-screen flex flex-col">
-      <Projects className="border-2 p-2 flex-1" />
+      <TimeDeck />
+      <Day />
+      
     </div>
   );
 }
