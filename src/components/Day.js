@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Day = () => {
   return (
-    <div className="border-2 p-2 flex-1">
+    <div className="bg-transparent h-16 border-2">
       Day
     </div>
   )

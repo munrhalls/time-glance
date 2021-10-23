@@ -1,7 +1,9 @@
+import { TimeCard } from "./TimeCard";
+
 export const TimeDeck = () => {
   return (
-    <div className="border-2 p-2 flex-1">
-      TimeDeck
+    <div className="bg-transparent h-18 border-2">
+      <TimeCard />
     </div>
-  )
-}
+  );
+};
