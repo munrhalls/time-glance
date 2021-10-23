@@ -4,7 +4,7 @@ import { Day } from "./components/Day";
 
 function App() {
   return (
-    <div className="App container h-screen flex flex-col">
+    <div className="App container h-screen box-border">
       <TimeDeck />
       <Day />
       
