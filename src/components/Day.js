@@ -4,11 +4,14 @@ import { TimeCard } from "./TimeCard";
 import { useState } from "react";
 
 export const Day = () => {
-  // syntax for functions
-  // this needs to detect ondrop
-  // launch callback on ondrop
-  // do checks
-  // update/not update state accordingly
+  
+// On drop, what needs to occur:
+// Pass that specific card's info up to state
+// State up needs to pass props to TimeDeck
+// TimeDeck needs to access that specific card
+// That specific card needs to re-render conditionally
+// Now with the style of a scheduled card
+
 
   const [cards] = useState([
     { id: 1, num: 1 },
@@ -17,25 +20,21 @@ export const Day = () => {
   ]);
 
   const handleDrop = (e) => {
-    console.log("DROP!!!");
-    console.log(e);
+    console.log("Drop.");
   }
-  const onDragOver = (e) => {
+  const handleDragOver = (e) => {
     e.preventDefault();
   };
-  function handleOnClick() {
-    console.log("CLICK");
-  }
+
 
   return (
     <div
-      className="h-14 border-2"
-      onClick={handleOnClick}
-      onDragOver={onDragOver}
+      className="h-14 border-2 flex"
+      onDragOver={handleDragOver}
       onDrop={(e) => handleDrop(e)}
     >
       {cards.map((card) => (
-        <h3 key={card.id}>{card.num}</h3>
+        <div className="border-2 w-10" key={card.id}>{card.num}</div>
       ))}
     </div>
   );
