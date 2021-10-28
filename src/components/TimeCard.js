@@ -1,13 +1,19 @@
 import React from 'react'
-import { useDrag } from 'react-dnd'
 
-export const TimeCard = () => {
-  // this needs to be draggable
-  // DONE
+export function TimeCard() {
+  function handleDrag() {
+  	console.log('drag')
+  }
+
   return (
-    <div className="bg-blue h-14 w-10 border-black border-2"
-    draggable>
+    <div className="m-24 bg-blue h-14 w-10 border-black border-2"
+    draggable
+    onDragStart={handleDrag}>
       
     </div>
   )
 }
+
+
+
+
