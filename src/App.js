@@ -1,15 +1,27 @@
 import "./App.css";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { TimeDeck } from "./components/TimeDeck";
-import { TimeCard } from "./components/TimeCard";
-import { Day } from "./components/Day";
+import Day from "./components/Day";
+import Card from "./components/Card";
 
 function App() {
   return (
     <div className="App container h-screen box-border">
-      <TimeCard />
-      <Day />
+      <main className="flex">
+          <Card
+            id="card-1"
+            draggable="true"
+            text="Card one"
+          />
+
+        <Day id="Day-2" className="m-7 w-40 bg-gray-500 h-96">
+          <Card
+            id="card-2"
+            draggable="true"
+            text="Card two"
+          />
+        </Day>
+      </main>
     </div>
   );
 }

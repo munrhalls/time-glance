@@ -1,22 +1,31 @@
 import React from "react";
-import { useDrop } from "react-dnd";
-import { TimeCard } from "./TimeCard";
-import { useState } from "react";
 
-export const Day = () => {
+function Day(props) {
+
   const handleDrop = (e) => {
-    console.log('drop')
-  }
-  const handleDragOver = (e) => {
+    e.preventDefault();
+    const cardId = e.dataTransfer.getData("cardId");
+
+    const card = document.getElementById(cardId);
+    card.style.display = "block";
+
+    e.target.appendChild(card);
+  };
+
+  const dragOver = (e) => {
     e.preventDefault();
   };
 
   return (
     <div
-      className="h-14 m-24 border-2 flex"
-      onDragOver={handleDragOver}
-      onDrop={(e) => handleDrop(e)}
+      id={props.id}
+      className={props.className}
+      onDrop={handleDrop}
+      onDragOver={dragOver}
     >
+      {props.children}
     </div>
   );
-};
+}
+
+export default Day;
