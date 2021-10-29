@@ -11,35 +11,27 @@ function Day(props) {
     // basic idea - when card is dragged & dropped to a day, state of cards updates
     // basic idea - anywhere where anything changes about cards in any way, it is updated via state of all cards and nothing else
 
-    // write state of all cards hook
+    //// App code lines
+
+    //// MOCK CARD OBJECTS
+    // Mock data is array of 5 objects, each object is a card
+    //// ALL CARDS STATE HOOK
+    // App has state of all cards hook
     // hook consists of state of all cards variable, state of all cards update method, state of all cards array
-    // write a mock with 3 cards
-    // that is an array with 3 objects
-    // each object consists of card id, card's project location, card's color, card's period starting hour num, card's period size, card's isScheduled status, card's day location
+    // each card object consists of card id, card's project location, card's color, card's period starting hour num, card's period size, card's isScheduled status, card's day location
+    // variable scheduleCards is all cards filtered for isOnSchedule status set to true
 
-    // drag & drop works via hook passed down in props
-    // this hook takes event data - day's id and card's id
-    // passes it upwards, method in App receives day's id
-    // hook's update method maps state of all cards
-    // if card card's id and card's day location id, match day's id
-    // this iteration is returned inside conditional
-    // now this card, instead of empty day's location
-    // has a day's id inside its day's location field
-    // and that's returned in that iteration as such
+    // MOCK DAYS DATA
+    // variable days (later it'll be all days in the year, tree object) is mock of 7 days data in the app
+    // it's an array of objects
+    // each object is of fields: id, year, month, week, number, name, available hour blocks sizes, cards
 
-    // state of all cards has a method that filters all cards by their isScheduled status
-    // all cards that are true for isScheduled, are assigned to a variable scheduledCards
-
-    // mocking 7 days data in the app
-    // variable days (later it'll be all days in the year, tree object)
-    // it's an array and each entry in it is an object
-    // each object is of fields that are id, year, month, week, number, name, available hour blocks sizes, cards
+    // DAYS COMPONENT
     // writing component Days (not calendar because I can re-arrange days however I want, instead of a big macro block that is managing smaller parts)
-    // Days receives days data in props
+    // Days receives props: scheduleCards, days data
     // (Days have nothing to do with cards)
-    // Days receives scheduleCards data in props
-    // scheduledCards are all cards with isOnSchedule status set to true
 
+    // DAYS COMPONENT
     // Days maps days data to create Day component
     // On each iteration, filtering scheduleCards
     // the condition is matching day id and card's day location id
@@ -91,8 +83,18 @@ function Day(props) {
     // width of HourColumn width * number is assigned to variable cardWidth
     // box, full height
 
-    // conditional, check if
-    //
+    //// PASSING VIA PROPS, CARDS STATE CHANGE DETECTION METHODS + WITHIN THESE ARE ALL CARD'S STATE-UPDATING HOOK METHODS
+    // drag & drop works via hook passed down in props
+    // this hook takes event data - day's id and card's id
+    // passes it upwards, method in App receives day's id
+    // hook's update method maps state of all cards
+    // if card card's id and card's day location id, match day's id
+    // this iteration is returned inside conditional
+    // now this card, instead of empty day's location
+    // has a day's id inside its day's location field
+    // and that's returned in that iteration as such
+    // state of all cards has a method that filters all cards by their isScheduled status
+    // all cards that are true for isScheduled, are assigned to a variable scheduledCards
 
     const card = document.getElementById(cardId);
     card.style.display = "block";
