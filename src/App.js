@@ -8,19 +8,22 @@ import TimeCard from "./components/TimeCard";
 
 function App() {
   const [timeCards, setCards] = useState([
-    { card: 1 }
+    { id: 1, duration: 3}
   ]);
-  
+  const testCard = timeCards[0];
+
   const updateCards = (e, card) => {
     e.preventDefault();
     // console.log(card)
-    setCards(() => [{card: "CHANGED ID  FROM SET STATE (CARDS) HOOK" }])
+    setCards(() => [{id: 1, duration: 12 }])
   };
   
-  console.log(timeCards[0].card)
+  console.log(testCard);
+  console.log('CHANGES DURATION IN THE FIRST CARD, IN THE STATE - AND ITS TRIGGERED WITHIN DAY COMPONENT BY DRAGGING!!!!!!!!!!!!')
+
   return (
     <div className="App container h-screen box-border">
-      <TimeCard card={1} />
+      <TimeCard card={testCard} />
       <Day updateCards={updateCards} />
     </div>
   );
