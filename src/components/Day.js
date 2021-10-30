@@ -18,53 +18,54 @@ function Day(props) {
 
     //// APP - MOCK CARDS DATA
     // Mock data: 5 objects, each is card
-    // object: card id, card's project location, card's color, card's period starting hour num, card's period size, card's isScheduled status, card's day location
-    
+    // object: id, project, color, startHourNum, hoursDurationNum, isScheduled, scheduledDayId
+
     //// APP - ALL CARDS STATE HOOK
-    // App has state of all cards hook
-    // hook consists of state of all cards and one update method
-    // putting mock cards data here (now it's only here)
+    // App - all cards everywhere & anywhere state hook
+    // one cards state, one update method
+    // mock data in state
 
     // APP - PREPARE PROP FOR DAYS COMPONENT - SCHEDULE CARDS
-    // variable scheduleCards
-    // is all cards filtered for isOnSchedule status set to true
+    // variable scheduledCards - filtering all cards for isScheduled
 
     // APP - MOCK DAYS DATA
-    // variable days is mock of 7 days data
-    // array of objects (later tree)
-    // each object: id, year, month,  week, number, name,  available hour blocks, cards
+    // variable days - mock of 7 days data
+    // array, each object: id, year, month,  week, number, name, dayScheduleCards
 
     // APP - DAYS COMPONENT
-    // component Days (nothing to do with cards)
-    // (not calendar, can derive everything for calendar from days data)
-    // Days props: scheduleCards, days data
+    // component Days (nothing to do with cards) (not calendar, can derive everything for calendar from days data)
+    // Days props: scheduledCards, days data
 
-    // DAYS - MAPPING DAYS DATA - CREATING DAY COMPONENTS
-    // Days retrieves days array
-    // Days maps days data to create list of Day components
+    // DAYS - MAPPING DAYS DATA - CREATING COLLECTION OF DAY COMPONENTS
+    // variable days - retrieves days array
+    // method map - maps days data to create list of Day components
+    // retrieving props - scheduledCards
+    // variable dayScheduleCards = filtering scheduledCards for match of card's scheduledDayId and day's id
+    // Day props - passing dayScheduleCards, day object
+    // Days (plural, comp above) tailwindCSS - flex
 
-    // DAYS - IN EACH MAPPING ITERATION - FILTERING ALL SCHEDULE CARDS BY DAY'S ID
-    // Days retrieves scheduleCards
-    // On each iteration, filtering scheduleCards
-    // check card's scheduleDayId equals day id
-    // variable scheduleCardsOfDay - array of matching cards
-    // Days tailwindCSS - flex
-
-    // DAY - PROPS: scheduleCardsOfDay + availableHours + day instance
-    // retrieve props as in line above
-    // Day tailwindCSS - a square with black border
-
-    // DAY LOOK
-    // From props - Month name, Number and day Name in the top left area
+    // DAY COMPONENT - INSIDE OF IT
+    // Day tailwindCSS - a large enough, not too large, square with black border
+    // Day from props - Month name, Number, day Name in the top left area, looking good
     // TailwindCSS
 
-    // DAY - STATE 
-
-    //// NEXT
-    // DAY - STATE THAT UPDATES DRAGOVER HIGHLIGHTING
-    // ?
-        
+    // DAY - ON DROP
+    // relevant factors
+    // onDrop event listener
+    // variable hourColumnWidth - day width / 24
+    // variable hoursDuration - get from card hoursDuration
+    // variable distanceToMidnight - get distance between left border of card and left border of day
+    //? how many times hourColumnWidth is contained within that distance
+    // variable startHour = distanceToMidnight / hourColumnWidth
+    //? account for near hour colStart/colEnd potential difference, depending on drag
+    // 
     
+
+
+    // simple
+    // not simple yet
+
+
     // hook's state availablePeriodsLeft = array of numbers
     // upon re-render from props, day has a method that calculates available space left
     // after the calculation, results are put into hook's state method
@@ -82,8 +83,6 @@ function Day(props) {
 
     // HIGHLIGHTING ATTEMPTED DROP AREA
     //
-
-    //?
     // DAY PASSES HOOK TO HOUR COLUMN, FOR UPDATING CURRENT STATE OF newAttemptedPeriodStartNum
     // it's initialized as ""
 
