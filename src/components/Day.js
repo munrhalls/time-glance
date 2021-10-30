@@ -1,15 +1,10 @@
 import React from "react";
-import ScheduledCard from "./ScheduledCard";
-import TimeCard from "./TimeCard";
 
-function Day(props) {
+function Day({updateCards}) {
   const handleDrop = (e) => {
     e.preventDefault();
-    const cardId = e.dataTransfer.getData("cardId");
-
-    const card = document.getElementById(cardId);
-    card.style.display = "block";
-    e.target.appendChild(card);
+    const card = e.dataTransfer.getData("card");
+    updateCards(e, card)
   };
 
   const dragOver = (e) => {
@@ -17,13 +12,11 @@ function Day(props) {
   };
 
   return (
-    <div
-      id={props.id}
-      className={props.className}
+    <div className="mt-40 border-2 border-black w-40 h-40"
       onDrop={handleDrop}
       onDragOver={dragOver}
     >
-      {props.children}
+    day
     </div>
   );
 }

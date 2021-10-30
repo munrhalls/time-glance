@@ -1,26 +1,22 @@
 import React from "react";
+// import PropTypes from "prop-types";
 
-function TimeCard(props) {
-  const dragStart = (e) => {
-    const target = e.target;
-    e.dataTransfer.setData("cardId", target.id);
-  };
-
-  const dragOver = (e) => {
-    e.stopPropagation();
+const TimeCard = ({ card }) => {
+  const handleDragStart = (e) => {
+    e.dataTransfer.setData("card", JSON.stringify({card}))
   };
 
   return (
     <div
-      className="border-2 border-black border-solid p-10"
-      id={props.id}
-      draggable={props.draggable}
-      onDragStart={dragStart}
-      onDragOver={dragOver}
-    >
-      {props.text}
-    </div>
+      className="border-2 bg-black border-black w-16 h-16"
+      draggable
+      onDragStart={handleDragStart}
+    ></div>
   );
-}
+};
+
+// TimeCard.propTypes = {
+
+// }
 
 export default TimeCard;

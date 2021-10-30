@@ -1,22 +1,27 @@
 import "./App.css";
+import React, { useState } from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import Day from "./components/Day";
 import Days from "./components/Days";
 import TimeCard from "./components/TimeCard";
 
-
 function App() {
- 
+  const [timeCards, setCards] = useState([
+    { card: 1 }
+  ]);
+  
+  const updateCards = (e, card) => {
+    e.preventDefault();
+    // console.log(card)
+    setCards(() => [{card: "CHANGED ID  FROM SET STATE (CARDS) HOOK" }])
+  };
+  
+  console.log(timeCards[0].card)
   return (
     <div className="App container h-screen box-border">
-      <main className="flex">
-        <TimeCard id="card-1" draggable="true" text="Card one" />
-
-        <Day id="Day-2" className="m-7 w-40 bg-gray-500 h-96">
-          <TimeCard id="card-2" draggable="true" text="Card two" />
-        </Day>
-      </main>
+      <TimeCard card={1} />
+      <Day updateCards={updateCards} />
     </div>
   );
 }

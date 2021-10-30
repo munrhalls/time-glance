@@ -14,7 +14,6 @@ const Days = (props) => {
     </div>
   );
 };
-//it's here
 Days.propTypes = {};
 
 export default Days;
