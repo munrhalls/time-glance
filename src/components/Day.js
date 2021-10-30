@@ -18,7 +18,7 @@ function Day(props) {
 
     //// APP - MOCK CARDS DATA
     // Mock data: 5 objects, each is card
-    // object: id, project, color, startHourNum, hoursDurationNum, isScheduled, scheduledDayId
+    // object: id, project, color, startHour, duration, isScheduled, scheduledDayId
 
     //// APP - ALL CARDS STATE HOOK
     // App - all cards everywhere & anywhere state hook
@@ -30,18 +30,18 @@ function Day(props) {
 
     // APP - MOCK DAYS DATA
     // variable days - mock of 7 days data
-    // array, each object: id, year, month,  week, number, name, dayScheduleCards
+    // array, each object: id, year, month,  week, number, name, dayScheduledCards
 
     // APP - DAYS COMPONENT
     // component Days (nothing to do with cards) (not calendar, can derive everything for calendar from days data)
-    // Days props: scheduledCards, days data
+    // Days props: updateCardInDay, scheduledCards, days data
 
     // DAYS - MAPPING DAYS DATA - CREATING COLLECTION OF DAY COMPONENTS
     // variable days - retrieves days array
     // method map - maps days data to create list of Day components
     // retrieving props - scheduledCards
-    // variable dayScheduleCards = filtering scheduledCards for match of card's scheduledDayId and day's id
-    // Day props - passing dayScheduleCards, day object
+    // variable dayScheduledCards = filtering scheduledCards for match of card's scheduledDayId and day's id
+    // DAY PROPS - updateCardInDay, dayScheduledCards, day object
     // Days (plural, comp above) tailwindCSS - flex
 
     // DAY COMPONENT - INSIDE OF IT
@@ -49,18 +49,43 @@ function Day(props) {
     // Day from props - Month name, Number, day Name in the top left area, looking good
     // TailwindCSS
 
-    // DAY - ON DROP
-    // relevant factors
-    // onDrop event listener
-    // variable hourColumnWidth - day width / 24
-    // variable hoursDuration - get from card hoursDuration
-    // variable distanceToMidnight - get distance between left border of card and left border of day
-    //? how many times hourColumnWidth is contained within that distance
-    // variable startHour = distanceToMidnight / hourColumnWidth
-    //? account for near hour colStart/colEnd potential difference, depending on drag
-    // 
-    
+    // DAY - DISPLAYING SCHEDULED CARDS
+    // variable dayWidth
+    // variable hourWidth = dayWidth / 24
+    // retrieve props - dayScheduledCards
+    // MAP SCHEDULED CARDS
+    // pass scheduledCard prop
+    // SCHEDULED CARD - COMPONENT
+    // retrieve props - startHour, duration, bgColor
+    // cardWidth = hourWidth * duration
+    // cardPositionLeft = hourWidth * startHour
+    // tailwindCSS cardPositionLeft, width = cardWidth, height = full, bgColor = bgColor
 
+    // DAY - ON DROP !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // first and foremost, nothing happens in the component except pass info to topmost level
+    // it merely detects on drop event - uses method provided in props to pass data to topmost level - and as topmost level handles state update, it receives it via props and re-renders (altered movie slide)
+    // now, what's interesting - this makes it that BOTH drag&drop from projects, and drag&drop from schedule area, work with this one functionality, they don't need different drag & drop stuff - and if I were to make a 1000000 of them, they could all use this one functionality
+    // relevant factors
+    
+    // DAY - onDrop event listener
+    // all that is needed here:  pass up card id, the calculated startHour & day.id
+    // method - onDrop event listener
+    // retrieve prop - updateCardInDay method (hook)
+    // variable distanceToMidnight = get card, get .getBoundingClientRect stuff, get day's getBoundingClientRect stuff, calculate
+    // variable startHour = distanceToMidnight/hourWidth, round to min
+    // variable day.id
+    // pass card's new scheduledDay: day.id (previously scheduledDay was empty or different id)
+    
+    // APP - UPDATE ALL CARDS STATE
+    // method - updateCards
+    // retrieve card id, calculated startHour, day.id
+    // map all cards
+    // get card id that matches variable card id 
+    // modify it by the above variables 
+    // in that iteration, return modified card
+    // that's it, it should now update state, which should be passed all the way down to that specific day, which should re-render that specific day with that specific card
+    // the drag & drop merely triggers a function in a specific place, which is fed upwards to update state, which passes new props, which re-renders that specific place accordingly
+    // that's react 
 
     // simple
     // not simple yet
@@ -133,7 +158,7 @@ function Day(props) {
     // box, full height
 
     //// DAY CHECKS FOR MATCH - ATTEMPTED PERIOD vs AVAILABLE PERIODS LEFT
-    // Day component receives props: dayScheduleCards, availablePeriodsLeft, day number, day name
+    // Day component receives props: dayScheduledCards, availablePeriodsLeft, day number, day name
     //// DAY DOES NOT ALLOW PASSING CARD STATE CHANGE UP UNLESS MATCH IS FOUND
     //
 
