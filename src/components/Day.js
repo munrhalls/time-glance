@@ -13,39 +13,89 @@ function Day(props) {
 
     //// App code lines
 
-    //// MOCK CARD OBJECTS
-    // Mock data is array of 5 objects, each object is a card
-    //// ALL CARDS STATE HOOK
+    // WRITING ((FILE + COMPONENT STARTER) + IMPORT) FOR ALL APP'S COMPONENTS
+    // entire files tree + starter code + imports are complete
+
+    //// APP - MOCK CARDS DATA
+    // Mock data: 5 objects, each is card
+    // object: card id, card's project location, card's color, card's period starting hour num, card's period size, card's isScheduled status, card's day location
+    
+    //// APP - ALL CARDS STATE HOOK
     // App has state of all cards hook
-    // hook consists of state of all cards variable, state of all cards update method, state of all cards array
-    // each card object consists of card id, card's project location, card's color, card's period starting hour num, card's period size, card's isScheduled status, card's day location
-    // variable scheduleCards is all cards filtered for isOnSchedule status set to true
+    // hook consists of state of all cards and one update method
+    // putting mock cards data here (now it's only here)
 
-    // MOCK DAYS DATA
-    // variable days (later it'll be all days in the year, tree object) is mock of 7 days data in the app
-    // it's an array of objects
-    // each object is of fields: id, year, month, week, number, name, available hour blocks sizes, cards
+    // APP - PREPARE PROP FOR DAYS COMPONENT - SCHEDULE CARDS
+    // variable scheduleCards
+    // is all cards filtered for isOnSchedule status set to true
 
-    // DAYS COMPONENT
-    // writing component Days (not calendar because I can re-arrange days however I want, instead of a big macro block that is managing smaller parts)
-    // Days receives props: scheduleCards, days data
-    // (Days have nothing to do with cards)
+    // APP - MOCK DAYS DATA
+    // variable days is mock of 7 days data
+    // array of objects (later tree)
+    // each object: id, year, month,  week, number, name,  available hour blocks, cards
 
-    // DAYS COMPONENT
-    // Days maps days data to create Day component
+    // APP - DAYS COMPONENT
+    // component Days (nothing to do with cards)
+    // (not calendar, can derive everything for calendar from days data)
+    // Days props: scheduleCards, days data
+
+    // DAYS - MAPPING DAYS DATA - CREATING DAY COMPONENTS
+    // Days retrieves days array
+    // Days maps days data to create list of Day components
+
+    // DAYS - IN EACH MAPPING ITERATION - FILTERING ALL SCHEDULE CARDS BY DAY'S ID
+    // Days retrieves scheduleCards
     // On each iteration, filtering scheduleCards
-    // the condition is matching day id and card's day location id
-    // dayScheduleCards variable
-    // it's getting the array of matching scheduleCards
+    // check card's scheduleDayId equals day id
+    // variable scheduleCardsOfDay - array of matching cards
+    // Days tailwindCSS - flex
 
-    // Day component receives props: dayScheduleCards, availablePeriodsLeft, day number, day name
-    // Day component takes form of a square
-    // Day component displays Month name, Number and day Name in the top left area
+    // DAY - PROPS: scheduleCardsOfDay + availableHours + day instance
+    // retrieve props as in line above
+    // Day tailwindCSS - a square with black border
 
-    //// Display scheduleCards from props in a day
+    // DAY LOOK
+    // From props - Month name, Number and day Name in the top left area
+    // TailwindCSS
+
+    // DAY - STATE 
+
+    //// NEXT
+    // DAY - STATE THAT UPDATES DRAGOVER HIGHLIGHTING
+    // ?
+        
+    
+    // hook's state availablePeriodsLeft = array of numbers
+    // upon re-render from props, day has a method that calculates available space left
+    // after the calculation, results are put into hook's state method
+    // DAY's state for available periods numbers left, is updated
+    // DAY re-renders again right after receiving new card props update, then calculates state change based on props, and re-renders again
+
+    // DRAGOVER DAY EVENT CHANGES STATE OF DRAG OVER SIZE, TO EVENT'S ATTEMPTED DROP CARD'S NUM
+    // hook, state variable is dragOverSize
+    // method is in the dragOver listener
+
+    // WAY TO ACCURATELY DETECT dragOver's dragOverStartColumn
+    // dragOver identifies distance of the left border of the dragged object from the left border of the day
+    // variable distanceFromLeftBorder is that
+    // dragOverStartColumn is distanceFromLeftBorder/HourColumnWidth, rounded to full number
+
+    // HIGHLIGHTING ATTEMPTED DROP AREA
+    //
+
+    //?
+    // DAY PASSES HOOK TO HOUR COLUMN, FOR UPDATING CURRENT STATE OF newAttemptedPeriodStartNum
+    // it's initialized as ""
+
+    // HOUR COLUMN LISTENS FOR DRAGOVER, ON DRAGOVER, IT TRIGGERS HOOK FOR UPDATING newAttemptedPeriodStartNum AND PASSES ITS NUMBER TO IT
+    // in HourColumn is dragOver detection method
+    // in that method is hook trigger and HourColumn's number is passed to it
+
+    // PREP HOUR COLUMNS WITH isAvailable property
     // Day maps array of length 24
+    // isAvailable variable is filtering availablePeriodsLeft for current number (from 24) and true/false based on whether it returns truthy/falsey
     // on each iteration, day returns HourColumn component
-    // HourColumn receives props: num, isAvailable, isAfterDragOut
+    // HourColumn receives props: num (from 24), isAvailable
 
     // Day has a hook with state
     // the state is dayCards
@@ -82,6 +132,11 @@ function Day(props) {
     // it's number is accessed
     // width of HourColumn width * number is assigned to variable cardWidth
     // box, full height
+
+    //// DAY CHECKS FOR MATCH - ATTEMPTED PERIOD vs AVAILABLE PERIODS LEFT
+    // Day component receives props: dayScheduleCards, availablePeriodsLeft, day number, day name
+    //// DAY DOES NOT ALLOW PASSING CARD STATE CHANGE UP UNLESS MATCH IS FOUND
+    //
 
     //// PASSING VIA PROPS, CARDS STATE CHANGE DETECTION METHODS + WITHIN THESE ARE ALL CARD'S STATE-UPDATING HOOK METHODS
     // drag & drop works via hook passed down in props
