@@ -9,7 +9,6 @@ const TimeCard = ({ timeCard }) => {
   const width = 'w-' + (timeCard.duration * hourUnit);
   const left = 'left-' + timeCard.startHour * 2;
   const bgColor = 'bg-' + timeCard.bgColor + '-900';
-  console.log(bgColor)
   const tailwindCSS = `${width} h-${hourUnit * 10} ${left} ${bgColor} h-full absolute text-white bg-black`
 
   return (

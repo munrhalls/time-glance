@@ -25,6 +25,9 @@ function App() {
 
   const updateCards = (e, card) => {
     e.preventDefault();
+    const distanceFromLeft = e.clientX;
+    
+    console.log(distanceFromLeft)
     setCards(() => [
       {
         id: 1,

@@ -11,6 +11,15 @@
   // imports
   // entire files tree + starter code + imports are complete
 
+
+  // First and foremost, drag & drop works
+  // when you drag a card, detect distance from the left border
+  // THIS IS KEY
+  // then, more mock cards, dragging & dropping them to all possible points of the day, works as it needs to work 
+
+
+
+
   //// APP - MOCK CARDS DATA
   // Mock data: 5 objects, each is card
   // object: id, project, color, startHour, duration, isScheduled, scheduledDayId
@@ -22,7 +31,7 @@
 
   // APP - PREPARE PROP FOR DAYS COMPONENT - SCHEDULE CARDS
   // variable scheduledCards - filtering all cards for isScheduled
-
+  
   // APP - MOCK DAYS DATA
   // variable days - mock of 7 days data
   // array, each object: id, year, month,  week, number, name, dayScheduledCards
