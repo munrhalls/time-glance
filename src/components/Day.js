@@ -4,7 +4,6 @@ import React, { useEffect } from "react";
 function Day({ updateCards, dayCards }) {
   // 
   useEffect(() => {
-    console.log(document)
   });
 
   const handleDrop = (e) => {
@@ -16,10 +15,13 @@ function Day({ updateCards, dayCards }) {
   const handleDragOver = (e) => {
     e.preventDefault();
   };
+  const hourUnit = 2;
+  const dayWidth = 'w-' + hourUnit * 24;
+  const tailwindCSS = `mt-40 border-2 border-black ${dayWidth} h-40`;
 
   return (
     <div
-      className="mt-40 border-2 border-black w-48 h-40"
+      className={tailwindCSS}
       onDrop={handleDrop}
       onDragOver={handleDragOver}
     >

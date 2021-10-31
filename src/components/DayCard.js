@@ -3,14 +3,16 @@ import React from 'react'
 
 function DayCard({dayCard, hourWidth}) {
     // retrieve props - startHour, duration, bgColor
-  // cardWidth = hourWidth * duration
+  // cardWidth = hourUnit * duration
   // cardPositionLeft = hourWidth * startHour
   // tailwindCSS cardPositionLeft, width = cardWidth, height = full, bgColor = bgColor
-  const width = dayCard.duration * Number(hourWidth);
-  console.log(hourWidth)
-  
+  const hourUnit = 2;
+  const cardWidth = 'w-' + (dayCard.duration * hourUnit);
+  const tailwindCSS = `${cardWidth} bg-black`
+
+
   return (
-    <div className="">
+    <div className={tailwindCSS}>
       {dayCard.duration}
     </div>
   )
