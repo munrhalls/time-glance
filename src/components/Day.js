@@ -3,13 +3,7 @@ import React, { useEffect, useRef } from "react";
 
 function Day({ updateCards, dayCards }) {
   const dayRef = useRef(null);
-  let dayRefWidth = "";
-  useEffect(() => {
-    if (dayRef.current) {
-      // console.log(`hookRef div width: ${dayRef.current.clientWidth}`);
-    }
-  }, []);
-
+  
   const handleDrop = (e) => {
     e.preventDefault();
     if (dayRef.current == e.target) {
