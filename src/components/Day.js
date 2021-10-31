@@ -6,10 +6,9 @@ function Day({ updateCards, dayCards }) {
   
   const handleDrop = (e) => {
     e.preventDefault();
-    if (dayRef.current == e.target) {
+    if (dayRef.current === e.target) {
       const card = e.dataTransfer.getData("card");
-      const dayWidth = dayRef.current.clientWidth;
-      updateCards(e, card, dayWidth);
+      updateCards(e, card, dayRef.current.clientWidth);
     }
   };
 
