@@ -8,7 +8,7 @@ function DayCard({dayCard, hourWidth}) {
   // tailwindCSS cardPositionLeft, width = cardWidth, height = full, bgColor = bgColor
   const hourUnit = 2;
   const cardWidth = 'w-' + (dayCard.duration * hourUnit);
-  const tailwindCSS = `${cardWidth} bg-black`
+  const tailwindCSS = `${cardWidth} text-white bg-black`
 
 
   return (
