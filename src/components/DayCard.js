@@ -1,10 +1,10 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 
-function DayCard({card}) {
+function DayCard({dayCard}) {
   return (
     <div>
-      day card
+      {dayCard.duration}
     </div>
   )
 }

@@ -19,8 +19,8 @@ function Day({ updateCards, dayCards }) {
       onDrop={handleDrop}
       onDragOver={dragOver}
     >
-    {dayCards.map((day, index) =>
-      <DayCard />
+    {dayCards.map((dayCard) =>
+      <DayCard key={dayCard.id} dayCard={dayCard} />
     )}
     </div>
   )
