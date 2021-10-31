@@ -75,7 +75,7 @@ function App() {
   };
 
   return (
-    <div className="App container h-screen box-border">
+    <div className="App container h-screen flex justify-center mt-10 box-border">
       <TimeCard card={testCard} />
       <Day updateCards={updateCards} dayCards={dayCards} />
     </div>

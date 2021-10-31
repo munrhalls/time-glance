@@ -6,13 +6,14 @@ const TimeCard = ({ card }) => {
     e.dataTransfer.setData("card", JSON.stringify({card}))
   };
   const width = 'w-' + card.duration;
-  const tailwindCSS = `border-2 bg-black border-black ${width} h-16`
+  const tailwindCSS = `border-2 bg-black text-white border-black ${width} h-16`
   return (
     <div
       className={tailwindCSS}
       draggable
       onDragStart={handleDragStart}
-    ></div>
+    >
+    {card.duration}</div>
   );
 };
 
