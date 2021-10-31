@@ -1,9 +1,9 @@
 import DayCard from "./DayCard";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 
 function Day({ updateCards, dayCards }) {
   const dayRef = useRef(null);
-  
+
   const handleDrop = (e) => {
     e.preventDefault();
     if (dayRef.current === e.target) {
@@ -19,7 +19,7 @@ function Day({ updateCards, dayCards }) {
   const hourUnit = 2;
   const dayHeight = "h-" + hourUnit * 24;
   const dayWidth = "w-" + hourUnit * 24;
-  const tailwindCSS = `${dayWidth} ${dayHeight} relative mt-40 border-2 border-black`;
+  const tailwindCSS = `${dayWidth} ${dayHeight} relative mt-40 border-black border-2 rounded-2x1`;
 
   return (
     <div

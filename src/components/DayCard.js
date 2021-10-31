@@ -11,7 +11,7 @@ function DayCard({dayCard, hourWidth}) {
   const width = 'w-' + (dayCard.duration * hourUnit);
   const left = 'left-' + dayCard.startHour * 2;
   const bgColor = 'bg-' + dayCard.bgColor + '-900';
-  const tailwindCSS = `${width} h-${hourUnit * 10} ${left} ${bgColor} h-full absolute text-white bg-black`
+  const tailwindCSS = `${width} h-${hourUnit * 10} ${left} ${bgColor} h-full absolute text-black text-2xl bg-black border-black  border-2 rounded-2x1 flex justify-center content-center`
 
 
   return (

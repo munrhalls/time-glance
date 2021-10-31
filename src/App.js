@@ -26,9 +26,9 @@ function App() {
   const updateCards = (e, card, dayWidth) => {
     e.preventDefault();
     const dropDistanceFromLeft = e.clientX;
-    console.log(e.target)
-    // e target cannot be another card
-    console.log(dayWidth/dropDistanceFromLeft)
+    // e.clientX distance in hour units
+    // console.log(e.clientX)
+    console.log(Math.floor(e.clientX/24))
     // day's width / distance from the left, round to min
     // transpose it onto hours format
 
