@@ -1,8 +1,6 @@
 import React from "react";
 
 function ScheduledCard(props) {
-  console.log(props);
-  console.log('I was triggered during render')
   const dragStart = (e) => {
     const target = e.target;
     e.dataTransfer.setData("cardId", target.id);
