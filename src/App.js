@@ -8,19 +8,70 @@ import TimeCard from "./components/TimeCard";
 
 function App() {
   const [timeCards, setCards] = useState([
-    { id: 1, duration: 8 },
-    { id: 2, duration: 8 },
-    { id: 3, duration: 8 },
+    {
+      id: 1,
+      project: "Project A",
+      bgColor: "blue",
+      startHour: 1,
+      duration: 8,
+      isScheduled: false,
+      scheduledDayId: undefined,
+    },
+    {
+      id: 2,
+      project: "Project B",
+      bgColor: "brown",
+      startHour: 1,
+      duration: 4,
+      isScheduled: false,
+      scheduledDayId: undefined,
+    },
+    {
+      id: 3,
+      project: "Project C",
+      bgColor: "orange",
+      startHour: 1,
+      duration: 12,
+      isScheduled: false,
+      scheduledDayId: undefined,
+    }
   ]);
+  // object: id, project, bgColor, startHour, duration, isScheduled, scheduledDayId
+
   const testCard = timeCards[0];
   const dayCards = timeCards;
 
   const updateCards = (e, card) => {
     e.preventDefault();
-    setCards(() => [{ id: 1, duration: 3 },
-      { id: 2, duration: 8 },
-      { id: 3, duration: 8 },
-      { id: 4, duration: 8 }]);
+    setCards(() => [
+      {
+        id: 1,
+        project: "Project A",
+        bgColor: "blue",
+        startHour: 4,
+        duration: 12,
+        isScheduled: false,
+        scheduledDayId: undefined,
+      },
+      {
+        id: 2,
+        project: "Project B",
+        bgColor: "purple",
+        startHour: 4,
+        duration: 12,
+        isScheduled: false,
+        scheduledDayId: undefined,
+      },
+      {
+        id: 3,
+        project: "Project C",
+        bgColor: "yellow",
+        startHour: 4,
+        duration: 8,
+        isScheduled: false,
+        scheduledDayId: undefined,
+      }
+    ]);
   };
 
   return (
