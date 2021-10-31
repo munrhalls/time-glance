@@ -16,18 +16,26 @@ function App() {
       duration: 4,
       isScheduled: false,
       scheduledDayId: undefined,
-    }
+    },
   ]);
   // object: id, project, bgColor, startHour, duration, isScheduled, scheduledDayId
 
   const testCard = timeCards[0];
   const dayCards = timeCards;
 
-  const updateCards = (e, card) => {
+  const updateCards = (e, card, dayWidth) => {
     e.preventDefault();
-    const distanceFromLeft = e.clientX;
-    
-    console.log(distanceFromLeft)
+    const dropDistanceFromLeft = e.clientX;
+    console.log(e.target)
+    // e target cannot be another card
+    console.log(dayWidth/dropDistanceFromLeft)
+    // day's width / distance from the left, round to min
+    // transpose it onto hours format
+
+    // accurately establish which hour the drop is attempted on
+    // check how many hours are required to the right
+    // check if they are available
+
     setCards(() => [
       {
         id: 1,
@@ -37,7 +45,7 @@ function App() {
         duration: 4,
         isScheduled: false,
         scheduledDayId: undefined,
-      }
+      },
     ]);
   };
 
