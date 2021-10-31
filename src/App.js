@@ -4,7 +4,7 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import Day from "./components/Day";
 import Days from "./components/Days";
-import TimeCard from "./components/TimeCard";
+import Projects from "./components/Projects";
 
 function App() {
   const [timeCards, setCards] = useState([
@@ -13,24 +13,6 @@ function App() {
       project: "Project A",
       bgColor: "blue",
       startHour: 0,
-      duration: 4,
-      isScheduled: false,
-      scheduledDayId: undefined,
-    },
-    {
-      id: 2,
-      project: "Project B",
-      bgColor: "brown",
-      startHour: 8,
-      duration: 4,
-      isScheduled: false,
-      scheduledDayId: undefined,
-    },
-    {
-      id: 3,
-      project: "Project C",
-      bgColor: "orange",
-      startHour: 16,
       duration: 4,
       isScheduled: false,
       scheduledDayId: undefined,
@@ -48,25 +30,7 @@ function App() {
         id: 1,
         project: "Project A",
         bgColor: "blue",
-        startHour: 0,
-        duration: 12,
-        isScheduled: false,
-        scheduledDayId: undefined,
-      },
-      {
-        id: 2,
-        project: "Project B",
-        bgColor: "purple",
-        startHour: 14,
-        duration: 1,
-        isScheduled: false,
-        scheduledDayId: undefined,
-      },
-      {
-        id: 3,
-        project: "Project C",
-        bgColor: "orange",
-        startHour: 15,
+        startHour: 8,
         duration: 4,
         isScheduled: false,
         scheduledDayId: undefined,
@@ -75,8 +39,8 @@ function App() {
   };
 
   return (
-    <div className="App container h-screen flex justify-center mt-10 box-border">
-      <TimeCard card={testCard} />
+    <div className="App container h-screen mt-10 box-border">
+      <Projects timeCard={testCard} />
       <Day updateCards={updateCards} dayCards={dayCards} />
     </div>
   );

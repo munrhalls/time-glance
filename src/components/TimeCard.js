@@ -1,19 +1,24 @@
 import React from "react";
 // import PropTypes from "prop-types";
 
-const TimeCard = ({ card }) => {
+const TimeCard = ({ timeCard }) => {
   const handleDragStart = (e) => {
-    e.dataTransfer.setData("card", JSON.stringify({card}))
+    e.dataTransfer.setData("card", JSON.stringify({timeCard}))
   };
-  const width = 'w-' + card.duration;
-  const tailwindCSS = `border-2 bg-black text-white border-black ${width} h-16`
+  const hourUnit = 2;
+  const width = 'w-' + (timeCard.duration * hourUnit);
+  const left = 'left-' + timeCard.startHour * 2;
+  const bgColor = 'bg-' + timeCard.bgColor + '-900';
+  console.log(bgColor)
+  const tailwindCSS = `${width} h-${hourUnit * 10} ${left} ${bgColor} h-full absolute text-white bg-black`
+
   return (
     <div
       className={tailwindCSS}
       draggable
       onDragStart={handleDragStart}
     >
-    {card.duration}</div>
+    {timeCard.duration}</div>
   );
 };
 
