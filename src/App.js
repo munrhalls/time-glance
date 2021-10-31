@@ -18,13 +18,10 @@ function App() {
     setCards(() => [{id: 1, duration: 12 }])
   };
   
-  console.log(testCard);
-  console.log('CHANGES DURATION IN THE FIRST CARD, IN THE STATE - AND ITS TRIGGERED WITHIN DAY COMPONENT BY DRAGGING!!!!!!!!!!!!')
-
   return (
     <div className="App container h-screen box-border">
       <TimeCard card={testCard} />
-      <Day updateCards={updateCards} />
+      <Day updateCards={updateCards} dayScheduledCards={timeCards} />
     </div>
   );
 }
