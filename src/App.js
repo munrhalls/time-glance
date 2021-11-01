@@ -28,14 +28,14 @@ function App() {
     const dropDistanceFromLeft = e.clientX;
     // e.clientX distance in hour units
     // console.log(e.clientX)
-    console.log(Math.floor(e.clientX/24))
+    console.log(Math.floor(e.clientX))
     // day's width / distance from the left, round to min
     // transpose it onto hours format
 
     // accurately establish which hour the drop is attempted on
     // check how many hours are required to the right
     // check if they are available
-
+    
     setCards(() => [
       {
         id: 1,

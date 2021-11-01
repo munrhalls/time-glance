@@ -19,18 +19,24 @@ function Day({ updateCards, dayCards }) {
   const hourUnit = 2;
   const dayHeight = "h-" + hourUnit * 24;
   const dayWidth = "w-" + hourUnit * 24;
-  const tailwindCSS = `${dayWidth} ${dayHeight} relative mt-40 border-black border-2 rounded-2x1`;
 
   return (
     <div
-      className={tailwindCSS}
+      className={`${dayWidth} ${dayHeight} relative mt-40 border-black border-2 rounded-2x1 flex flex-col`}
       onDrop={handleDrop}
       onDragOver={handleDragOver}
       ref={dayRef}
     >
-      {dayCards.map((dayCard) => (
-        <DayCard key={dayCard.id} dayCard={dayCard} />
-      ))}
+      <div>
+        {dayCards.map((dayCard) => (
+          <DayCard key={dayCard.id} dayCard={dayCard} />
+        ))}
+      </div>
+      <div>
+        {Array.from({ length: 24 }, (_, i) => i + 1).map((hour) => {
+          return <span>{hour}</span>;
+        })}
+      </div>
     </div>
   );
 }
