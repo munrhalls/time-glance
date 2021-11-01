@@ -6,17 +6,22 @@ function Day({ updateCards, dayCards }) {
   const dayRef = useRef(null);
   const handleDrop = (e) => {
     e.preventDefault();
-    const card = e.dataTransfer.getData("card");
+    const card = JSON.parse(e.dataTransfer.getData("card"));
     const dayWidth = dayRef.current.clientWidth;
-    updateCards(e, card, dayWidth);
+    const dropCoordX = e.clientX;
+    const hourWidth = dayWidth / 24;
+    const numStartHour = Number(Math.floor(dropCoordX/hourWidth));
+    card.numStartHour = numStartHour;
+    console.log(numStartHour)
+    updateCards(e, card);
     
   };
   const handleDragOver = (e) => {
     e.preventDefault();
   };
-  const hourUnit = 2;
-  const dayHeight = hourUnit * 24;
-  const dayWidth = hourUnit * 24;
+  const numHourUnit = 2;
+  const dayHeight = numHourUnit * 24;
+  const dayWidth = numHourUnit * 24;
   const hourMarks = [...Array(7).keys()]
     .map((i) => i * 4)
     .map((mark) => {
@@ -32,7 +37,7 @@ function Day({ updateCards, dayCards }) {
     >
       <div className="h-5/6 relative">
         {dayCards.map((dayCard) => (
-          <DayCard key={dayCard.id} dayCard={dayCard} />
+          <DayCard key={dayCard.id} dayCard={dayCard} numHourUnit={numHourUnit} />
         ))}
       </div>
       <div className="h-1/6 bg-black text-white flex">

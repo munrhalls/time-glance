@@ -6,8 +6,8 @@ const TimeCard = ({ timeCard }) => {
     e.dataTransfer.setData("card", JSON.stringify({ timeCard }));
   };
   const hourUnit = 2;
-  const width = "w-" + timeCard.duration * hourUnit;
-  const left = "left-" + timeCard.startHour * 2;
+  const width = "w-" + timeCard.numDuration * hourUnit;
+  const left = "left-" + timeCard.numStartHour * 2;
   const bgColor = "bg-" + timeCard.bgColor + "-900";
   const tailwindCSS = `${width} h-${
     hourUnit * 10
@@ -15,7 +15,7 @@ const TimeCard = ({ timeCard }) => {
 
   return (
     <div className={tailwindCSS} draggable onDragStart={handleDragStart}>
-      <span>{timeCard.duration}</span>
+      <span>{timeCard.numDuration}</span>
     </div>
   );
 };

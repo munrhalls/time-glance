@@ -12,36 +12,21 @@ function App() {
       id: 1,
       project: "Project A",
       bgColor: "blue",
-      startHour: 0,
-      duration: 4,
+      numStartHour: 0,
+      numDuration: 4,
       isScheduled: false,
       scheduledDayId: undefined,
     },
   ]);
-  // object: id, project, bgColor, startHour, duration, isScheduled, scheduledDayId
+  // object: id, project, bgColor, numStartHour, numDuration, isScheduled, scheduledDayId
 
   const testCard = timeCards[0];
   const dayCards = timeCards;
 
-  const updateCards = (e, card, dayWidth)  => {
+  const updateCards = (e, card)  => {
     e.preventDefault();
-    
-    const dropCoordX = e.clientX;
-    const hourWidth = dayWidth / 24;
-    const startHour = Number(Math.floor(dropCoordX/hourWidth));
-    console.log(startHour)
-    
-    setCards(() => [
-      {
-        id: 1,
-        project: "Project A",
-        bgColor: "blue",
-        startHour: startHour,
-        duration: 4,
-        isScheduled: false,
-        scheduledDayId: undefined,
-      },
-    ]);
+      
+    setCards(() => [card]);
   };
 
   return (
