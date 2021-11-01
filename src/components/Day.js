@@ -34,9 +34,9 @@ function Day({ updateCards, dayCards }) {
           <DayCard key={dayCard.id} dayCard={dayCard} />
         ))}
       </div>
-      <div className="h-1/6 bg-black text-white flex content-between">
+      <div className="h-1/6 bg-black text-white flex">
         {hourMarks.map((mark) => (
-          <span key={mark} className="flex-1 flex items-center">
+          <span key={mark} className="text-xs font-extrabold flex-1 flex justify-center items-center">
             {mark}
           </span>
         ))}
