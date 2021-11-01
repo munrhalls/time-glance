@@ -19,6 +19,9 @@ function Day({ updateCards, dayCards }) {
   const hourUnit = 2;
   const dayHeight = "h-" + hourUnit * 24;
   const dayWidth = "w-" + hourUnit * 24;
+  
+  const hourMarks = [...Array(7).keys()].map((i) => i * 4).map((mark) => {return mark});
+  
 
   return (
     <div
@@ -33,15 +36,9 @@ function Day({ updateCards, dayCards }) {
         ))}
       </div>
       <div className="h-1/6 bg-black text-white flex content-between">
-        {[...Array(7).keys()]
-          .map((i) => i * 4)
-          .map((hour) => {
-            return (
-              <span key={hour} className="flex-1 flex content-center items-center">
-                {hour}
-              </span>
-            );
-          })}
+        {hourMarks.map((mark) => {
+          return (<span key={mark} className="flex-1 flex items-center"> {mark} </span>)
+        })}
       </div>
     </div>
   );
