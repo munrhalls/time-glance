@@ -23,15 +23,14 @@ function App() {
   const testCard = timeCards[0];
   const dayCards = timeCards;
 
-  const updateCards = (e, card, dayWidth) => {
+  const updateCards = (e, card, dayWidth)  => {
     e.preventDefault();
-    const dropDistanceFromLeft = e.clientX;
-
-    // get drop location
-    console.log(Math.floor(e.clientX))
-    // 
-
     
+    const dropCoordX = e.target.getBoundingClientRect().width;
+    console.log(dayWidth)
+    
+    
+
     setCards(() => [
       {
         id: 1,

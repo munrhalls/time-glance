@@ -2,13 +2,14 @@ import DayCard from "./DayCard";
 import React, { useRef } from "react";
 
 function Day({ updateCards, dayCards }) {
+  
   const dayRef = useRef(null);
   const handleDrop = (e) => {
     e.preventDefault();
-    if (dayRef.current === e.target) {
-      const card = e.dataTransfer.getData("card");
-      updateCards(e, card, dayRef.current.clientWidth);
-    }
+    const card = e.dataTransfer.getData("card");
+    const dayWidth = dayRef.current.clientWidth;
+    updateCards(e, card, dayWidth);
+    
   };
   const handleDragOver = (e) => {
     e.preventDefault();
@@ -36,7 +37,10 @@ function Day({ updateCards, dayCards }) {
       </div>
       <div className="h-1/6 bg-black text-white flex">
         {hourMarks.map((mark) => (
-          <span key={mark} className="text-xs font-extrabold flex-1 flex justify-center items-center">
+          <span
+            key={mark}
+            className="text-xs font-extrabold flex-1 flex justify-center items-center"
+          >
             {mark}
           </span>
         ))}
