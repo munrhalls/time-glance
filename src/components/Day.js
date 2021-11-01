@@ -32,9 +32,9 @@ function Day({ updateCards, dayCards }) {
           <DayCard key={dayCard.id} dayCard={dayCard} />
         ))}
       </div>
-      <div className="h-1/6">
-        {Array.from({ length: 24 }, (_, i) => i + 1).map((hour) => {
-          return <span>{hour}</span>;
+      <div className="h-1/6 bg-black text-white flex content-between">
+        {[...Array(7).keys()].map(i=>i*4).map((hour) => {
+          return <span key={hour} className="flex-1  content-between">{hour}</span>;
         })}
       </div>
     </div>
