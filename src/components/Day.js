@@ -27,11 +27,11 @@ function Day({ updateCards, dayCards }) {
       ref={dayRef}
       onDrop={handleDrop}
       onDragOver={handleDragOver}
-      className={`w-${dayWidth} h-${dayHeight} relative mt-40 border-black border-2 rounded-2x1 flex flex-col`}
+      className={`h-${dayHeight} w-${dayWidth} mt-40 border-black border-2 rounded-2x1 flex flex-col`}
     >
-      <div className="h-5/6">
+      <div className="h-5/6 relative">
         {dayCards.map((dayCard) => (
-          <DayCard key={dayCard.id} dayCard={dayCard} dayHeight="h-5/6" />
+          <DayCard key={dayCard.id} dayCard={dayCard} />
         ))}
       </div>
       <div className="h-1/6 bg-black text-white flex content-between">

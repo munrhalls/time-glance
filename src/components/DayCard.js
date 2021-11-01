@@ -13,7 +13,7 @@ function DayCard({dayCard, dayHeight, hourWidth}) {
   const bgColor = dayCard.bgColor;
 
   return (
-    <div className={`w-${width} h-${hourUnit * 10} left-${leftDistance} bg-${bgColor}-900 h-${dayHeight} absolute text-black text-2xl bg-black border-black  border-2 rounded-2x1 flex justify-center content-center`}>
+    <div className={`w-${width} h-full left-${leftDistance} bg-${bgColor}-900 absolute text-black text-2xl bg-black border-black  border-2 rounded-2x1 flex justify-center content-center`}>
       {dayCard.duration}
     </div>
   )
