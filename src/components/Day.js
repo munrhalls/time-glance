@@ -33,9 +33,15 @@ function Day({ updateCards, dayCards }) {
         ))}
       </div>
       <div className="h-1/6 bg-black text-white flex content-between">
-        {[...Array(7).keys()].map(i=>i*4).map((hour) => {
-          return <span key={hour} className="flex-1  content-between">{hour}</span>;
-        })}
+        {[...Array(7).keys()]
+          .map((i) => i * 4)
+          .map((hour) => {
+            return (
+              <span key={hour} className="flex-1 flex content-center items-center">
+                {hour}
+              </span>
+            );
+          })}
       </div>
     </div>
   );
