@@ -26,15 +26,11 @@ function App() {
   const updateCards = (e, card, dayWidth) => {
     e.preventDefault();
     const dropDistanceFromLeft = e.clientX;
-    // e.clientX distance in hour units
-    // console.log(e.clientX)
-    console.log(Math.floor(e.clientX))
-    // day's width / distance from the left, round to min
-    // transpose it onto hours format
 
-    // accurately establish which hour the drop is attempted on
-    // check how many hours are required to the right
-    // check if they are available
+    // get drop location
+    console.log(Math.floor(e.clientX))
+    // 
+
     
     setCards(() => [
       {
