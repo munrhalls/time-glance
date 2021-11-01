@@ -27,12 +27,12 @@ function Day({ updateCards, dayCards }) {
       onDragOver={handleDragOver}
       ref={dayRef}
     >
-      <div>
+      <div className="h-5/6">
         {dayCards.map((dayCard) => (
           <DayCard key={dayCard.id} dayCard={dayCard} />
         ))}
       </div>
-      <div>
+      <div className="h-1/6">
         {Array.from({ length: 24 }, (_, i) => i + 1).map((hour) => {
           return <span>{hour}</span>;
         })}
