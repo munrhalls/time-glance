@@ -26,17 +26,17 @@ function App() {
   const updateCards = (e, card, dayWidth)  => {
     e.preventDefault();
     
-    const dropCoordX = e.target.getBoundingClientRect().width;
-    console.log(dayWidth)
+    const dropCoordX = e.clientX;
+    const hourWidth = dayWidth / 24;
+    const startHour = Number(Math.floor(dropCoordX/hourWidth));
+    console.log(startHour)
     
-    
-
     setCards(() => [
       {
         id: 1,
         project: "Project A",
         bgColor: "blue",
-        startHour: 8,
+        startHour: startHour,
         duration: 4,
         isScheduled: false,
         scheduledDayId: undefined,
