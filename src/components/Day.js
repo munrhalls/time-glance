@@ -31,7 +31,7 @@ function Day({ updateCards, dayCards }) {
     >
       <div className="h-5/6">
         {dayCards.map((dayCard) => (
-          <DayCard key={dayCard.id} dayCard={dayCard} />
+          <DayCard key={dayCard.id} dayCard={dayCard} dayHeight="h-5/6" />
         ))}
       </div>
       <div className="h-1/6 bg-black text-white flex content-between">

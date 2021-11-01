@@ -1,21 +1,19 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 
-function DayCard({dayCard, hourWidth}) {
+function DayCard({dayCard, dayHeight, hourWidth}) {
     // retrieve props - startHour, duration, bgColor
   // cardWidth = hourUnit * duration
 
   // cardPositionLeft = hourWidth * startHour
   // tailwindCSS cardPositionLeft, width = cardWidth, height = full, bgColor = bgColor
   const hourUnit = 2;
-  const width = 'w-' + (dayCard.duration * hourUnit);
-  const left = 'left-' + dayCard.startHour * 2;
-  const bgColor = 'bg-' + dayCard.bgColor + '-900';
-  const tailwindCSS = `${width} h-${hourUnit * 10} ${left} ${bgColor} h-full absolute text-black text-2xl bg-black border-black  border-2 rounded-2x1 flex justify-center content-center`
-
+  const width = dayCard.duration * hourUnit;
+  const leftDistance = dayCard.startHour * 2;
+  const bgColor = dayCard.bgColor;
 
   return (
-    <div className={tailwindCSS}>
+    <div className={`w-${width} h-${hourUnit * 10} left-${leftDistance} bg-${bgColor}-900 h-${dayHeight} absolute text-black text-2xl bg-black border-black  border-2 rounded-2x1 flex justify-center content-center`}>
       {dayCard.duration}
     </div>
   )
