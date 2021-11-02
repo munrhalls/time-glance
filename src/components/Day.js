@@ -2,19 +2,19 @@ import DayCard from "./DayCard";
 import React, { useRef } from "react";
 
 function Day({ updateCards, dayCards }) {
-  
   const dayRef = useRef(null);
   const handleDrop = (e) => {
     e.preventDefault();
     const card = JSON.parse(e.dataTransfer.getData("card"));
-    const dayWidth = dayRef.current.clientWidth;
-    const dropCoordX = e.clientX;
-    const hourWidth = dayWidth / 24;
-    const numStartHour = Number(Math.floor(dropCoordX/hourWidth));
-    card.numStartHour = numStartHour;
-    console.log(numStartHour)
+    const getStartHour = () => {
+      const dayWidth = dayRef.current.clientWidth;
+      const dropCoordX = e.clientX;
+      const hourWidth = dayWidth / 24;
+      const numStartHour = Number(Math.floor(dropCoordX / hourWidth));
+      return numStartHour;
+    };
+    card.numStartHour = getStartHour();
     updateCards(e, card);
-    
   };
   const handleDragOver = (e) => {
     e.preventDefault();
@@ -37,7 +37,11 @@ function Day({ updateCards, dayCards }) {
     >
       <div className="h-5/6 relative">
         {dayCards.map((dayCard) => (
-          <DayCard key={dayCard.id} dayCard={dayCard} numHourUnit={numHourUnit} />
+          <DayCard
+            key={JSON.stringify(dayCard)}
+            dayCard={dayCard}
+            numHourUnit={numHourUnit}
+          />
         ))}
       </div>
       <div className="h-1/6 bg-black text-white flex">
