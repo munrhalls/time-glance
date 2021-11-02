@@ -24,14 +24,24 @@ function Day({ updateCards, dayCards }) {
         numHourUnit * 24
       } mt-40 border-black border-2 rounded-2x1 flex flex-col`}
     >
-      <div className="h-5/6 relative">
-        {dayCards.map((dayCard) => (
+      <div className="h-5/6 flex">
+      {[...Array(24).keys()]
+          .map((i) => i + 1)
+          .map((mark) => (
+            <span
+              key={mark}
+              className={`w-${numHourUnit} border border-gray-100 flex items-center text-xs`}
+            >
+              {mark}
+            </span>
+          ))}
+        {/* {dayCards.map((dayCard) => (
           <DayCard
             key={dayCard.id}
             dayCard={dayCard}
             numHourUnit={numHourUnit}
           />
-        ))}
+        ))} */}
       </div>
       <div className="h-1/6 bg-black text-white flex">
         {[...Array(7).keys()]
@@ -39,7 +49,7 @@ function Day({ updateCards, dayCards }) {
           .map((mark) => (
             <span
               key={mark}
-              className={`mr-${numHourUnit * 2} text-sm`}
+              className={`mr-${numHourUnit * 2} flex items-center text-xs`}
             >
               {mark}
             </span>
