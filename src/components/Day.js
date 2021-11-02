@@ -39,7 +39,7 @@ function Day({ updateCards, dayCards }) {
           .map((mark) => (
             <span
               key={mark}
-              className={`mr-${numHourUnit * 2} text-xs font-extrabold`}
+              className={`mr-${numHourUnit * 2} text-sm`}
             >
               {mark}
             </span>
