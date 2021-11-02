@@ -6,7 +6,7 @@ function Day({ updateCards, dayCards }) {
   const handleDrop = (e) => {
     e.preventDefault();
     const card = JSON.parse(e.dataTransfer.getData("card")).timeCard;
-    console.log(card)
+    // console.log(card)
     const getStartHour = () => {
       const dayWidth = dayRef.current.clientWidth;
       const dropCoordX = e.clientX;
