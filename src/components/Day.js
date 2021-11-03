@@ -3,7 +3,6 @@ import React, { useRef } from "react";
 
 function Day({ updateCards, dayCards }) {
   const dayRef = useRef(null);
-
   const handleDrop = (e) => {
     e.preventDefault();
     const cardStr = e.dataTransfer.getData("card").timeCard
@@ -13,11 +12,12 @@ function Day({ updateCards, dayCards }) {
     card.numStartHour = numStartHour;
     updateCards(e, card);
   };
-
   const handleDragOver = (e) => {
     e.preventDefault();
   };
   const numHourUnit = 2;
+  const dayHeight = numHourUnit * 24;
+  const dayWidth = numHourUnit * 24;
   const hourColumns = [...Array(24).keys()].map((i) => i + 1);
   const hourNumMarks = [...Array(7).keys()].map((i) => i * 4);
 
@@ -26,9 +26,7 @@ function Day({ updateCards, dayCards }) {
       ref={dayRef}
       onDrop={handleDrop}
       onDragOver={handleDragOver}
-      className={`h-${numHourUnit * 24} w-${
-        numHourUnit * 24
-      } mt-40 border-black border-2 rounded-2x1 flex flex-col`}
+      className={`h-${dayHeight} w-${dayWidth} mt-40 border-black border-2 rounded-2x1 flex flex-col`}
     >
       <div className="h-5/6 flex">
         {hourColumns.map((mark) => (
