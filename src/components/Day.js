@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 
 function Day({ updateCards, dayCards }) {
   const dayRef = useRef(null);
+
   const handleDrop = (e) => {
     e.preventDefault();
     const card = JSON.parse(e.dataTransfer.getData("card")).timeCard;
@@ -10,10 +11,13 @@ function Day({ updateCards, dayCards }) {
     card.numStartHour = Number(Math.floor(e.clientX / hourWidth));
     updateCards(e, card);
   };
+
   const handleDragOver = (e) => {
     e.preventDefault();
   };
   const numHourUnit = 2;
+  const hourMarks = [...Array(24).keys()].map((i) => i + 1);
+  const hourNumbers = [...Array(7).keys()].map((i) => i * 4);
 
   return (
     <div
@@ -25,16 +29,15 @@ function Day({ updateCards, dayCards }) {
       } mt-40 border-black border-2 rounded-2x1 flex flex-col`}
     >
       <div className="h-5/6 flex">
-      {[...Array(24).keys()]
-          .map((i) => i + 1)
-          .map((mark) => (
-            <span
-              key={mark}
-              className={`w-${numHourUnit} border border-gray-100 flex items-center text-xs`}
-            >
-              {mark}
-            </span>
-          ))}
+        {hourMarks.map((mark) => (
+          <span
+            key={mark}
+            className={`w-${numHourUnit} border border-gray-100 flex items-center text-xs`}
+          >
+            {mark}
+          </span>
+        ))}
+
         {/* {dayCards.map((dayCard) => (
           <DayCard
             key={dayCard.id}
@@ -43,17 +46,16 @@ function Day({ updateCards, dayCards }) {
           />
         ))} */}
       </div>
+
       <div className="h-1/6 bg-black text-white flex">
-        {[...Array(7).keys()]
-          .map((i) => i * 4)
-          .map((mark) => (
-            <span
-              key={mark}
-              className={`mr-${numHourUnit * 2} flex items-center text-xs`}
-            >
-              {mark}
-            </span>
-          ))}
+        {hourNumbers.map((mark) => (
+          <span
+            key={mark}
+            className={`mr-${numHourUnit * 2} flex items-center text-xs`}
+          >
+            {mark}
+          </span>
+        ))}
       </div>
     </div>
   );
