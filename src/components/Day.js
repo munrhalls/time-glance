@@ -6,9 +6,11 @@ function Day({ updateCards, dayCards }) {
 
   const handleDrop = (e) => {
     e.preventDefault();
-    const card = JSON.parse(e.dataTransfer.getData("card")).timeCard;
+    const cardStr = e.dataTransfer.getData("card").timeCard
+    const card = JSON.parse(cardStr);
     const hourWidth = dayRef.current.clientWidth / 24;
-    card.numStartHour = Number(Math.floor(e.clientX / hourWidth));
+    const numStartHour = Number(Math.floor(e.clientX / hourWidth));
+    card.numStartHour = numStartHour;
     updateCards(e, card);
   };
 
@@ -16,8 +18,8 @@ function Day({ updateCards, dayCards }) {
     e.preventDefault();
   };
   const numHourUnit = 2;
-  const hourMarks = [...Array(24).keys()].map((i) => i + 1);
-  const hourNumbers = [...Array(7).keys()].map((i) => i * 4);
+  const hourColumns = [...Array(24).keys()].map((i) => i + 1);
+  const hourNumMarks = [...Array(7).keys()].map((i) => i * 4);
 
   return (
     <div
@@ -29,7 +31,7 @@ function Day({ updateCards, dayCards }) {
       } mt-40 border-black border-2 rounded-2x1 flex flex-col`}
     >
       <div className="h-5/6 flex">
-        {hourMarks.map((mark) => (
+        {hourColumns.map((mark) => (
           <span
             key={mark}
             className={`w-${numHourUnit} border border-gray-100 flex items-center text-xs`}
@@ -48,7 +50,7 @@ function Day({ updateCards, dayCards }) {
       </div>
 
       <div className="h-1/6 bg-black text-white flex">
-        {hourNumbers.map((mark) => (
+        {hourNumMarks.map((mark) => (
           <span
             key={mark}
             className={`mr-${numHourUnit * 2} flex items-center text-xs`}
