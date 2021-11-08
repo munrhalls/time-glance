@@ -7,10 +7,12 @@ function Day({ updateCards, dayCards }) {
     e.preventDefault();
     const cardStr = e.dataTransfer.getData("card");
     console.log(cardStr);
-    const card = JSON.parse(cardStr);
+    const object = JSON.parse(cardStr);
+    const card = object.timeCard;
     const hourWidth = dayRef.current.clientWidth / 24;
     const numStartHour = Number(Math.floor(e.clientX / hourWidth));
     card.numStartHour = numStartHour;
+    console.log(card)
     updateCards(e, card);
   };
   const handleDragOver = (e) => {
