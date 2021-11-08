@@ -31,11 +31,11 @@ function Day({ updateCards, dayCards }) {
       onDragOver={handleDragOver}
       className={`h-${dayHeight} w-${dayWidth} mt-40 border-black border-2 rounded-2x1 flex flex-col`}
     >
-      <div className="h-5/6 flex">
+      <div className="h-5/6 relative flex">
         {hourColumns.map((mark) => (
           <span
             key={mark}
-            className={`w-${numHourUnit} border border-gray-100 flex items-center text-xs`}
+            className={`w-${numHourUnit} relative border border-gray-100 flex items-center text-xs`}
           >
             {mark}
           </span>

@@ -4,7 +4,7 @@ import React from 'react'
 function DayCard({dayCard, numHourUnit}) {
 
   return (
-    <div className={`w-${dayCard.numDuration * numHourUnit} h-full ml-${dayCard.numStartHour * numHourUnit} bg-${dayCard.bgColor}-900 absolute text-black text-2xl bg-black border-black  border-2 rounded-2x1 flex justify-center content-center`}>
+    <div className={`h-full w-${dayCard.numDuration * numHourUnit}  ml-${dayCard.numStartHour * numHourUnit} bg-${dayCard.bgColor}-900 absolute text-black text-2xl bg-black border-black  border-2 rounded-2x1 flex justify-center content-center`}>
       {dayCard.numDuration}
     </div>
   )
