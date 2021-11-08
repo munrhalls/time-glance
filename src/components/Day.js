@@ -3,17 +3,23 @@ import React, { useRef } from "react";
 
 function Day({ updateCards, dayCards }) {
   const dayRef = useRef(null);
-  const handleDrop = (e) => {
-    e.preventDefault();
+  const getCard = (e) => {
     const cardStr = e.dataTransfer.getData("card");
     console.log(cardStr);
     const object = JSON.parse(cardStr);
-    const card = object.timeCard;
+    return object.timeCard;
+  }
+  const handleCard = (e, card) => {
     const hourWidth = dayRef.current.clientWidth / 24;
     const numStartHour = Number(Math.floor(e.clientX / hourWidth));
     card.numStartHour = numStartHour;
-    console.log(card)
-    updateCards(e, card);
+    return card;
+  }
+  const handleDrop = (e) => {
+    e.preventDefault();
+    const card = getCard(e)
+    const updatedCard = handleCard(e, card)
+    updateCards(e, updatedCard);
   };
   const handleDragOver = (e) => {
     e.preventDefault();
