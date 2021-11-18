@@ -2,11 +2,14 @@ import DayCard from "./DayCard";
 import React, { useRef } from "react";
 
 function Day({ updateCards, dayCards }) {
+
   const dayRef = useRef(null);
+
   const getCard = (e) => {
     const cardStr = e.dataTransfer.getData("card");
     const object = JSON.parse(cardStr);
     const card = object.timeCard;
+    console.log(card)
     return card;
   }
   const handleCard = (e) => {
@@ -24,15 +27,18 @@ function Day({ updateCards, dayCards }) {
     }
     return card;
   }
+
   const handleDrop = (e) => {
     e.preventDefault();
     const card = getCard(e)
     const updatedCard = handleCard(e, card);
     updateCards(e, updatedCard);
   };
+
   const handleDragOver = (e) => {
     e.preventDefault();
   };
+
   const hourUnit = 2;
   const dayHeight = hourUnit * 24;
   const dayWidth = hourUnit * 24;
