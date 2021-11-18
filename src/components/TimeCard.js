@@ -6,15 +6,12 @@ const TimeCard = ({ timeCard }) => {
     e.dataTransfer.setData("card", JSON.stringify({ timeCard }));
   };
   const hourUnit = 2;
-  const width = "w-" + timeCard.numDuration * hourUnit;
-  const left = "left-" + timeCard.numStartHour * 2;
+  const width = timeCard.duration * hourUnit;
+  const left = "left-" + timeCard.startHour * 2;
   const bgColor = "bg-" + timeCard.bgColor + "-900";
-  const tailwindCSS = `${width} h-${
-    hourUnit * 10
-  } ${left} ${bgColor} h-12 absolute text-black text-2xl bg-black border-black  border-2 rounded-lg flex justify-center content-center`;
 
   return (
-    <div className={tailwindCSS} draggable onDragStart={handleDragStart}>
+    <div className={`w-${width} h-${hourUnit * 10} ${left} ${bgColor} h-12 absolute text-black text-2xl bg-black border-black  border-2 rounded-lg flex justify-center content-center`} draggable onDragStart={handleDragStart}>
       <span>{timeCard.numDuration}</span>
     </div>
   );

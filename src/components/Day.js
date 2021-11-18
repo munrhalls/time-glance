@@ -5,28 +5,37 @@ function Day({ updateCards, dayCards }) {
   const dayRef = useRef(null);
   const getCard = (e) => {
     const cardStr = e.dataTransfer.getData("card");
-    console.log(cardStr);
     const object = JSON.parse(cardStr);
-    return object.timeCard;
+    const card = object.timeCard;
+    return card;
   }
-  const handleCard = (e, card) => {
-    const hourWidth = dayRef.current.clientWidth / 24;
-    const numStartHour = Number(Math.floor(e.clientX / hourWidth));
-    card.numStartHour = numStartHour;
+  const handleCard = (e) => {
+    // const hourWidth = dayRef.current.clientWidth / 24;
+    // const startHour = Number(Math.floor(e.clientX / hourWidth));
+    // card.startHour = startHour;
+    const card = {
+      id: 1,
+      project: "Project A",
+      bgColor: "blue",
+      startHour: 7,
+      duration: 4,
+      isScheduled: false,
+      scheduledDayId: undefined
+    }
     return card;
   }
   const handleDrop = (e) => {
     e.preventDefault();
     const card = getCard(e)
-    const updatedCard = handleCard(e, card)
+    const updatedCard = handleCard(e, card);
     updateCards(e, updatedCard);
   };
   const handleDragOver = (e) => {
     e.preventDefault();
   };
-  const numHourUnit = 2;
-  const dayHeight = numHourUnit * 24;
-  const dayWidth = numHourUnit * 24;
+  const hourUnit = 2;
+  const dayHeight = hourUnit * 24;
+  const dayWidth = hourUnit * 24;
   const hourColumns = [...Array(24).keys()].map((i) => i + 1);
   const hourNumMarks = [...Array(7).keys()].map((i) => i * 4);
 
@@ -41,7 +50,7 @@ function Day({ updateCards, dayCards }) {
         {hourColumns.map((mark) => (
           <span
             key={mark}
-            className={`w-${numHourUnit} relative border border-gray-100 flex items-center text-xs`}
+            className={`w-${hourUnit} relative border border-gray-100 flex items-center text-xs`}
           >
             {mark}
           </span>
@@ -51,7 +60,7 @@ function Day({ updateCards, dayCards }) {
           <DayCard
             key={dayCard.id}
             dayCard={dayCard}
-            numHourUnit={numHourUnit}
+            hourUnit={hourUnit}
           />
         ))}
       </div>
@@ -60,7 +69,7 @@ function Day({ updateCards, dayCards }) {
         {hourNumMarks.map((mark) => (
           <span
             key={mark}
-            className={`mr-${numHourUnit * 2} flex items-center text-xs`}
+            className={`mr-${hourUnit * 2} flex items-center text-xs`}
           >
             {mark}
           </span>

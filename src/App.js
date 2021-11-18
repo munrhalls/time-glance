@@ -12,27 +12,26 @@ function App() {
       id: 1,
       project: "Project A",
       bgColor: "blue",
-      numStartHour: 0,
-      numDuration: 4,
+      startHour: 0,
+      duration: 4,
       isScheduled: false,
       scheduledDayId: undefined,
     },
   ]);
-  // object: id, project, bgColor, numStartHour, numDuration, isScheduled, scheduledDayId
+  // object: id, project, bgColor, startHour, duration, isScheduled, scheduledDayId
 
   const testCard = timeCards[0];
   const dayCards = timeCards;
 
   const updateCards = (e, card)  => {
     e.preventDefault();
-    console.log(card.numStartHour)
     setCards(() => [card]);
   };
 
   return (
     <div className="App container h-screen mt-10 box-border">
       <Projects timeCard={testCard} />
-      <Day updateCards={updateCards} dayCards={dayCards} />
+      {/* <Day updateCards={updateCards} dayCards={dayCards} /> */}
     </div>
   );
 }
