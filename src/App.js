@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="App container h-screen mt-10 box-border">
       <Projects timeCard={testCard} />
-      {/* <Day updateCards={updateCards} dayCards={dayCards} /> */}
+      <Day updateCards={updateCards} dayCards={dayCards} />
     </div>
   );
 }

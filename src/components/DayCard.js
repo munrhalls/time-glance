@@ -4,7 +4,7 @@ import React from 'react'
 function DayCard({dayCard, hourUnit}) {
 
   const width = dayCard.duration * hourUnit;
-  const marginLeft = dayCard.numStartHour * hourUnit;
+  const marginLeft = dayCard.startHour * hourUnit;
   const duration = dayCard.duration;
   const bgColor = dayCard.bgColor;
 
