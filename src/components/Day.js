@@ -64,7 +64,7 @@ function Day({ updateCards, dayCards }) {
         ))}
       </div>
 
-      <div className="h-1/6 flex bg-black text-white relative">
+      <div className="h-1/6 flex bg-black text-white items-center relative">
         {everyFourHours.map((mark, i) => (
           <span
             key={i}
