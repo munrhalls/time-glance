@@ -64,12 +64,12 @@ function Day({ updateCards, dayCards }) {
         ))}
       </div>
 
-      <div className="h-1/6 flex bg-black text-white">
+      <div className="h-1/6 flex bg-black text-white relative">
         {everyFourHours.map((mark, i) => (
           <span
             key={i}
-            className={`flex items-center text-xs`}
-            // style={{marginLeft: `${i}rem`}}
+            className={`absolute flex items-center text-xs`}
+            style={{marginLeft: `${mark/2}rem`}}
           >
             {mark}
           </span>
