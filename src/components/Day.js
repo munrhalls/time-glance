@@ -37,7 +37,7 @@ function Day({ updateCards, dayCards }) {
   };
 
   const hourColumns = [...Array(24).keys()].map((i) => i + 1);
-  const hourNumMarks = [...Array(7).keys()].map((i) => i * 4);
+  const everyFourHours = [...Array(6).keys()].map((i) => (i + 1) * 4);
 
   return (
     <div
@@ -64,11 +64,12 @@ function Day({ updateCards, dayCards }) {
         ))}
       </div>
 
-      <div className="h-1/6 justify-between bg-black text-white flex">
-        {hourNumMarks.map((mark) => (
+      <div className="h-1/6 flex bg-black text-white">
+        {everyFourHours.map((mark, i) => (
           <span
-            key={mark}
+            key={i}
             className={`flex items-center text-xs`}
+            // style={{marginLeft: `${i}rem`}}
           >
             {mark}
           </span>
