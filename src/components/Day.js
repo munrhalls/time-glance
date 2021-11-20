@@ -16,15 +16,6 @@ function Day({ updateCards, dayCards }) {
     const hourWidth = dayRef.current.clientWidth / 24;
     const startHour = Number(Math.floor(e.clientX / hourWidth));
     card.startHour = startHour;
-    // const card = {
-    //   id: 1,
-    //   project: "Project A",
-    //   bgColor: "blue",
-    //   startHour: 7,
-    //   duration: 4,
-    //   isScheduled: false,
-    //   scheduledDayId: undefined
-    // }
     return card;
   }
 
@@ -48,7 +39,8 @@ function Day({ updateCards, dayCards }) {
       ref={dayRef}
       onDrop={handleDrop}
       onDragOver={handleDragOver}
-      className={`h-48 w-48 mt-40 border-black border-2 rounded-2x1 flex flex-col`}
+      className={`mt-40 border-black border-2 rounded-2x1 flex flex-col`}
+      style={{height: '12rem', width: '12rem'}}
     >
       <div className="h-5/6 relative flex">
         {hourColumns.map((mark) => (
