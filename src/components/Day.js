@@ -9,22 +9,22 @@ function Day({ updateCards, dayCards }) {
     const cardStr = e.dataTransfer.getData("card");
     const object = JSON.parse(cardStr);
     const card = object.timeCard;
-    console.log(card)
     return card;
   }
   const handleCard = (e) => {
-    // const hourWidth = dayRef.current.clientWidth / 24;
-    // const startHour = Number(Math.floor(e.clientX / hourWidth));
-    // card.startHour = startHour;
-    const card = {
-      id: 1,
-      project: "Project A",
-      bgColor: "blue",
-      startHour: 7,
-      duration: 4,
-      isScheduled: false,
-      scheduledDayId: undefined
-    }
+    const card = getCard(e);
+    const hourWidth = dayRef.current.clientWidth / 24;
+    const startHour = Number(Math.floor(e.clientX / hourWidth));
+    card.startHour = startHour;
+    // const card = {
+    //   id: 1,
+    //   project: "Project A",
+    //   bgColor: "blue",
+    //   startHour: 7,
+    //   duration: 4,
+    //   isScheduled: false,
+    //   scheduledDayId: undefined
+    // }
     return card;
   }
 
