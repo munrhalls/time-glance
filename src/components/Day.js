@@ -64,11 +64,11 @@ function Day({ updateCards, dayCards }) {
         ))}
       </div>
 
-      <div className="h-1/6 bg-black text-white flex">
+      <div className="h-1/6 justify-between bg-black text-white flex">
         {hourNumMarks.map((mark) => (
           <span
             key={mark}
-            className={`mr-48 flex items-center text-xs`}
+            className={`flex items-center text-xs`}
           >
             {mark}
           </span>
