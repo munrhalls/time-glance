@@ -9,7 +9,7 @@ function DayCard({dayCard, hourUnit}) {
   const bgColor = dayCard.bgColor;
 
   return (
-    <div className={`h-full w-${width} bg-${bgColor}-900 absolute text-black text-2xl bg-black border-black  border-2 rounded-2x1 flex justify-center content-center border-2 rounded-lg`} style={{backgroundColor: 'blue'}}>
+    <div className={`h-full w-${width} bg-${bgColor}-900 absolute text-black text-2xl bg-black border-black  border-2 rounded-2x1 flex justify-center content-center border-2 rounded-lg`} style={{marginLeft: `${dayCard.startHour}rem`}}>
       {duration}
     </div>
   )

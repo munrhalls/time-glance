@@ -31,6 +31,7 @@ function Day({ updateCards, dayCards }) {
   const handleDrop = (e) => {
     e.preventDefault();
     const card = getCard(e)
+    console.log(card)
     const updatedCard = handleCard(e, card);
     updateCards(e, updatedCard);
   };
