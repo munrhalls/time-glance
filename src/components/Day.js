@@ -40,9 +40,6 @@ function Day({ updateCards, dayCards }) {
     e.preventDefault();
   };
 
-  const hourUnit = 2;
-  const dayHeight = hourUnit * 24;
-  const dayWidth = hourUnit * 24;
   const hourColumns = [...Array(24).keys()].map((i) => i + 1);
   const hourNumMarks = [...Array(7).keys()].map((i) => i * 4);
 
@@ -51,13 +48,13 @@ function Day({ updateCards, dayCards }) {
       ref={dayRef}
       onDrop={handleDrop}
       onDragOver={handleDragOver}
-      className={`h-${dayHeight} w-${dayWidth} mt-40 border-black border-2 rounded-2x1 flex flex-col`}
+      className={`h-48 w-48 mt-40 border-black border-2 rounded-2x1 flex flex-col`}
     >
       <div className="h-5/6 relative flex">
         {hourColumns.map((mark) => (
           <span
             key={mark}
-            className={`w-${hourUnit} relative bg-black flex items-center text-xs`}
+            className={`w-48 relative bg-black flex items-center text-xs`}
           >
           </span>
         ))}
@@ -66,7 +63,6 @@ function Day({ updateCards, dayCards }) {
           <DayCard
             key={dayCard.id}
             dayCard={dayCard}
-            hourUnit={hourUnit}
           />
         ))}
       </div>
@@ -75,7 +71,7 @@ function Day({ updateCards, dayCards }) {
         {hourNumMarks.map((mark) => (
           <span
             key={mark}
-            className={`mr-${hourUnit * 2} flex items-center text-xs`}
+            className={`mr-48 flex items-center text-xs`}
           >
             {mark}
           </span>
