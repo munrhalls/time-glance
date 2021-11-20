@@ -13,9 +13,14 @@ function Day({ updateCards, dayCards }) {
   }
   const handleCard = (e) => {
     const card = getCard(e);
+    // isWithinDay
+    // isWithinAvailableHours
     const hourWidth = dayRef.current.clientWidth / 24;
     const startHour = Number(Math.floor(e.clientX / hourWidth));
-    card.startHour = startHour;
+    const isWithinDay = startHour + card.duration <= 24;
+    if (isWithinDay) {
+      card.startHour = startHour;
+    }
     return card;
   }
 
