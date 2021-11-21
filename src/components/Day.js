@@ -35,7 +35,8 @@ function Day({ updateCards, dayCards }) {
     e.preventDefault();
   };
 
-  const hourColumns = [...Array(24).keys()].map((i) => i + 1);
+  const hourColumns = [...Array(24).keys()].map((i) => i);
+  console.log(hourColumns);
   const everyFourHours = [...Array(6).keys()].map((i) => (i + 1) * 4);
 
   return (
