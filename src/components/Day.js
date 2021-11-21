@@ -65,7 +65,8 @@ function Day({ updateCards, dayCards }) {
         ))}
       </div>
 
-      <div className="h-1/6 flex bg-black text-white items-center">
+      <div className="h-1/6 flex bg-black text-white items-center"
+      >
         {hourMarks.map((mark, i) => (
           <span
             key={i}

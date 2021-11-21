@@ -4,8 +4,8 @@ import React from 'react'
 function DayCard({ dayCard }) {
 
   return (
-    <div className={`h-5/6 bg-${dayCard.bgColor}-900 absolute text-black text-2xl bg-black border-black  border-2 rounded-2x1 flex justify-center content-center border-2 rounded-lg`} 
-    style={{ marginLeft: `${dayCard.startHour/2}rem`, width: `${dayCard.duration/2}rem` }}>
+    <div className={`bg-${dayCard.bgColor}-900 absolute text-black text-2xl bg-black border-black flex justify-center content-center`} 
+    style={{height: '90%', marginTop: '1.25%', marginLeft: `${dayCard.startHour/2}rem`, width: `${dayCard.duration/2}rem`, borderRadius: '4px'}}>
       {dayCard.duration}
     </div>
   )
