@@ -36,7 +36,6 @@ function Day({ updateCards, dayCards }) {
   };
 
   const hourColumns = [...Array(24).keys()].map((i) => i);
-  console.log(hourColumns);
   const everyFourHours = [...Array(6).keys()].map((i) => (i + 1) * 4);
 
   return (
@@ -52,7 +51,7 @@ function Day({ updateCards, dayCards }) {
             onDrop={handleDrop}
             key={mark}
             className={`bg-black flex items-center text-xs`}
-            style={{ width: '0.5rem' }}
+            style={{ width: '0.5rem', borderRight: '1px solid #111111' }}
 
           >
             {mark}
