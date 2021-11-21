@@ -36,7 +36,7 @@ function Day({ updateCards, dayCards }) {
   };
 
   const hourColumns = [...Array(24).keys()].map((i) => i);
-  const everyFourHours = [...Array(6).keys()].map((i) => (i + 1) * 4);
+  const hourMarks = [...Array(6).keys()].map((i) => (i) * 4);
 
   return (
     <div
@@ -50,9 +50,8 @@ function Day({ updateCards, dayCards }) {
           <span
             onDrop={handleDrop}
             key={mark}
-            className={`bg-black flex items-center text-xs`}
-            style={{ width: '0.5rem', borderRight: '1px solid #111111' }}
-
+            className={`bg-black color-white text-xs flex items-end`}
+            style={{ width: '0.5rem', borderRight: '1px solid #111111', color: 'white', fontSize: '5px' }}
           >
             {mark}
           </span>
@@ -66,12 +65,12 @@ function Day({ updateCards, dayCards }) {
         ))}
       </div>
 
-      <div className="h-1/6 flex bg-black text-white items-center relative">
-        {everyFourHours.map((mark, i) => (
+      <div className="h-1/6 flex bg-black text-white items-center">
+        {hourMarks.map((mark, i) => (
           <span
             key={i}
-            className={`absolute flex items-center text-xs`}
-            style={{ marginLeft: `${mark / 2}rem` }}
+            className={`text-xs h-full flex justify-center items-center`}
+            style={{ width: '2rem', borderRight: '4px solid #111111', marginLeft: '0.15rem', fontWeight: 'bold'}}
           >
             {mark}
           </span>
