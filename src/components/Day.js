@@ -51,8 +51,9 @@ function Day({ updateCards, dayCards }) {
         {hourColumns.map((mark) => (
           <span
             key={mark}
-            className={`w-48 relative bg-black flex items-center text-xs`}
-          >
+            className={`bg-black flex items-center text-xs`}
+            style={{width: '0.5rem'}}
+          > 
           </span>
         ))}
 
