@@ -11,12 +11,12 @@ function Day({ updateCards, dayCards }) {
     const card = object.timeCard;
     return card;
   }
-  const handleCard = (e) => {
-    const card = getCard(e);
+
+  const handleUpdate = (e, card) => {
     // isWithinDay
     // isWithinAvailableHours
-    const hourWidth = dayRef.current.clientWidth / 24;
-    const startHour = Number(Math.floor(e.clientX / hourWidth));
+    const startHour = Number(e.target.innerText);
+    console.log(startHour)
     const isWithinDay = startHour + card.duration <= 24;
     if (isWithinDay) {
       card.startHour = startHour;
@@ -27,8 +27,7 @@ function Day({ updateCards, dayCards }) {
   const handleDrop = (e) => {
     e.preventDefault();
     const card = getCard(e)
-    console.log(card)
-    const updatedCard = handleCard(e, card);
+    const updatedCard = handleUpdate(e, card);
     updateCards(e, updatedCard);
   };
 
@@ -42,18 +41,20 @@ function Day({ updateCards, dayCards }) {
   return (
     <div
       ref={dayRef}
-      onDrop={handleDrop}
       onDragOver={handleDragOver}
-      className={`mt-40 border-black border-2 rounded-2x1 flex flex-col`}
-      style={{height: '12rem', width: '12rem'}}
+      className={`mt-40 border-black border-2 rounded-2x1 flex flex-col relative`}
+      style={{ height: '12rem', width: '12rem', marginLeft: '30rem' }}
     >
       <div className="h-5/6 relative flex">
         {hourColumns.map((mark) => (
           <span
+            onDrop={handleDrop}
             key={mark}
             className={`bg-black flex items-center text-xs`}
-            style={{width: '0.5rem'}}
-          > 
+            style={{ width: '0.5rem' }}
+
+          >
+            {mark}
           </span>
         ))}
 
@@ -70,7 +71,7 @@ function Day({ updateCards, dayCards }) {
           <span
             key={i}
             className={`absolute flex items-center text-xs`}
-            style={{marginLeft: `${mark/2}rem`}}
+            style={{ marginLeft: `${mark / 2}rem` }}
           >
             {mark}
           </span>

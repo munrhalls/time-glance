@@ -25,7 +25,6 @@ function App() {
 
   const updateCards = (e, card)  => {
     e.preventDefault();
-    console.log(card)
     setCards(() => [card]);
   };
 
