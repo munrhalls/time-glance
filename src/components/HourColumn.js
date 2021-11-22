@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-const HourColumn = ({ handleDrop, mark }) => {
+const HourColumn = ({ handleDrop, getCard, mark }) => {
     const [background, setBackground] = useState('blue');
 
         
     const handleDragOver = (e) => {
         e.preventDefault();
-        const target = e.target;
-        setBackground('green')
+        const card = getCard(e);
+        setBackground(card.bgColor);
     };
 
     return (

@@ -45,6 +45,7 @@ function Day({ updateCards, dayCards }) {
         {hourColumns.map((mark) => (
           <HourColumn
             handleDrop={handleDrop}
+            getCard={getCard}
             key={mark}
             className={`bg-black color-white text-xs flex items-end`}
             style={{ width: '0.5rem', borderRight: '1px solid #111111', color: 'white', fontSize: '5px' }}
