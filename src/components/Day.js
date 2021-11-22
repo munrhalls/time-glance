@@ -1,5 +1,6 @@
 import DayCard from "./DayCard";
 import React, { useRef } from "react";
+import HourColumn from './HourColumn';
 
 function Day({ updateCards, dayCards }) {
 
@@ -33,6 +34,8 @@ function Day({ updateCards, dayCards }) {
 
   const handleDragOver = (e) => {
     e.preventDefault();
+    const target = e.target;
+
   };
 
   const hourColumns = [...Array(24).keys()].map((i) => i);
@@ -47,14 +50,13 @@ function Day({ updateCards, dayCards }) {
     >
       <div className="h-5/6 relative flex">
         {hourColumns.map((mark) => (
-          <span
-            onDrop={handleDrop}
+          <HourColumn
+            handleDrop={handleDrop}
             key={mark}
             className={`bg-black color-white text-xs flex items-end`}
             style={{ width: '0.5rem', borderRight: '1px solid #111111', color: 'white', fontSize: '5px' }}
-          >
-            {mark}
-          </span>
+            mark={mark}
+          />
         ))}
 
         {dayCards.map((dayCard) => (
@@ -71,7 +73,7 @@ function Day({ updateCards, dayCards }) {
           <span
             key={i}
             className={`text-xs h-full flex justify-center items-center`}
-            style={{ width: '2rem', borderRight: '4px solid #111111', marginLeft: '0.15rem', fontWeight: 'bold'}}
+            style={{ width: '2rem', borderRight: '4px solid #111111', marginLeft: '0.15rem', fontWeight: 'bold' }}
           >
             {mark}
           </span>
