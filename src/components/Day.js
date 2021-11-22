@@ -3,37 +3,29 @@ import React, { useRef } from "react";
 import HourColumn from './HourColumn';
 
 function Day({ updateCards, dayCards }) {
-
+  const hourColumns = [...Array(24).keys()].map((i) => i);
+  const hourMarks = [...Array(6).keys()].map((i) => (i) * 4);
   const dayRef = useRef(null);
-
   const getCard = (e) => {
     const cardStr = e.dataTransfer.getData("card");
     const object = JSON.parse(cardStr);
     const card = object.timeCard;
     return card;
   }
-
   const handleUpdate = (e, card) => {
-    // isWithinDay
-    // isWithinAvailableHours
     const startHour = Number(e.target.innerText);
-    console.log(startHour)
     const isWithinDay = startHour + card.duration <= 24;
     if (isWithinDay) {
       card.startHour = startHour;
     }
     return card;
   }
-
   const handleDrop = (e) => {
     e.preventDefault();
     const card = getCard(e)
     const updatedCard = handleUpdate(e, card);
     updateCards(e, updatedCard);
   };
-
-  const hourColumns = [...Array(24).keys()].map((i) => i);
-  const hourMarks = [...Array(6).keys()].map((i) => (i) * 4);
 
   return (
     <div
@@ -48,8 +40,8 @@ function Day({ updateCards, dayCards }) {
             getCard={getCard}
             key={mark}
             className={`bg-black color-white text-xs flex items-end`}
-            style={{ width: '0.5rem', borderRight: '1px solid #111111', color: 'white', fontSize: '5px' }}
             mark={mark}
+            isHighlighted={false}
           />
         ))}
 
