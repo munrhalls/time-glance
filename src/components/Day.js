@@ -32,19 +32,12 @@ function Day({ updateCards, dayCards }) {
     updateCards(e, updatedCard);
   };
 
-  const handleDragOver = (e) => {
-    e.preventDefault();
-    const target = e.target;
-
-  };
-
   const hourColumns = [...Array(24).keys()].map((i) => i);
   const hourMarks = [...Array(6).keys()].map((i) => (i) * 4);
 
   return (
     <div
       ref={dayRef}
-      onDragOver={handleDragOver}
       className={`mt-40 border-black border-2 rounded-2x1 flex flex-col relative`}
       style={{ height: '12rem', width: '12rem', marginLeft: '30rem' }}
     >
