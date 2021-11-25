@@ -25,14 +25,19 @@ function Day({ updateCards, dayCards }) {
   }
   const handleDragOver = (e) => {
     e.preventDefault();
-    const highlightHours = [];
-    const startHour = Number(e.target.innerText);
-    const card = getCard(e)
-    const endHour = startHour + card.duration;
-    for (let i = startHour; i <= endHour ; i++) {
-      highlightHours.push(i);
+    const getHoursToHighlight = (e) => {
+      const highlightHours = [];
+      const startHour = Number(e.target.innerText);
+      const card = getCard(e)
+      const endHour = startHour + card.duration;
+      for (let i = startHour; i <= endHour; i++) {
+        highlightHours.push(i);
+      }
+      return highlightHours;
     }
+    const highlightHours = getHoursToHighlight(e);
     setDragHighlight(highlightHours)
+    console.log(highlightHours)
   };
   const handleDrop = (e) => {
     e.preventDefault();
