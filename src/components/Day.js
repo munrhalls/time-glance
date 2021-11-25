@@ -1,11 +1,14 @@
 import DayCard from "./DayCard";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+
 import HourColumn from './HourColumn';
 
 function Day({ updateCards, dayCards }) {
+  const [dragHighlight, setDragHighlight] = useState([]);
   const hourColumns = [...Array(24).keys()].map((i) => i);
   const hourMarks = [...Array(6).keys()].map((i) => (i) * 4);
   const dayRef = useRef(null);
+
   const getCard = (e) => {
     const cardStr = e.dataTransfer.getData("card");
     const object = JSON.parse(cardStr);
@@ -20,6 +23,17 @@ function Day({ updateCards, dayCards }) {
     }
     return card;
   }
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    const highlightHours = [];
+    const startHour = Number(e.target.innerText);
+    const card = getCard(e)
+    const endHour = startHour + card.duration;
+    for (let i = startHour; i <= endHour ; i++) {
+      highlightHours.push(i);
+    }
+    setDragHighlight(highlightHours)
+  };
   const handleDrop = (e) => {
     e.preventDefault();
     const card = getCard(e)
@@ -36,12 +50,12 @@ function Day({ updateCards, dayCards }) {
       <div className="h-5/6 relative flex">
         {hourColumns.map((mark) => (
           <HourColumn
+            handleDragOver={handleDragOver}
             handleDrop={handleDrop}
-            getCard={getCard}
-            key={mark}
-            className={`bg-black color-white text-xs flex items-end`}
+            isHighlighted={dragHighlight.indexOf(mark) > -1}
             mark={mark}
-            isHighlighted={false}
+            className={`bg-black color-white text-xs flex items-end`}
+            key={mark}
           />
         ))}
 
@@ -57,9 +71,9 @@ function Day({ updateCards, dayCards }) {
       >
         {hourMarks.map((mark, i) => (
           <span
-            key={i}
             className={`text-xs h-full flex justify-center items-center`}
             style={{ width: '2rem', borderRight: '4px solid #111111', marginLeft: '0.15rem', fontWeight: 'bold' }}
+            key={i}
           >
             {mark}
           </span>
