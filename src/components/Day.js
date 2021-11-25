@@ -34,11 +34,8 @@ function Day({ updateCards, dayCards }) {
     for (let i = startHour; i <= endHour; i++) {
       highlightHours.push(i);
     }
-    console.log(highlightHours)
     return highlightHours;
   }
-
-
   const handleDrop = (e) => {
     e.preventDefault();
     const card = getCard(e)
@@ -52,15 +49,16 @@ function Day({ updateCards, dayCards }) {
       className={`mt-40 border-black border-2 rounded-2x1 flex flex-col relative`}
       style={{ height: '12rem', width: '12rem', marginLeft: '30rem' }}
     >
-      <HourColumns
-        handleDragOver={handleDragOver}
-        handleDrop={handleDrop}
-        dragHighlight={dragHighlight}
-      />
-
-      <DayCards dayCards={dayCards} />
+      <div className="h-5/6 flex relative">
+        <HourColumns
+          handleDragOver={handleDragOver}
+          handleDrop={handleDrop}
+          dragHighlight={dragHighlight}
+        />
+        <DayCards dayCards={dayCards} />
+      </div>
       <HourMarks />
-      
+
     </div >
   );
 }

@@ -4,8 +4,8 @@ const HourColumns = ({handleDragOver, handleDrop, dragHighlight, isHighlighted, 
     const hourColumns = [...Array(24).keys()].map((i) => i);
 
     return (
-        <div className="h-5/6 relative flex">
-            {hourColumns.map((mark) => (
+        <>
+        {hourColumns.map((mark) => (
                 <HourColumn
                     handleDragOver={handleDragOver}
                     handleDrop={handleDrop}
@@ -15,7 +15,7 @@ const HourColumns = ({handleDragOver, handleDrop, dragHighlight, isHighlighted, 
                     key={mark}
                 />
             ))}
-        </div>
+        </>
     )
 }
 export default HourColumns;
