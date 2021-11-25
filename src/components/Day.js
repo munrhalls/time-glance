@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import HourColumns from './HourColumns';
 import DayCards from './DayCards';
+import HourColumns from './HourColumns';
 import HourMarks from './HourMarks';
 
 function Day({ updateCards, dayCards }) {
@@ -58,7 +58,6 @@ function Day({ updateCards, dayCards }) {
         <DayCards dayCards={dayCards} />
       </div>
       <HourMarks />
-
     </div >
   );
 }
