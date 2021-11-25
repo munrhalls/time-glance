@@ -54,20 +54,18 @@ function Day({ updateCards, dayCards }) {
       className={`mt-40 border-black border-2 rounded-2x1 flex flex-col relative`}
       style={{ height: '12rem', width: '12rem', marginLeft: '30rem' }}
     >
-      <div>
-        <HourColumns
-          handleDragOver={handleDragOver}
-          handleDrop={handleDrop}
-          dragHighlight={dragHighlight}
-        />
+      <HourColumns
+        handleDragOver={handleDragOver}
+        handleDrop={handleDrop}
+        dragHighlight={dragHighlight}
+      />
 
-        {dayCards.map((dayCard) => (
-          <DayCard
-            key={dayCard.id}
-            dayCard={dayCard}
-          />
-        ))}
-      </div>
+      {dayCards.map((dayCard) => (
+        <DayCard
+          key={dayCard.id}
+          dayCard={dayCard}
+        />
+      ))}
       <div className="h-1/6 flex bg-black text-white items-center"
       >
         {hourMarks.map((mark, i) => (
