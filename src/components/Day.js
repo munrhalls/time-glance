@@ -1,14 +1,10 @@
-import DayCard from "./DayCard";
 import React, { useRef, useState } from "react";
-
 import HourColumns from './HourColumns';
-import HourColumn from './HourColumn';
-
 import DayCards from './DayCards';
+import HourMarks from './HourMarks';
 
 function Day({ updateCards, dayCards }) {
   const [dragHighlight, setDragHighlight] = useState([]);
-  const hourMarks = [...Array(6).keys()].map((i) => (i) * 4);
   const dayRef = useRef(null);
 
   const getCard = (e) => {
@@ -63,19 +59,8 @@ function Day({ updateCards, dayCards }) {
       />
 
       <DayCards dayCards={dayCards} />
-
-      <div className="h-1/6 flex bg-black text-white items-center"
-      >
-        {hourMarks.map((mark, i) => (
-          <span
-            className={`text-xs h-full flex justify-center items-center`}
-            style={{ width: '2rem', borderRight: '4px solid #111111', marginLeft: '0.15rem', fontWeight: 'bold' }}
-            key={i}
-          >
-            {mark}
-          </span>
-        ))}
-      </div>
+      <HourMarks />
+      
     </div >
   );
 }
