@@ -4,6 +4,8 @@ import React, { useRef, useState } from "react";
 import HourColumns from './HourColumns';
 import HourColumn from './HourColumn';
 
+import DayCards from './DayCards';
+
 function Day({ updateCards, dayCards }) {
   const [dragHighlight, setDragHighlight] = useState([]);
   const hourMarks = [...Array(6).keys()].map((i) => (i) * 4);
@@ -60,12 +62,8 @@ function Day({ updateCards, dayCards }) {
         dragHighlight={dragHighlight}
       />
 
-      {dayCards.map((dayCard) => (
-        <DayCard
-          key={dayCard.id}
-          dayCard={dayCard}
-        />
-      ))}
+      <DayCards dayCards={dayCards} />
+
       <div className="h-1/6 flex bg-black text-white items-center"
       >
         {hourMarks.map((mark, i) => (
