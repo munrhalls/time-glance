@@ -13,7 +13,7 @@ function App() {
       startHour: 0,
       duration: 4,
       isScheduled: false,
-      scheduledDayId: undefined,
+      idOfScheduledDay: undefined,
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ function App() {
       startHour: 12,
       duration: 4,
       isScheduled: false,
-      scheduledDayId: undefined,
+      idOfScheduledDay: undefined,
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ function App() {
       startHour: 20,
       duration: 4,
       isScheduled: false,
-      scheduledDayId: undefined,
+      idOfScheduledDay: undefined,
     }
   ]);
 
@@ -45,10 +45,10 @@ function App() {
   };
 
   return (
-    <div className="App container h-screen mt-10 box-border">
+    <div className="App container h-screen mt-10 box-border flex">
       <Projects timeCard={testCard} />
       {days.map(day => {
-        const cards = dayCards.filter((card) => { return card.id == day });
+        const cards = dayCards.filter((card) => { return card.idOfScheduledDay == day });
 
         return <Day id={day} key={day} updateCards={updateCards} dayCards={cards} />
       })}

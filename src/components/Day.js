@@ -18,6 +18,8 @@ function Day({ id, dayCards, updateCards }) {
     const isWithinDay = startHour + card.duration <= 24;
     if (isWithinDay) {
       card.startHour = startHour;
+      card.idOfScheduledDay = id;
+      console.log(card)
     }
     return card;
   }
@@ -48,7 +50,7 @@ function Day({ id, dayCards, updateCards }) {
     <div
       ref={dayRef}
       className={`mt-40 border-black border-2 rounded-2x1 flex flex-col relative`}
-      style={{ height: '12rem', width: '12rem', marginLeft: '30rem' }}
+      style={{ height: '12rem', width: '12rem', marginLeft: '0.5rem'}}
     >
       <div className="h-5/6 flex relative">
         <HourColumns
