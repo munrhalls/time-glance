@@ -3,7 +3,7 @@ import DayCards from './DayCards';
 import HourColumns from './HourColumns';
 import HourMarks from './HourMarks';
 
-function Day({ updateCards, dayCards }) {
+function Day({ id, dayCards, updateCards }) {
   const [dragHighlight, setDragHighlight] = useState([]);
   const dayRef = useRef(null);
 
@@ -26,6 +26,12 @@ function Day({ updateCards, dayCards }) {
     const highlightHours = getHoursToHighlight(e);
     setDragHighlight(highlightHours)
   };
+  const handleDrop = (e) => {
+    e.preventDefault();
+    const card = getCard(e)
+    const updatedCard = handleUpdate(e, card);
+    updateCards(e, updatedCard);
+  };
   const getHoursToHighlight = (e) => {
     const highlightHours = [];
     const startHour = Number(e.target.innerText);
@@ -36,12 +42,7 @@ function Day({ updateCards, dayCards }) {
     }
     return highlightHours;
   }
-  const handleDrop = (e) => {
-    e.preventDefault();
-    const card = getCard(e)
-    const updatedCard = handleUpdate(e, card);
-    updateCards(e, updatedCard);
-  };
+  
 
   return (
     <div

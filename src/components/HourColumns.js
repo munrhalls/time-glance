@@ -2,14 +2,14 @@ import HourColumn from './HourColumn';
 
 const HourColumns = ({handleDragOver, handleDrop, dragHighlight, isHighlighted, mark }) => {
     const hourColumns = [...Array(24).keys()].map((i) => i);
-    const checkIsAvailable = () => {
+    const checkIsIndayHours = () => {
         if (dragHighlight.indexOf(24) > -1) {
             return false;
         }
         return true;
     }
-
-    const isAvailable = checkIsAvailable()
+    const isInDayHours = checkIsIndayHours();
+    const isAvailable = isInDayHours;
 
     return (
         <>

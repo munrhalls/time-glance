@@ -17,13 +17,32 @@ function App() {
       isScheduled: false,
       scheduledDayId: undefined,
     },
+    {
+      id: 2,
+      project: "Project B",
+      bgColor: "blue",
+      startHour: 12,
+      duration: 4,
+      isScheduled: false,
+      scheduledDayId: undefined,
+    },
+    {
+      id: 3,
+      project: "Project C",
+      bgColor: "blue",
+      startHour: 20,
+      duration: 4,
+      isScheduled: false,
+      scheduledDayId: undefined,
+    }
   ]);
   // object: id, project, bgColor, startHour, duration, isScheduled, scheduledDayId
 
+  const days = [0, 1, 2, 3, 4];
   const testCard = timeCards[0];
   const dayCards = timeCards;
 
-  const updateCards = (e, card)  => {
+  const updateCards = (e, card) => {
     e.preventDefault();
     setCards(() => [card]);
   };
@@ -31,7 +50,9 @@ function App() {
   return (
     <div className="App container h-screen mt-10 box-border">
       <Projects timeCard={testCard} />
-      <Day updateCards={updateCards} dayCards={dayCards} />
+      {days.map(day => {
+        return <Day id={1} key={day} updateCards={updateCards} dayCards={dayCards} />
+      })}
     </div>
   );
 }
