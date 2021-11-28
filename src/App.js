@@ -1,7 +1,5 @@
 import "./App.css";
 import React, { useState } from "react";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
 import Day from "./components/Day";
 import Days from "./components/Days";
 import Projects from "./components/Projects";
@@ -36,9 +34,8 @@ function App() {
       scheduledDayId: undefined,
     }
   ]);
-  // object: id, project, bgColor, startHour, duration, isScheduled, scheduledDayId
 
-  const days = [0, 1, 2, 3, 4];
+  const days = [1, 2, 3, 4];
   const testCard = timeCards[0];
   const dayCards = timeCards;
 
@@ -51,7 +48,9 @@ function App() {
     <div className="App container h-screen mt-10 box-border">
       <Projects timeCard={testCard} />
       {days.map(day => {
-        return <Day id={1} key={day} updateCards={updateCards} dayCards={dayCards} />
+        const cards = dayCards.filter((card) => { return card.id == day });
+
+        return <Day id={day} key={day} updateCards={updateCards} dayCards={cards} />
       })}
     </div>
   );
