@@ -4,7 +4,7 @@ import HourColumns from './HourColumns';
 import HourMarks from './HourMarks';
 
 function Day({ id, dayCards, updateCards }) {
-  const [dragHighlight, setDragHighlight] = useState([]);
+  const [highlightHours, sethighlightHours] = useState([]);
   const dayRef = useRef(null);
 
   const getCard = (e) => {
@@ -26,8 +26,13 @@ function Day({ id, dayCards, updateCards }) {
   const handleDragOver = (e) => {
     e.preventDefault();
     const highlightHours = getHoursToHighlight(e);
-    setDragHighlight(highlightHours)
+    sethighlightHours(highlightHours)
   };
+  const handleDragLeave = (e) => {
+    // e.preventDefault();
+    console.log('drag leave')
+    sethighlightHours(undefined); 
+  }
   const handleDrop = (e) => {
     e.preventDefault();
     const card = getCard(e)
@@ -55,8 +60,9 @@ function Day({ id, dayCards, updateCards }) {
       <div className="h-5/6 flex relative">
         <HourColumns
           handleDragOver={handleDragOver}
+          handleDragLeave={handleDragLeave}
           handleDrop={handleDrop}
-          dragHighlight={dragHighlight}
+          highlightHours={highlightHours}
         />
         <DayCards dayCards={dayCards} />
       </div>

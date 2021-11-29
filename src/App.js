@@ -46,7 +46,7 @@ function App() {
 
   return (
     <div className="App container h-screen mt-10 box-border flex">
-      <Projects timeCard={testCard} />
+      <Projects timeCards={timeCards} />
       {days.map(day => {
         const cards = dayCards.filter((card) => { return card.idOfScheduledDay == day });
 

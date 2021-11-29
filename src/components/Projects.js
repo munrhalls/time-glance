@@ -2,10 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import TimeCard from './TimeCard'
 
-const Projects = ({timeCard}) => {
+const Projects = ({timeCards}) => {
   return (
     <div className="relative h-48 w-full">
-      <TimeCard timeCard={timeCard} />
+      {timeCards.map((card) => {
+        return <TimeCard timeCard={card} />
+      })}
     </div>
   )
 }

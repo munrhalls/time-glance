@@ -1,13 +1,14 @@
 import HourColumn from './HourColumn';
 
-const HourColumns = ({handleDragOver, handleDrop, dragHighlight, isHighlighted, mark }) => {
+const HourColumns = ({handleDragOver, handleDragLeave, handleDrop, highlightHours, isHighlighted, mark }) => {
     const hourColumns = [...Array(24).keys()].map((i) => i);
     const checkIsIndayHours = () => {
-        if (dragHighlight.indexOf(24) > -1) {
+        if (highlightHours.indexOf(24) > -1) {
             return false;
         }
         return true;
     }
+    
     const isInDayHours = checkIsIndayHours();
     const isAvailable = isInDayHours;
 
@@ -16,8 +17,9 @@ const HourColumns = ({handleDragOver, handleDrop, dragHighlight, isHighlighted, 
         {hourColumns.map((mark) => (
                 <HourColumn
                     handleDragOver={handleDragOver}
+                    handleDragLeave={handleDragLeave}
                     handleDrop={handleDrop}
-                    isHighlighted={dragHighlight.indexOf(mark) > -1}
+                    isHighlighted={highlightHours.indexOf(mark) > -1}
                     isAvailable={isAvailable}
                     mark={mark}
                     className={`bg-black color-white text-xs flex items-end`}
