@@ -3,7 +3,7 @@ import HourColumn from './HourColumn';
 const HourColumns = ({handleDragOver, handleDragLeave, handleDrop, highlightHours, isHighlighted, mark }) => {
     const hourColumns = [...Array(24).keys()].map((i) => i);
     const checkIsIndayHours = () => {
-        if (highlightHours.indexOf(24) > -1) {
+        if (highlightHours && highlightHours.indexOf(24) > -1) {
             return false;
         }
         return true;
@@ -19,7 +19,7 @@ const HourColumns = ({handleDragOver, handleDragLeave, handleDrop, highlightHour
                     handleDragOver={handleDragOver}
                     handleDragLeave={handleDragLeave}
                     handleDrop={handleDrop}
-                    isHighlighted={highlightHours.indexOf(mark) > -1}
+                    isHighlighted={highlightHours && highlightHours.indexOf(mark) > -1}
                     isAvailable={isAvailable}
                     mark={mark}
                     className={`bg-black color-white text-xs flex items-end`}

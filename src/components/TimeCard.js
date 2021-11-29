@@ -11,7 +11,7 @@ const TimeCard = ({ timeCard }) => {
   const bgColor = "bg-" + timeCard.bgColor + "-900";
 
   return (
-    <div className={`w-${width} h-${hourUnit * 10} ${left} ${bgColor} h-12 absolute text-black text-2xl bg-black border-black  border-2 rounded-lg flex justify-center content-center`} draggable onDragStart={handleDragStart}>
+    <div className={`w-${width} h-${hourUnit * 10} ${left} ${bgColor} h-12 text-black text-2xl bg-black border-black  border-2 rounded-lg flex justify-center content-center`} draggable onDragStart={handleDragStart}>
       <span>{timeCard.duration}</span>
     </div>
   );

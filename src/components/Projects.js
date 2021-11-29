@@ -4,7 +4,7 @@ import TimeCard from './TimeCard'
 
 const Projects = ({timeCards}) => {
   return (
-    <div className="relative h-48 w-full">
+    <div className="flex relative h-48 w-full">
       {timeCards.map((card) => {
         return <TimeCard timeCard={card} />
       })}

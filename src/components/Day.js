@@ -6,12 +6,21 @@ import HourMarks from './HourMarks';
 function Day({ id, dayCards, updateCards }) {
   const [highlightHours, sethighlightHours] = useState([]);
   const dayRef = useRef(null);
-
   const getCard = (e) => {
     const cardStr = e.dataTransfer.getData("card");
     const object = JSON.parse(cardStr);
     const card = object.timeCard;
     return card;
+  }
+  const getHoursToHighlight = (e) => {
+    const highlightHours = [];
+    const startHour = Number(e.target.innerText);
+    const card = getCard(e)
+    const endHour = startHour + card.duration;
+    for (let i = startHour; i <= endHour; i++) {
+      highlightHours.push(i);
+    }
+    return highlightHours;
   }
   const handleUpdate = (e, card) => {
     const startHour = Number(e.target.innerText);
@@ -39,17 +48,6 @@ function Day({ id, dayCards, updateCards }) {
     const updatedCard = handleUpdate(e, card);
     updateCards(e, updatedCard);
   };
-  const getHoursToHighlight = (e) => {
-    const highlightHours = [];
-    const startHour = Number(e.target.innerText);
-    const card = getCard(e)
-    const endHour = startHour + card.duration;
-    for (let i = startHour; i <= endHour; i++) {
-      highlightHours.push(i);
-    }
-    return highlightHours;
-  }
-  
 
   return (
     <div
