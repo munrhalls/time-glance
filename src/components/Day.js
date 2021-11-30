@@ -52,7 +52,7 @@ function Day({ id, dayCards, updateCards }) {
   return (
     <div
       ref={dayRef}
-      className={`mt-40 border-black border-2 rounded-2x1 flex flex-col relative`}
+      className={`mt-4 border-black border-2 rounded-2x1 flex flex-col relative`}
       style={{ height: '12rem', width: '12rem', marginLeft: '0.5rem'}}
     >
       <div className="h-5/6 flex relative">

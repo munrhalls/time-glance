@@ -12,7 +12,7 @@ const Days = ({days, timeCards, updateCards}) => {
   }
 
   return (
-    <div>
+    <div className="flex">
       {days.map(day => {
         const dayCards = getDayCards(day, timeCards);
         return <Day id={day} key={day} updateCards={updateCards} dayCards={dayCards} />
