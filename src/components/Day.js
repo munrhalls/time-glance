@@ -2,9 +2,10 @@ import React, { useRef, useState } from "react";
 import DayCards from './DayCards';
 import HourColumns from './HourColumns';
 import HourMarks from './HourMarks';
+import HighlightBox from './HighlightBox';
 
 function Day({ id, dayCards, updateCards }) {
-  const [highlightParams, setHighlightParams] = useState({display: false, width: 0, bgColor: undefined, });
+  const [highlightParams, setHighlightParams] = useState({display: 'none', width: 0, left: 0, bgColor: 'purple', });
   const dayRef = useRef(null);
   const standardHourColWidth = 0.5;
   const getCard = (e) => {
@@ -25,6 +26,7 @@ function Day({ id, dayCards, updateCards }) {
   }
   const handleDragOver = (e) => {
     e.preventDefault();
+    const card = getCard(e)
     // REWRITE
     // detect in hourColumn but handle in day
     // 1. hourColumn's innerText ->  get hour num
@@ -36,23 +38,31 @@ function Day({ id, dayCards, updateCards }) {
     // DONE
     // 1. DONE
     // 2. DONE
-    // 3. 
+    // 3. DONE
+    // 4. DONE
+    // 5. DONE
+    // 6 DONE
+    
+    const bgColor = card.bgColor;
     const hourColumn = e.target;
     const hourNum = hourColumn.innerText;
-    const highlightWidth = standardHourColWidth * hourNum;
-    console.log(hourNum)
+    const width = standardHourColWidth * card.duration; 
+    const distanceLeft = standardHourColWidth * hourNum;
+    setHighlightParams({display: 'block', bgColor: bgColor, width: width, distanceLeft: distanceLeft})
+    
     
   };
   const handleDragLeave = (e) => {
     // e.preventDefault();
-    console.log('drag leave')
-    setHighlightParams(undefined); 
+    const highLightParams = {display: false, width: 0, left: 0, bgColor: 'none', }
+    setHighlightParams(highLightParams); 
   }
   const handleDrop = (e) => {
     e.preventDefault();
     const card = getCard(e)
     const updatedCard = handleUpdate(e, card);
-    setHighlightParams(undefined)
+    const highLightParams = {display: false, width: 0, left: 0, bgColor: 'none', }
+    setHighlightParams(highLightParams); 
     updateCards(e, updatedCard);
   };
 
@@ -72,6 +82,7 @@ function Day({ id, dayCards, updateCards }) {
         <DayCards dayCards={dayCards} />
       </div>
       <HourMarks />
+      <HighlightBox highlightParams={highlightParams} />
     </div >
   );
 }
