@@ -48,7 +48,7 @@ function App() {
   };
 
   return (
-    <div className="App container h-screen mt-10 box-border flex flex-col">
+    <div className="App container h-screen mt-10 box-border flex flex-col ml-4">
       <Projects timeCards={timeCards} />
       <Days days={days} timeCards={timeCards} updateCards={updateCards} />
     </div>
