@@ -42,13 +42,13 @@ function Day({ id, dayCards, updateCards }) {
     // 4. DONE
     // 5. DONE
     // 6 DONE
-    
+
     const bgColor = card.bgColor;
     const hourColumn = e.target;
     const hourNum = hourColumn.innerText;
     const width = standardHourColWidth * card.duration; 
     const distanceLeft = standardHourColWidth * hourNum;
-    setHighlightParams({display: 'block', bgColor: bgColor, width: width, distanceLeft: distanceLeft})
+    setHighlightParams({display: 'block', bgColor: bgColor, width: width, left: distanceLeft})
     
     
   };
