@@ -46,6 +46,7 @@ function Day({ id, dayCards, updateCards }) {
     e.preventDefault();
     const card = getCard(e)
     const updatedCard = handleUpdate(e, card);
+    sethighlightHours(undefined)
     updateCards(e, updatedCard);
   };
 

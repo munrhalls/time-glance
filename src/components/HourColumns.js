@@ -1,6 +1,6 @@
 import HourColumn from './HourColumn';
 
-const HourColumns = ({handleDragOver, handleDragLeave, handleDrop, highlightHours, isHighlighted, mark }) => {
+const HourColumns = ({handleDragOver, handleDragLeave, handleDrop, highlightHours }) => {
     const hourColumns = [...Array(24).keys()].map((i) => i);
     const checkIsIndayHours = () => {
         if (highlightHours && highlightHours.indexOf(24) > -1) {
