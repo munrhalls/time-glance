@@ -4,23 +4,14 @@ import HourColumns from './HourColumns';
 import HourMarks from './HourMarks';
 
 function Day({ id, dayCards, updateCards }) {
-  const [highlightHours, sethighlightHours] = useState([]);
+  const [highlightParams, setHighlightParams] = useState({display: false, width: 0, bgColor: undefined, });
   const dayRef = useRef(null);
+  const standardHourColWidth = '0.5rem';
   const getCard = (e) => {
     const cardStr = e.dataTransfer.getData("card");
     const object = JSON.parse(cardStr);
     const card = object.timeCard;
     return card;
-  }
-  const getHoursToHighlight = (e) => {
-    const highlightHours = [];
-    const startHour = Number(e.target.innerText);
-    const card = getCard(e)
-    const endHour = startHour + card.duration;
-    for (let i = startHour; i <= endHour; i++) {
-      highlightHours.push(i);
-    }
-    return highlightHours;
   }
   const handleUpdate = (e, card) => {
     const startHour = Number(e.target.innerText);
@@ -34,19 +25,32 @@ function Day({ id, dayCards, updateCards }) {
   }
   const handleDragOver = (e) => {
     e.preventDefault();
-    const highlightHours = getHoursToHighlight(e);
-    sethighlightHours(highlightHours)
+    // REWRITE
+    // detect in hourColumn but handle in day
+    // 1. hourColumn's innerText ->  get hour num
+    // 2. standardize hour unit
+    // 3. multiply that by hour num
+    // 4. from that, get width: card.duration * hour num
+    // 5. create highlightBox component
+    // 6. props width = card.duration * standard unit, marginLeft = hourNum * standard unit, color = card.color, pos absolute, height full
+    // DONE
+    // DONE
+    //
+    const hourColumn = e.target;
+    const hourNum = hourColumn.innerText;
+    console.log(hourNum)
+    
   };
   const handleDragLeave = (e) => {
     // e.preventDefault();
     console.log('drag leave')
-    sethighlightHours(undefined); 
+    setHighlightParams(undefined); 
   }
   const handleDrop = (e) => {
     e.preventDefault();
     const card = getCard(e)
     const updatedCard = handleUpdate(e, card);
-    sethighlightHours(undefined)
+    setHighlightParams(undefined)
     updateCards(e, updatedCard);
   };
 
@@ -61,7 +65,7 @@ function Day({ id, dayCards, updateCards }) {
           handleDragOver={handleDragOver}
           handleDragLeave={handleDragLeave}
           handleDrop={handleDrop}
-          highlightHours={highlightHours}
+          standardHourColWidth={standardHourColWidth}
         />
         <DayCards dayCards={dayCards} />
       </div>

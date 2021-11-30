@@ -1,0 +1,5 @@
+TIME CARDS
+Project notes
+
+- rewriting dragover function from works fully well but is extremely resource-inefficient to works fully well and is fairly resource efficient
+- highlightHours solution in hourColumns -> highlightParams and highlightBox with props solution
