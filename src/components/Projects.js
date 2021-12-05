@@ -6,7 +6,7 @@ const Projects = ({timeCards}) => {
   return (
     <div className="flex relative h-48 w-full">
       {timeCards.map((card) => {
-        return <TimeCard timeCard={card} />
+        return <TimeCard key={card.id} timeCard={card} />
       })}
     </div>
   )

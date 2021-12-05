@@ -1,47 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import HighlightBox from './HighlightBox';
+let dragOverCount = 0;
 
 const HourColumn = ({ getCard, handleDrop, isHighlighted, isAvailable, mark, standardHourColWidth }) => {
     const [highlightParams, setHighlightParams] = useState({ display: 'none', width: 0, left: 0, bgColor: 'purple', });
-    let dragOverAvailable = true;
-
     const defaultStyle = { width: `${standardHourColWidth}rem`, backgroundColor: 'black', borderRight: '1px solid #111111', color: 'white', fontSize: '5px' }
-    const runFunc = () => {
-        console.log('Function runs.')
-    }
-    const throttleDragOver = (e) => {
-        e.preventDefault();
-        if (dragOverAvailable) {
-            dragOverAvailable = false;
-            runFunc();
-            setTimeout(() => {
-                dragOverAvailable = true;
-            }, 1500)
-        }
-    }
+
     const handleDragOver = (e) => {
         e.preventDefault();
-        console.log('dragover')
-        const card = getCard(e);
-        const bgColor = card.bgColor;
-        const hourColumn = e.target;
-        const hourNum = hourColumn.innerText;
-        const width = standardHourColWidth * card.duration;
-        const distanceLeft = standardHourColWidth * hourNum;
-        setHighlightParams({ display: 'block', bgColor: bgColor, width: width, left: distanceLeft })
-    };
-
+        if (dragOverCount === 0) {
+            console.log('dragover event runs', dragOverCount)
+            setHighlightParams({ display: 'block', width: 3, left: 0, bgColor: 'purple'});
+            dragOverCount++;
+        }
+        console.log(dragOverCount)
+        // const card = getCard(e);
+        // const bgColor = card.bgColor;
+        // const hourColumn = e.target;
+        // const hourNum = hourColumn.innerText;
+        // const width = standardHourColWidth * card.duration;
+        // const distanceLeft = standardHourColWidth * hourNum;
+    }
     const handleDragLeave = (e) => {
         e.preventDefault();
-        console.log('dragleave')
-        setHighlightParams({ display: 'none', bgColor: 'transparent', width: 0, left: 0 })
-    }
-
+        dragOverCount = 0;
+        setHighlightParams({ display: 'none', width: 0, left: 0, bgColor: 'purple', });
+    } 
     return (
         <div
             onDrop={handleDrop}
-            onDragOver={throttleDragOver}
-            // onDragLeave={handleDragLeave}
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
             key={mark}
             className={`color-white text-xs flex items-end`}
             style={defaultStyle}

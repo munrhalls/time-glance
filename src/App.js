@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState} from "react";
 import Day from "./components/Day";
 import Days from "./components/Days";
 import Projects from "./components/Projects";
@@ -38,12 +38,11 @@ function App() {
   const days = [1, 2, 3, 4];
 
   const updateCards = (e, updatedCard) => {
-    e.preventDefault();
     setCards(() => timeCards.map(card => {
       if (card.id === updatedCard.id) {
-        return updatedCard
-      } 
-    return card;
+        return updatedCard;
+      }
+      return card;
     }));
   };
 

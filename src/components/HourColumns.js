@@ -1,6 +1,8 @@
+import React, { useState, useEffect } from "react";
 import HourColumn from './HourColumn';
 
-const HourColumns = ({getCard, handleDragEnd, handleDrop, highlightHours, standardHourColWidth }) => {
+const HourColumns = ({ getCard, handleDragEnd, handleDrop, highlightHours, standardHourColWidth }) => {
+
     const hourColumns = [...Array(24).keys()].map((i) => i);
     const checkIsIndayHours = () => {
         if (highlightHours && highlightHours.indexOf(24) > -1) {
@@ -8,13 +10,13 @@ const HourColumns = ({getCard, handleDragEnd, handleDrop, highlightHours, standa
         }
         return true;
     }
-    
+
     const isInDayHours = checkIsIndayHours();
     const isAvailable = isInDayHours;
 
     return (
         <>
-        {hourColumns.map((mark) => (
+            {hourColumns.map((mark) => (
                 <HourColumn
                     handleDragEnd={handleDragEnd}
                     handleDrop={handleDrop}
