@@ -10,22 +10,23 @@ const HourColumn = ({ getCard, handleDrop, isHighlighted, isAvailable, mark, sta
         e.preventDefault();
         if (dragOverCount === 0) {
             console.log('dragover event runs', dragOverCount)
-            setHighlightParams({ display: 'block', width: 3, left: 0, bgColor: 'purple'});
+            const card = getCard(e);
+            const bgColor = card.bgColor;
+            const hourColumn = e.target;
+            const hourNum = hourColumn.innerText;
+            const width = standardHourColWidth * card.duration;
+            const distanceLeft = standardHourColWidth * hourNum;
+            setHighlightParams({ display: 'block', width: width, left: distanceLeft, bgColor: bgColor });
             dragOverCount++;
         }
         console.log(dragOverCount)
-        // const card = getCard(e);
-        // const bgColor = card.bgColor;
-        // const hourColumn = e.target;
-        // const hourNum = hourColumn.innerText;
-        // const width = standardHourColWidth * card.duration;
-        // const distanceLeft = standardHourColWidth * hourNum;
+
     }
     const handleDragLeave = (e) => {
         e.preventDefault();
         dragOverCount = 0;
         setHighlightParams({ display: 'none', width: 0, left: 0, bgColor: 'purple', });
-    } 
+    }
     return (
         <div
             onDrop={handleDrop}
