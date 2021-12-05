@@ -1,7 +1,6 @@
 import React from 'react'
 
 const HighlightBox = ({ highlightParams }) => {
-    console.log(highlightParams.left)
     return (
         <div
             className="h-5/6"

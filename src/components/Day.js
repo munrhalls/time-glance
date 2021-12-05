@@ -2,12 +2,11 @@ import React, { useRef, useState } from "react";
 import DayCards from './DayCards';
 import HourColumns from './HourColumns';
 import HourMarks from './HourMarks';
-import HighlightBox from './HighlightBox';
 
 function Day({ id, dayCards, updateCards }) {
-  const [highlightParams, setHighlightParams] = useState({display: 'none', width: 0, left: 0, bgColor: 'purple', });
   const dayRef = useRef(null);
   const standardHourColWidth = 0.5;
+
   const getCard = (e) => {
     const cardStr = e.dataTransfer.getData("card");
     const object = JSON.parse(cardStr);
@@ -20,49 +19,14 @@ function Day({ id, dayCards, updateCards }) {
     if (isWithinDay) {
       card.startHour = startHour;
       card.idOfScheduledDay = id;
-      console.log(card)
     }
     return card;
   }
-  const handleDragOver = (e) => {
-    e.preventDefault();
-    const card = getCard(e)
-    // REWRITE
-    // detect in hourColumn but handle in day
-    // 1. hourColumn's innerText ->  get hour num
-    // 2. standardize hour unit
-    // 3. multiply that by hour num
-    // 4. from that, get width: card.duration * hour num
-    // 5. create highlightBox component
-    // 6. props width = card.duration * standard unit, marginLeft = hourNum * standard unit, color = card.color, pos absolute, height full
-    // DONE
-    // 1. DONE
-    // 2. DONE
-    // 3. DONE
-    // 4. DONE
-    // 5. DONE
-    // 6 DONE
-
-    const bgColor = card.bgColor;
-    const hourColumn = e.target;
-    const hourNum = hourColumn.innerText;
-    const width = standardHourColWidth * card.duration; 
-    const distanceLeft = standardHourColWidth * hourNum;
-    setHighlightParams({display: 'block', bgColor: bgColor, width: width, left: distanceLeft})
-    
-    
-  };
-  const handleDragLeave = (e) => {
-    // e.preventDefault();
-    const highLightParams = {display: false, width: 0, left: 0, bgColor: 'none', }
-    setHighlightParams(highLightParams); 
-  }
+  
   const handleDrop = (e) => {
     e.preventDefault();
     const card = getCard(e)
     const updatedCard = handleUpdate(e, card);
-    const highLightParams = {display: false, width: 0, left: 0, bgColor: 'none', }
-    setHighlightParams(highLightParams); 
     updateCards(e, updatedCard);
   };
 
@@ -74,15 +38,13 @@ function Day({ id, dayCards, updateCards }) {
     >
       <div className="h-5/6 flex relative">
         <HourColumns
-          handleDragOver={handleDragOver}
-          handleDragLeave={handleDragLeave}
           handleDrop={handleDrop}
+          getCard={getCard}
           standardHourColWidth={standardHourColWidth}
         />
         <DayCards dayCards={dayCards} />
       </div>
       <HourMarks />
-      <HighlightBox highlightParams={highlightParams} />
     </div >
   );
 }
