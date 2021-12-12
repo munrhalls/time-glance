@@ -1,8 +1,7 @@
-import "./App.css";
-import React, { useState} from "react";
-import Day from "./components/Day";
-import Days from "./components/Days";
-import Projects from "./components/Projects";
+import React, { useState } from "react";
+import { TimeDecks } from "./components/TimeDecks";
+import { Schedule } from "./components/Schedule";
+import Dragover from "./components/Dragover";
 
 function App() {
   const [timeCards, setCards] = useState([
@@ -35,8 +34,6 @@ function App() {
     }
   ]);
 
-  const days = [1, 2, 3, 4];
-
   const updateCards = (e, updatedCard) => {
     setCards(() => timeCards.map(card => {
       if (card.id === updatedCard.id) {
@@ -46,10 +43,13 @@ function App() {
     }));
   };
 
+
+
   return (
     <div className="App container h-screen mt-10 box-border flex flex-col ml-4">
-      <Projects timeCards={timeCards} />
-      <Days days={days} timeCards={timeCards} updateCards={updateCards} />
+      <TimeDecks />
+      <Schedule />
+      <Dragover />
     </div>
   );
 }
