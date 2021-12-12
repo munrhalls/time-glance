@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { TimeDeck } from './TimeDeck'
+import { TimeDecksPanel } from './TimeDecksPanel';
 
 export const TimeDecks = () => {
     const decks = [
@@ -23,7 +24,7 @@ export const TimeDecks = () => {
 
     return (
         <div className='flex'>
-            <div>Side panel.</div>
+            <TimeDecksPanel timeDecks={timeDecks} />
             <div>
                 {timeDecks.map(timeDeck => {
                     return <TimeDeck timeDeck={timeDeck} />
