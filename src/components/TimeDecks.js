@@ -2,8 +2,11 @@ import React from 'react'
 
 export const TimeDecks = () => {
     return (
-        <div>
-            Time decks.
+        <div className='flex'>
+            <div>Side panel.</div>
+            <div>
+                Time Decks.
+            </div>
         </div>
     )
 }
