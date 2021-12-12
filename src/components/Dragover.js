@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Dragover() {
+export const Dragover = () => {
     return (
         <div>
-            Dragover.
+           Dragover. 
         </div>
     )
 }
