@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 export const Dragover = () => {
     const highlight = [1, 2, 3, 4];
-    let pos;
+    let pos = {x: 0, y: 0}
 
     // const [box, setBox] = useState([...highlight]);
     const [location, setLocation] = useState(pos)
