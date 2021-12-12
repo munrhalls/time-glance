@@ -1,0 +1,16 @@
+body {
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+.App {
+    position: relative;
+}
+
+.Dragover {
+    background-color: #111777;
+    opacity: 0.05;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}

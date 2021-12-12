@@ -1,8 +1,9 @@
 import React from 'react'
 
 export const Dragover = () => {
+    
     return (
-        <div>
+        <div className="Dragover">
            Dragover. 
         </div>
     )
