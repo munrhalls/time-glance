@@ -10,11 +10,18 @@ body {
 .Dragover {
     /* background-color: #111777; */
     position: absolute;
-    height: 100%;
-    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .Day {
     border: 1px solid #000000;
     height: 3rem;
+}
+
+.HourMark {
+    padding-left: 1rem;
+    font-size: 0.5rem;
 }
