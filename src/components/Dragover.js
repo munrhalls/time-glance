@@ -7,9 +7,9 @@ export const Dragover = () => {
     // const [box, setBox] = useState([...highlight]);
     const [location, setLocation] = useState(pos)
     const getCoords = (e) => {
-        setLocation(e.clientX)
+        const location = { y: e.clientY, x: e.clientX };
+        setLocation(location)
     }
-
     console.log(location)
     return (
         <div className="Dragover" onMouseMove={getCoords}>
@@ -18,8 +18,8 @@ export const Dragover = () => {
                 background: '#000',
                 width: '4rem',
                 height: '4rem',
-                left: `${location}px`,
-                top: '8rem'
+                top: `${location.y}px`,
+                left: `${location.x}px`
             }}>box</div>
         </div>
     )
