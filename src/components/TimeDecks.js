@@ -6,15 +6,18 @@ export const TimeDecks = () => {
     const decks = [
         {
             id: 1,
-            name: 'Working out.'
+            name: 'Working out.',
+            color: 'blue'
         },
         {
             id: 2,
-            name: 'Going out.'
+            name: 'Going out.',
+            color: 'blue'
         },
         {
             id: 3,
-            name: 'Study, training and practice.'
+            name: 'Study, training and practice.',
+            color: 'blue'
         }
     ]
     const [timeDecks, setTimeDecks] = useState(decks);
@@ -28,7 +31,7 @@ export const TimeDecks = () => {
             <div>
                 TIMEDECKS.
                 {timeDecks.map(timeDeck => {
-                    return <TimeDeck timeDeck={timeDeck} key={timeDeck.id}/>
+                    return <TimeDeck timeDeck={timeDeck} key={timeDeck.id} />
                 })}
             </div>
         </div>

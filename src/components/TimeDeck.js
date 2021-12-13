@@ -2,7 +2,7 @@ import React from 'react'
 
 export const TimeDeck = ({timeDeck}) => {
     return (
-        <div>
+        <div style={{background: `${timeDeck.color}`}}>
            {timeDeck.name}
         </div>
     )
