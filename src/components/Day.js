@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const Day = ({ day }) => {
-    const hourMarks = [...Array(24).keys()];
+    const hourMarks = [...Array(24).keys()].map(i => i + 1);
 
     return (
         <div className="Day">
