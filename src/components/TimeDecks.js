@@ -26,6 +26,7 @@ export const TimeDecks = () => {
         <div className='flex'>
             <TimeDecksPanel timeDecks={timeDecks} />
             <div>
+                TIMEDECKS.
                 {timeDecks.map(timeDeck => {
                     return <TimeDeck timeDeck={timeDeck} key={timeDeck.id}/>
                 })}

@@ -10,7 +10,7 @@ function App() {
     <div className="App container h-screen mt-10 box-border flex flex-col ml-4">
       <TimeDecks />
       <Schedule />
-      <Dragover />
+      {/* <Dragover /> */}
     </div>
   );
 }
