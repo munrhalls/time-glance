@@ -1,10 +1,12 @@
 body {
     box-sizing: border-box;
     min-height: 100vh;
+    margin: 0;
 }
 
 .App {
     position: relative;
+    margin: 0;  
 }
 
 .Dragover {
@@ -18,10 +20,22 @@ body {
 
 .Day {
     border: 1px solid #000000;
-    height: 3rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-width: 1rem;
 }
 
+.HourMarks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .HourMark {
-    padding-left: 1rem;
     font-size: 0.5rem;
+}
+
+.Month {
+    display: flex;
+    height: 100%;
 }

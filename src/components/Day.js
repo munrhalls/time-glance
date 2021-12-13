@@ -6,7 +6,7 @@ export const Day = ({ day }) => {
     return (
         <div className="Day">
             {day}
-            <div>
+            <div className="HourMarks">
                 {hourMarks.map(hourMark => { return <span className="HourMark">{hourMark}</span> })}
             </div>
         </div>
