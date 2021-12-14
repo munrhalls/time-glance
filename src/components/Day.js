@@ -10,7 +10,7 @@ export const Day = ({ day }) => {
                 {day}
             </div>
             <div className="HourColumns">
-                {hourColumns.map(hourColumn => { return <div className="hourColumn" key={hourColumn}>{hourColumn}</div> })}
+                {hourColumns.map(hourColumn => { return <div className="HourColumn" key={hourColumn}>.</div> })}
             </div>
             <div className="HourMarks">
                 {hourMarks.map(hourMark => { return <span className="HourMark" key={hourMark}>{hourMark}</span> })}
