@@ -5,14 +5,37 @@ body {
 }
 
 .App {
+    background-color: #000;
+    color: #fff;
     height: 100vh;
     width: 100vw;
     position: relative;
     margin: 0;  
 }
 
+
+
+
 .TimeDecks {
-    height: 50vh;
+    height: 30vh;
+    display: flex;
+}
+
+.TimeDeck {
+    border: 1px solid #fff;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+.TimeDecksPanel {
+    padding: 0.5rem;
+}
+.TimeDecksPanelItem {
+    border: 1px solid #777;
+    border-radius: 5px;
+    margin: 0.5rem;
+    padding: 0.15rem;
+
 }
 
 
@@ -20,20 +43,22 @@ body {
 
 
 .Schedule {
-    height: 50vh;
+    height: 40vh;
     display: flex;
     flex-wrap: wrap;
 }
 
 .Week {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 .Day {
+    background-color: #fff;
+    color: #000;
     border: 1px solid #000000;
-    flex: 1;
-    max-width: 2.5rem;
-    flex-wrap: nowrap;
+    height: 6rem;
+    width: 6rem;
+    flex-wrap: wrap;
 }
 
 .HourMarks {

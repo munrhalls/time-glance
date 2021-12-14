@@ -27,7 +27,7 @@ export const TimeDecks = () => {
 
     return (
         <div className='TimeDecks'>
-            {/* <TimeDecksPanel timeDecks={timeDecks} /> */}
+            <TimeDecksPanel timeDecks={timeDecks} />
             <div>
                 TIMEDECKS.
                 {timeDecks.map(timeDeck => {

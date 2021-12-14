@@ -7,7 +7,7 @@ export const Schedule = () => {
 
     return (
         <div className="Schedule">
-            {weeks.map(week => <div className="Week">
+            {weeks.map(week => <div className="Week" key={week}>
                 {month.map((day, index) => { return <Day day={day} key={day} /> })}
             </div>)}
 
