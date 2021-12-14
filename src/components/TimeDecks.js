@@ -28,7 +28,7 @@ export const TimeDecks = () => {
     return (
         <div className='TimeDecks'>
             <TimeDecksPanel timeDecks={timeDecks} />
-            <div>
+            <div className="TimeDecksItems">
                 TIMEDECKS.
                 {timeDecks.map(timeDeck => {
                     return <TimeDeck timeDeck={timeDeck} key={timeDeck.id} />

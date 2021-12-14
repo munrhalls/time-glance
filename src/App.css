@@ -19,26 +19,33 @@ body {
 .TimeDecks {
     height: 30vh;
     display: flex;
-}
-
-.TimeDeck {
-    border: 1px solid #fff;
-    margin: 0.5rem;
-    padding: 0.5rem;
+    width: 100%;
 }
 
 .TimeDecksPanel {
     padding: 0.5rem;
+    border-right: 0.15rem solid #777;
 }
+
 .TimeDecksPanelItem {
     border: 1px solid #777;
     border-radius: 5px;
     margin: 0.5rem;
     padding: 0.15rem;
-
 }
 
-
+.TimeDecksItems {
+    width: 100%;
+    padding: 0.5rem;
+    padding-right: 1.5rem;
+}
+.TimeDeck {
+    border: 1px solid #fff;
+    height: 3rem;
+    width: 100%;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
 
 
 
@@ -58,14 +65,37 @@ body {
     border: 1px solid #000000;
     height: 6rem;
     width: 6rem;
+    display: flex;
     flex-wrap: wrap;
 }
 
+.DayTitle {
+    color: #fff;
+    background-color: #000;
+    height: 1rem;
+    width: 100%;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.HourColumns {
+    display: flex;
+}
+.HourColumn {
+    height: 100%;
+}
 .HourMarks {
+    background-color: #000;
+    color: #fff;
+    align-self: flex-end;
+    width: 100%;
+    display: flex;
 }   
 
 .HourMark {
-    font-size: 0.1rem;
+    font-size: 0.5rem;
+    flex: 1;
 }
 
 

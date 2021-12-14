@@ -1,14 +1,20 @@
 import React from 'react'
 
 export const Day = ({ day }) => {
-    const hourMarks = [...Array(24).keys()].map(i => i + 1);
+    const hourMarks = [0, 4, 8, 12, 16, 20, 24];
+    const hourColumns = [...Array(24).keys()];
 
     return (
         <div className="Day">
-            {day}
-            {/* <div className="HourMarks">
+            <div className="DayTitle">
+                {day}
+            </div>
+            <div className="HourColumns">
+                {hourColumns.map(hourColumn => { return <div className="hourColumn" key={hourColumn}>{hourColumn}</div> })}
+            </div>
+            <div className="HourMarks">
                 {hourMarks.map(hourMark => { return <span className="HourMark" key={hourMark}>{hourMark}</span> })}
-            </div> */}
+            </div>
         </div>
     )
 }
