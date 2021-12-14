@@ -7,10 +7,20 @@ export const Schedule = () => {
 
     return (
         <div className="Schedule">
-            {weeks.map(week => <div className="Week" key={week}>
-                {month.map((day, index) => { return <Day day={day} key={day} /> })}
-            </div>)}
-
+            <div className="TitleStripDays">
+                <div className='TitleStripDaysSquare'></div>
+                <div className='TitleStripDaysTitle'>days</div>
+            </div>
+            <div className="Month">
+                <div className="TitleStripHours">
+                    <div className="TitleStripHoursTitle">hours</div>
+                </div>
+                <div className="Weeks">
+                    {weeks.map(week => <div className="Week" key={week}>
+                        {month.map((day, index) => { return <Day day={day} key={day} /> })}
+                    </div>)}
+                </div>
+            </div>
         </div>
     )
 }
