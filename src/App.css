@@ -26,6 +26,10 @@ body {
     border-right: 0.15rem solid #777;
 }
 
+.BtnAddTimeDeck {
+    border: 1px solid #fff
+}
+
 .TimeDecksPanelItem {
     border: 1px solid #777;
     border-radius: 5px;

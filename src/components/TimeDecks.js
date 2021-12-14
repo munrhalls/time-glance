@@ -21,9 +21,6 @@ export const TimeDecks = () => {
         }
     ]
     const [timeDecks, setTimeDecks] = useState(decks);
-    const updateDecks = (decks) => {
-        setTimeDecks(decks);
-    }
 
     const addNewTimeDeck = (e) => {
         const newTimeDeck = {
@@ -31,18 +28,17 @@ export const TimeDecks = () => {
             name: "New deck of time cards!",
             color: "Blue"
         }
-        setTimeDecks(timeDec)
+        setTimeDecks([...timeDecks, newTimeDeck])
     }
-}
-return (
-    <div className='TimeDecks'>
-        <TimeDecksPanel timeDecks={timeDecks} addNewTimeDeck={addNewTimeDeck} />
-        <div className="TimeDecksItems">
-            TIMEDECKS.
-            {timeDecks.map(timeDeck => {
-                return <TimeDeck timeDeck={timeDeck} key={timeDeck.id} />
-            })}
+    return (
+        <div className='TimeDecks'>
+            <TimeDecksPanel timeDecks={timeDecks} addNewTimeDeck={addNewTimeDeck} />
+            <div className="TimeDecksItems">
+                TIMEDECKS.
+                {timeDecks.map(timeDeck => {
+                    return <TimeDeck timeDeck={timeDeck} key={timeDeck.id} />
+                })}
+            </div>
         </div>
-    </div>
-)
+    )
 }
