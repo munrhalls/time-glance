@@ -9,7 +9,8 @@ export const TimeDecksPanel = ({ timeDecks, addNewTimeDeck }) => {
             <button
                 className='BtnAddTimeDeck'
                 onClick={addNewTimeDeck}>
-                <span>Add new time deck.</span>
+                <span className="BtnAddTimeDeckSign">+</span>
+                <span className='BtnAddTimeDeckText'>Add new time deck.</span>
             </button>
             {timeDecks.map(timeDeck =>
                 <div className="TimeDecksPanelItem"

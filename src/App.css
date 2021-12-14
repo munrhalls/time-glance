@@ -27,8 +27,29 @@ body {
 }
 
 .BtnAddTimeDeck {
-    border: 1px solid #fff
+    display: flex;
+}   
+
+.BtnAddTimeDeckSign {
+    color: #fff;
+    background-color: #000;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
 }
+.BtnAddTimeDeckText {
+    color: #fff;
+    background-color: #000;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+
+}  
 
 .TimeDecksPanelItem {
     border: 1px solid #777;
