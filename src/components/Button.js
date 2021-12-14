@@ -1,14 +1,26 @@
 import React from 'react'
 
-export const Button = ({ sign, text, handlerFunc }) => {
+export const Button = ({ type, handlerFunc }) => {
+    const getSign = () => {
+        if (type === 'add') { return '+' }
+        if (type === 'delete') { return '-' }
+        if (type === 'edit') { return '.' }
+    }
+    const getText = () => {
+        if (type === 'add') { return 'Add new.' }
+        if (type === 'delete') { return 'Delete.' }
+        if (type === 'edit') { return 'Edit.' }
+    }
     return (
         <button
-            className='BtnAddTimeDeck'
-            onClick={handlerFunc}>
-            <span className="BtnCircle">
-                <span className='BtnSign'>+</span>
+            className='Btn'
+            onClick={handlerFunc} >
+            <span className={`BtnCircle ${type}`}>
+                <span className='BtnSign'>
+                    {getSign()}
+                </span>
             </span>
-            <span className='BtnText'>{text}</span>
-        </button>
+            <span className='BtnText'>{getText()}</span>
+        </button >
     )
 }

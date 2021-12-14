@@ -28,14 +28,22 @@ body {
 .TimeDecksPanelTitle {
     margin-bottom: 0.5rem;
 }
-
-
-.TimeDecksPanelItem {
+.TimeDecksPanelSymbolDeck {
     border: 1px solid #777;
     border-radius: 5px;
-    margin: 0.5rem;
+    margin-top: 1rem;
     padding: 0.15rem;
 }
+.TimeDecksPanelItemMenu {
+    color: #fff;
+}
+
+
+
+
+
+
+
 
 .TimeDecksItems {
     width: 100%;
@@ -65,7 +73,6 @@ body {
 
 
 .Btn {
-    display: flex;
 }   
 .BtnCircle {
     color: #fff;

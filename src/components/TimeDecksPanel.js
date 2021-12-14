@@ -8,15 +8,24 @@ export const TimeDecksPanel = ({ timeDecks, addNewTimeDeck }) => {
             style={{}}>
             <div className="TimeDecksPanelTitle">TIME DECKS PANEL.</div>
             <Button
-            sign="+"
-            text="Add new."
-            handlerFunc={addNewTimeDeck} />
-            {timeDecks.map(timeDeck =>
-                <div className="TimeDecksPanelItem"
-                    key={timeDeck.id}
-                    style={{ backgroundColor: `${timeDeck.color}` }}>
-                    {timeDeck.name}
-                </div>)
+                type='add'
+                handlerFunc={addNewTimeDeck} />
+            {timeDecks.map(timeDeck => {
+                return <div className="TimeDecksPanelItem">
+                    <div className="TimeDecksPanelSymbolDeck"
+                        key={timeDeck.id}
+                        style={{ backgroundColor: `${timeDeck.color}` }}>{timeDeck.name}</div>
+                    <div className='TimeDecksPanelSymbolDeckMenu'>
+                        <Button
+                            type='delete'
+                            handlerFunc={addNewTimeDeck} />
+                        <Button
+                            type='edit'
+                            handlerFunc={addNewTimeDeck} />
+                    </div>
+                </div>
+            }
+            )
             }
         </div >
     )
