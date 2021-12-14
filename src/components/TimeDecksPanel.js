@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from './Button'
 
 export const TimeDecksPanel = ({ timeDecks, addNewTimeDeck }) => {
 
@@ -6,12 +7,10 @@ export const TimeDecksPanel = ({ timeDecks, addNewTimeDeck }) => {
         <div className="TimeDecksPanel"
             style={{}}>
             <span>Time Decks:</span>
-            <button
-                className='BtnAddTimeDeck'
-                onClick={addNewTimeDeck}>
-                <span className="BtnAddTimeDeckSign">+</span>
-                <span className='BtnAddTimeDeckText'>Add new time deck.</span>
-            </button>
+            <Button
+            sign="+"
+            text="Add new."
+            handlerFunc={addNewTimeDeck} />
             {timeDecks.map(timeDeck =>
                 <div className="TimeDecksPanelItem"
                     key={timeDeck.id}
