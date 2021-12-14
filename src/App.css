@@ -25,6 +25,44 @@ body {
     padding: 0.5rem;
     border-right: 0.15rem solid #777;
 }
+.TimeDecksPanelTitle {
+    margin-bottom: 0.5rem;
+}
+
+
+.TimeDecksPanelItem {
+    border: 1px solid #777;
+    border-radius: 5px;
+    margin: 0.5rem;
+    padding: 0.15rem;
+}
+
+.TimeDecksItems {
+    width: 100%;
+    padding: 0.5rem;
+    padding-right: 1.5rem;
+}
+.TimeDeck {
+    border: 1px solid #fff;
+    height: 3rem;
+    width: 100%;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+
+.TimeCard {
+    border: 1px solid #777;
+    border-radius: 2.5px;
+    cursor: pointer;
+    height: 100%;
+    width: 2.5rem;
+}
+
+
+
+
+
 
 .Btn {
     display: flex;
@@ -63,38 +101,6 @@ body {
     padding-bottom: 0.125rem;
     margin-left: 0.125rem;
 }  
-
-.TimeDecksPanelItem {
-    border: 1px solid #777;
-    border-radius: 5px;
-    margin: 0.5rem;
-    padding: 0.15rem;
-}
-
-.TimeDecksItems {
-    width: 100%;
-    padding: 0.5rem;
-    padding-right: 1.5rem;
-}
-.TimeDeck {
-    border: 1px solid #fff;
-    height: 3rem;
-    width: 100%;
-    margin: 0.5rem;
-    padding: 0.5rem;
-}
-
-
-.TimeCard {
-    border: 1px solid #777;
-    border-radius: 2.5px;
-    cursor: pointer;
-    height: 100%;
-    width: 2.5rem;
-}
-
-
-
 
 
 

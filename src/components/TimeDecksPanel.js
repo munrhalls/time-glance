@@ -6,7 +6,7 @@ export const TimeDecksPanel = ({ timeDecks, addNewTimeDeck }) => {
     return (
         <div className="TimeDecksPanel"
             style={{}}>
-            <span>Time Decks:</span>
+            <div className="TimeDecksPanelTitle">TIME DECKS PANEL.</div>
             <Button
             sign="+"
             text="Add new."
