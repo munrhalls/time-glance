@@ -18,7 +18,7 @@ export const Day = ({ day }) => {
                 <div className="HourMarks">
                     {hourMarks.map((hourMark, index) => {
                         return <div className="HourMark" key={hourMark}
-                            style={{ marginTop: `${calcMargin(hourMark)}` }}> {hourMark}</div>
+                            style={{ marginTop: `${calcMargin(hourMark)}rem` }}> {hourMark}</div>
                     })}
                 </div>
                 <div className="HourRows">
