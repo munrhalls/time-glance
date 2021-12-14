@@ -12,12 +12,12 @@ export const TimeDecks = () => {
         {
             id: 2,
             name: 'Going out.',
-            color: 'blue'
+            color: 'black'
         },
         {
             id: 3,
             name: 'Study, training and practice.',
-            color: 'blue'
+            color: 'purple'
         }
     ]
     const [timeDecks, setTimeDecks] = useState(decks);
@@ -26,8 +26,8 @@ export const TimeDecks = () => {
     }
 
     return (
-        <div className='flex'>
-            <TimeDecksPanel timeDecks={timeDecks} />
+        <div className='TimeDecks'>
+            {/* <TimeDecksPanel timeDecks={timeDecks} /> */}
             <div>
                 TIMEDECKS.
                 {timeDecks.map(timeDeck => {

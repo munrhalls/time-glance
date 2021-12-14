@@ -5,9 +5,53 @@ body {
 }
 
 .App {
+    height: 100vh;
+    width: 100vw;
     position: relative;
     margin: 0;  
 }
+
+.TimeDecks {
+    height: 50vh;
+}
+
+
+
+
+
+.Schedule {
+    height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Week {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.Day {
+    border: 1px solid #000000;
+    flex: 1;
+    max-width: 2.5rem;
+    flex-wrap: nowrap;
+}
+
+.HourMarks {
+}   
+
+.HourMark {
+    font-size: 0.1rem;
+}
+
+
+
+
+
+
+
+
+
+
 
 .Dragover {
     /* background-color: #111777; */
@@ -16,26 +60,4 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-}
-
-.Month {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.Day {
-    border: 1px solid #000000;
-    height: 5rem;
-}
-
-.HourMarks {
-}   
-
-.HourMark {
-    font-size: 0.5rem;
-}
-
-.Month {
-    display: flex;
-    height: 100%;
 }
