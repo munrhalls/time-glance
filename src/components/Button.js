@@ -16,11 +16,11 @@ export const Button = ({ type, handlerFunc }) => {
             className='Btn'
             onClick={handlerFunc} >
             <span className={`BtnCircle ${type}`}>
-                <span className='BtnSign'>
+                <span className={`BtnSign ${type}`}>
                     {getSign()}
                 </span>
             </span>
-            <span className='BtnText'>{getText()}</span>
+            <span className={`BtnText ${type}`}>{getText()}</span>
         </button >
     )
 }
