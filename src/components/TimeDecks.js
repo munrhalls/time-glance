@@ -25,15 +25,24 @@ export const TimeDecks = () => {
         setTimeDecks(decks);
     }
 
-    return (
-        <div className='TimeDecks'>
-            <TimeDecksPanel timeDecks={timeDecks} />
-            <div className="TimeDecksItems">
-                TIMEDECKS.
-                {timeDecks.map(timeDeck => {
-                    return <TimeDeck timeDeck={timeDeck} key={timeDeck.id} />
-                })}
-            </div>
+    const addNewTimeDeck = (e) => {
+        const newTimeDeck = {
+            id: timeDecks.length + 1,
+            name: "New deck of time cards!",
+            color: "Blue"
+        }
+        setTimeDecks(timeDec)
+    }
+}
+return (
+    <div className='TimeDecks'>
+        <TimeDecksPanel timeDecks={timeDecks} addNewTimeDeck={addNewTimeDeck} />
+        <div className="TimeDecksItems">
+            TIMEDECKS.
+            {timeDecks.map(timeDeck => {
+                return <TimeDeck timeDeck={timeDeck} key={timeDeck.id} />
+            })}
         </div>
-    )
+    </div>
+)
 }

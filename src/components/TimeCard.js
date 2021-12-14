@@ -2,7 +2,7 @@ import React from 'react'
 
 export const TimeCard = () => {
     const handleDragStart = (e) => {
-        e.dataTransfer.setData('text/plain', 'dragstaff')
+        e.dataTransfer.setData('text/plain', e)
     }
 
     return (

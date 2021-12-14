@@ -9,12 +9,17 @@ export const Day = ({ day }) => {
         }
     }
 
+    const handleDragOver = (e) => {
+        e.preventDefault();
+    }
+
     const handleOnDrop = (e) => {
         console.log('console logging DROP')
         console.log(e.dataTransfer.getData("text/plain"))
     }
     return (
         <div className="Day"
+        onDragOver={handleDragOver}
         onDrop={handleOnDrop}>
             <div className="DayTitle">
                 {day}
