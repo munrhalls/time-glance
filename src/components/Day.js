@@ -9,8 +9,13 @@ export const Day = ({ day }) => {
         }
     }
 
+    const handleOnDrop = (e) => {
+        console.log('console logging DROP')
+        console.log(e.dataTransfer.getData("text/plain"))
+    }
     return (
-        <div className="Day">
+        <div className="Day"
+        onDrop={handleOnDrop}>
             <div className="DayTitle">
                 {day}
             </div>

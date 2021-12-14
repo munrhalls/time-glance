@@ -47,6 +47,31 @@ body {
 }
 
 
+.TimeCard {
+    border: 1px solid #777;
+    border-radius: 2.5px;
+    cursor: pointer;
+    height: 100%;
+    width: 2.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .Schedule {
     display: flex;
@@ -77,6 +102,12 @@ body {
 }
 
 
+
+
+
+
+
+
 .Month {
     display: flex;
 }
@@ -97,10 +128,18 @@ body {
     align-items: center;
 }
 .TitleStripHoursTitle {
+    color: #fff;
     display: block;
     width: 1rem;
     transform: rotate(-90deg);
 }
+
+
+
+
+
+
+
 .Weeks {
     display: flex;
     flex-wrap: wrap;
@@ -109,6 +148,38 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .Day {
     background-color: #fff;
     color: #000;
@@ -135,6 +206,19 @@ body {
     width: 100%;
     display: flex;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 .HourRows {
     height: 100%;
     width: 85%;
@@ -159,10 +243,6 @@ body {
 .HourRowShelf {
     width: 85%;
 }
-
-
-
-
 .HourMarks {
     background-color: #000;
     color: #fff;
