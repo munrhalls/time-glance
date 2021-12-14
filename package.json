@@ -35,12 +35,13 @@
       "not op_mini all"
     ],
     "development": [
+      "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^9.8.8",
+    "autoprefixer": "^9.8.8", 
     "eslint-plugin-react-hooks": "^4.2.0",
     "postcss": "^7.0.39",
     "stylelint-config-recommended": "^6.0.0",
