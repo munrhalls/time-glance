@@ -1,6 +1,7 @@
 import React from "react";
 import add from "./../resources/add.png";
-import xbtn from "./../resources/x-button.png";
+import del from "./../resources/del.png";
+import edit from "./../resources/edit.png";
 
 export const Button = ({ type, handlerFunc }) => {
   let img, label;
@@ -10,18 +11,18 @@ export const Button = ({ type, handlerFunc }) => {
       label = "Add new deck.";
     }
     if (type === "del") {
-      img = xbtn;
+      img = del;
       label = "Delete.";
+    }
+    if (type === "edit") {
+      img = edit;
+      label = "Edit.";
     }
   };
   setResources();
   return (
     <button className={`Btn ${type}`} onClick={handlerFunc}>
-      <img
-        src={img}
-        alt="Add symbol image."
-        style={{ backgroundColor: "#fff", borderRadius: "50%" }}
-      ></img>
+      <img className="BtnImg" src={img} alt="Add symbol image."></img>
       <label>{label}</label>
     </button>
   );

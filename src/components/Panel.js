@@ -18,7 +18,7 @@ export const Panel = ({ timeDecks, addNewTimeDeck }) => {
             </div>
             <div className="PanelBtns">
               <Button type="del" handlerFunc={addNewTimeDeck} />
-              {/* <Button type="edit" handlerFunc={addNewTimeDeck} /> */}
+              <Button type="edit" handlerFunc={addNewTimeDeck} />
             </div>
           </div>
         );

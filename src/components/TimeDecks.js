@@ -12,7 +12,7 @@ export const TimeDecks = () => {
     {
       id: 2,
       name: "Going out.",
-      color: "black",
+      color: "orange",
     },
     {
       id: 3,

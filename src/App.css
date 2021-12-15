@@ -71,15 +71,31 @@ body {
 .Btn.add label {
   margin-left: 0.5rem;
 }
-.Btn.delete {
+.Btn.del {
   font-size: 1.15rem;
   height: 2rem;
   margin: 0.5rem;
   display: flex;
   align-items: center;
 }
-.Btn.delete label {
+.Btn.del label {
   margin-left: 0.5rem;
+}
+.Btn.edit {
+  font-size: 1.15rem;
+  height: 2rem;
+  margin: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.Btn.edit label {
+  margin-left: 0.5rem;
+}
+.BtnImg {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 2rem;
+  padding: 0.15rem; 
 }
 
 .Schedule {
