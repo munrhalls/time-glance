@@ -17,8 +17,8 @@ export const Panel = ({ timeDecks, addNewTimeDeck }) => {
               {timeDeck.name}
             </div>
             <div className="PanelBtns">
-              <Button type="delete" handlerFunc={addNewTimeDeck} />
-              <Button type="edit" handlerFunc={addNewTimeDeck} />
+              <Button type="del" handlerFunc={addNewTimeDeck} />
+              {/* <Button type="edit" handlerFunc={addNewTimeDeck} /> */}
             </div>
           </div>
         );

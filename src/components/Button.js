@@ -1,37 +1,28 @@
 import React from "react";
 import add from "./../resources/add.png";
+import xbtn from "./../resources/x-button.png";
 
 export const Button = ({ type, handlerFunc }) => {
-  const getSign = () => {
+  let img, label;
+  const setResources = () => {
     if (type === "add") {
-      return "+";
+      img = add;
+      label = "Add new deck.";
     }
-    if (type === "delete") {
-      return "-";
-    }
-    if (type === "edit") {
-      return ".";
+    if (type === "del") {
+      img = xbtn;
+      label = "Delete.";
     }
   };
-  const getText = () => {
-    if (type === "add") {
-      return "Add new.";
-    }
-    if (type === "delete") {
-      return "Delete.";
-    }
-    if (type === "edit") {
-      return "Edit.";
-    }
-  };
+  setResources();
   return (
-    <button className="Btn" onClick={handlerFunc}>
+    <button className={`Btn ${type}`} onClick={handlerFunc}>
       <img
-        src={add}
+        src={img}
         alt="Add symbol image."
         style={{ backgroundColor: "#fff", borderRadius: "50%" }}
       ></img>
-      <label>Add new time deck.</label>
+      <label>{label}</label>
     </button>
   );
 };

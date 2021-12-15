@@ -29,10 +29,10 @@ body {
   margin-bottom: 0.5rem;
 }
 .PanelDeck {
-  border: 1px solid #777;
-  border-radius: 5px;
-  margin-top: 1rem;
-  padding: 0.15rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .PanelBtns {
   display: flex;
@@ -61,14 +61,24 @@ body {
   width: 2.5rem;
 }
 
-.Btn {
+.Btn.add {
   font-size: 1.15rem;
   height: 2rem;
   margin: 0.5rem;
   display: flex;
   align-items: center;
 }
-.Btn label {
+.Btn.add label {
+  margin-left: 0.5rem;
+}
+.Btn.delete {
+  font-size: 1.15rem;
+  height: 2rem;
+  margin: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.Btn.delete label {
   margin-left: 0.5rem;
 }
 
