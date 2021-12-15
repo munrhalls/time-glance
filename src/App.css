@@ -23,27 +23,29 @@ body {
 }
 .Panel {
   border-right: 0.15rem solid #777;
-  width: 25%;
+  width: 35%;
+  padding: 0 1.5rem 2.5rem 1.5rem;
 }
 .PanelTitle {
   margin-bottom: 0.5rem;
 }
+.PanelItem {
+  margin: 1rem 0 2.5rem 0;
+}
 .PanelDeck {
-  height: 3rem;
+  height: 2.25rem;
+  border-radius: 2.5px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .PanelBtns {
   display: flex;
+  justify-content: space-between;
   height: 1rem;
 }
-.PanelItemMenu {
-  color: #fff;
-}
-
 .TimeDecksItems {
-  width: 70%;
+  width: 60%;
 }
 .TimeDeck {
   border: 1px solid #fff;
@@ -91,11 +93,13 @@ body {
 .Btn.edit label {
   margin-left: 0.5rem;
 }
+.Btn.scrollUp img {
+}
 .BtnImg {
   background-color: #fff;
   border-radius: 50%;
   width: 2rem;
-  padding: 0.15rem; 
+  padding: 0.15rem;
 }
 
 .Schedule {
