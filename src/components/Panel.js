@@ -1,32 +1,24 @@
 import React from "react";
 import { Button } from "./Button";
+import { PanelItems } from "./PanelItems";
 
 export const Panel = ({ timeDecks, addNewTimeDeck }) => {
-  const scrollUp = () => {};
+  const ref = React.createRef();
+
+  const scrollUp = () => {
+    // ref.current.scroll(0, ref.current.scrollY + 108);
+  };
   const scrollDown = () => {};
   return (
     <div className="Panel">
-      <Button type="add" handlerFunc={addNewTimeDeck} />
-      <Button type="scrollUp" handlerFunc={scrollUp} />
-      <Button type="scrollDown" handlerFunc={scrollDown} />
-
-      {timeDecks.map((timeDeck, i) => {
-        return (
-          <div className="PanelItem" key={timeDeck.name + i}>
-            <div
-              className="PanelDeck"
-              key={timeDeck.id}
-              style={{ backgroundColor: `${timeDeck.color}` }}
-            >
-              {timeDeck.name}
-            </div>
-            <div className="PanelBtns">
-              <Button type="del" handlerFunc={addNewTimeDeck} />
-              <Button type="edit" handlerFunc={addNewTimeDeck} />
-            </div>
-          </div>
-        );
-      })}
+      <div className="PanelTopBtns">
+        <Button type="add" handlerFunc={addNewTimeDeck} />
+        <div className="ScrollBtns">
+          <Button type="scrollUp" handlerFunc={scrollUp} />
+          <Button type="scrollDown" handlerFunc={scrollDown} />
+        </div>
+        <PanelItems timeDecks={timeDecks} addNewTimeDeck={addNewTimeDeck} />
+      </div>
     </div>
   );
 };

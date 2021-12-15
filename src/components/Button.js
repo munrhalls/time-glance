@@ -26,7 +26,7 @@ export const Button = ({ type, handlerFunc }) => {
     }
     if (type === "scrollUp") {
       img = chevronUp;
-      label = "Scroll.";
+      label = "";
     }
   };
   setResources();

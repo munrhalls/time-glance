@@ -29,6 +29,19 @@ body {
 .PanelTitle {
   margin-bottom: 0.5rem;
 }
+.PanelTopBtns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.PanelTopBtns .ScrollBtns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ScrollBtns button {
+  margin-left: 0.75rem;
+}
 .PanelItem {
   margin: 1rem 0 2.5rem 0;
 }
@@ -93,7 +106,8 @@ body {
 .Btn.edit label {
   margin-left: 0.5rem;
 }
-.Btn.scrollUp img {
+.Btn.scrollUp {
+  display: flex;
 }
 .BtnImg {
   background-color: #fff;
