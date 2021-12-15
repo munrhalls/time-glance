@@ -31,6 +31,7 @@ export const Button = ({ type, handlerFunc }) => {
         alt="Add symbol image."
         style={{ backgroundColor: "#fff", borderRadius: "50%" }}
       ></img>
+      <label>Add new time deck.</label>
     </button>
   );
 };
