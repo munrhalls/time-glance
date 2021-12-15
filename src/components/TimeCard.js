@@ -1,16 +1,18 @@
-import React from 'react'
+import React from "react";
 
 export const TimeCard = () => {
-    const handleDragStart = (e) => {
-        e.dataTransfer.setData('text/plain', e)
-    }
+  const handleDragStart = (e) => {
+    e.dataTransfer.setData("text/plain", e);
+  };
 
-    return (
-        <div className='TimeCard' 
-        style={{backgroundColor: 'orange', zIndex: '1'}}
-        draggable={true}
-        onDragStart={handleDragStart}>
-            4
-        </div>
-    )
-}
+  return (
+    <div
+      className="TimeCard"
+      style={{ backgroundColor: "orange", zIndex: "1" }}
+      draggable={true}
+      onDragStart={handleDragStart}
+    >
+      4
+    </div>
+  );
+};

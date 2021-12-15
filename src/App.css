@@ -1,368 +1,248 @@
 body {
-    box-sizing: border-box;
-    min-height: 100vh;
-    margin: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  margin: 0;
 }
 
 .App {
-    background-color: #000;
-    color: #fff;
-    min-height: 100vh;
-    width: 100vw;
-    position: relative;
-    margin: 0;  
-    display: flex;
-    flex-direction: column;
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
-
 
 .TimeDecks {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
+  max-height: 40vh;
+  overflow-y: scroll;
 }
-
-.TimeDecksPanel {
-    padding: 0.5rem;
-    border-right: 0.15rem solid #777;
+.Panel {
+  border-right: 0.15rem solid #777;
+  width: 25%;
 }
-.TimeDecksPanelTitle {
-    margin-bottom: 0.5rem;
+.PanelTitle {
+  margin-bottom: 0.5rem;
 }
-.TimeDecksPanelSymbolDeck {
-    border: 1px solid #777;
-    border-radius: 5px;
-    margin-top: 1rem;
-    padding: 0.15rem;
+.PanelDeck {
+  border: 1px solid #777;
+  border-radius: 5px;
+  margin-top: 1rem;
+  padding: 0.15rem;
 }
-.TimeDecksPanelSymbolDeckMenu {
-    display: flex;
-    height: 1rem;
+.PanelBtns {
+  display: flex;
+  height: 1rem;
 }
-.TimeDecksPanelItemMenu {
-    color: #fff;
+.PanelItemMenu {
+  color: #fff;
 }
-
-
-
-
-
-
-
 
 .TimeDecksItems {
-    width: 100%;
-    padding: 0.5rem;
-    padding-right: 1.5rem;
+  width: 70%;
 }
 .TimeDeck {
-    border: 1px solid #fff;
-    height: 3rem;
-    width: 100%;
-    margin: 0.5rem;
-    padding: 0.5rem;
+  border: 1px solid #fff;
+  height: 3rem;
+  width: 100%;
+  margin: 0.5rem;
+  padding: 0.5rem;
 }
-
 
 .TimeCard {
-    border: 1px solid #777;
-    border-radius: 2.5px;
-    cursor: pointer;
-    height: 100%;
-    width: 2.5rem;
+  border: 1px solid #777;
+  border-radius: 2.5px;
+  cursor: pointer;
+  height: 100%;
+  width: 2.5rem;
 }
-
-
-
-
-
 
 .Btn {
-    height: 1rem;
-}   
+  height: 2rem;
+}
 .BtnCircle {
-    color: #fff;
-    background-color: #000;
-    border: 1px solid #fff;
-    border-radius: 100%;
-    font-size: 0.5rem;
-    /* font-weight: bold; */
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    padding-bottom: 0.125rem;
-    position: relative;
+  border: 1px solid #777;
+  border-radius: 100%;
+  height: 2rem;
 }
 .BtnCircle.add {
-    border: 1px solid #fff;  
 }
 .BtnCircle.delete {
-    border: 1px solid crimson;  
 }
 .BtnCircle.edit {
-    border: 1px solid blue;  
 }
 .BtnSign {
-    font-size: 1rem;
-    color: #fff;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    margin: -0.47rem;
-    position: absolute;
-    top: 0; bottom: 0; left: 0; right: 0;
+  height: 2rem;
+  font-size: 2rem;
+  padding: 1rem;
 }
 .BtnSign.add {
-    color: #fff;
 }
 .BtnSign.delete {
-    color: crimson;
 }
 .BtnSign.edit {
-    color: blue;
 }
 .BtnText {
-    color: #fff;
-    background-color: #000;
-    border: 1px solid #fff;
-    border-radius: 50px;
-    font-size: 0.5rem;
-    letter-spacing: 1px;
-    width: 6rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    padding-bottom: 0.125rem;
-    margin-left: 0.125rem;
-}  
+  padding: 15px;
+}
 .BtnText.add {
-    color: #fff;
 }
 .BtnText.delete {
-    color: crimson;
-    border: 1px solid crimson;  
 }
 .BtnText.edit {
-    color: blue;
-    border: 1px solid blue;  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .Schedule {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 .TitleStripDays {
-    color: #fff;
-    border-bottom: 1px solid #777;
-    height: 1.5rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  color: #fff;
+  border-bottom: 1px solid #777;
+  height: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .TitleStripDaysSquare {
-    height: 100%;
-    width: 1.5rem;
-    min-width: 1.5rem;
-    background-color: #777;
-    border: 3px solid #000;
-    border-radius: 5px;
+  height: 100%;
+  width: 1.5rem;
+  min-width: 1.5rem;
+  background-color: #777;
+  border: 3px solid #000;
+  border-radius: 5px;
 }
 .TitleStripDaysTitle {
-    border-left: 180px solid #777;
-    opacity: 0.15;
-    border-radius: 45%;
-    width: calc(100% - 1.5rem);
+  border-left: 180px solid #777;
+  opacity: 0.15;
+  border-radius: 45%;
+  width: calc(100% - 1.5rem);
 }
-
-
-
-
-
-
-
 
 .Month {
-    display: flex;
+  display: flex;
 }
 .TitleStripHours {
-    color: #fff;
-    font-size: xx-small;
-    letter-spacing: 3px;
-    border-top: 180px solid #777;
-    opacity: 0.15;
-    border-radius: 45%;
-    border-right: 1px solid #777;
-    height: 100%;
-    width: 1.5rem;
-    min-width: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  color: #fff;
+  font-size: xx-small;
+  letter-spacing: 3px;
+  border-top: 180px solid #777;
+  opacity: 0.15;
+  border-radius: 45%;
+  border-right: 1px solid #777;
+  height: 100%;
+  width: 1.5rem;
+  min-width: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .TitleStripHoursTitle {
-    color: #fff;
-    display: block;
-    width: 1rem;
-    transform: rotate(-90deg);
+  color: #fff;
+  display: block;
+  width: 1rem;
+  transform: rotate(-90deg);
 }
-
-
-
-
-
-
 
 .Weeks {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 .Week {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .Day {
-    background-color: #fff;
-    color: #000;
-    height: 10rem;
-    width: 4.5rem;
-    margin: 0;
-    padding: 0;
-    outline: none;
-    display: flex;
-    flex-wrap: wrap;
+  background-color: #fff;
+  color: #000;
+  height: 10rem;
+  width: 4.5rem;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .DayTitle {
-    color: #fff;
-    background-color: #000;
-    height: 15%;
-    width: 100%;
-    font-size: 0.75rem;
-    display: flex;
-    align-items: center;
+  color: #fff;
+  background-color: #000;
+  height: 15%;
+  width: 100%;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
 }
 .DayHours {
-    height: 85%;
-    width: 100%;
-    display: flex;
+  height: 85%;
+  width: 100%;
+  display: flex;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 .HourRows {
-    height: 100%;
-    width: 85%;
-    display: flex;
-    flex-direction: column;
+  height: 100%;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
 }
 .HourRow {
-    font-size: 5px;
-    font-weight: bold;
-    border-bottom: 1px solid #aaa;
-    width: 100%;
-    flex: 1;
-    display: flex;
+  font-size: 5px;
+  font-weight: bold;
+  border-bottom: 1px solid #aaa;
+  width: 100%;
+  flex: 1;
+  display: flex;
 }
 .HourRowNum {
-    color: #fff;
-    background-color: #000;
-    font-size: 0.25rem;
-    height: 100%;
-    width: 15%;
+  color: #fff;
+  background-color: #000;
+  font-size: 0.25rem;
+  height: 100%;
+  width: 15%;
 }
 .HourRowShelf {
-    width: 85%;
+  width: 85%;
 }
 .HourMarks {
-    background-color: #000;
-    color: #fff;
-    height: 100%;
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center
-}   
-
-.HourMark {
-    font-size: .5rem;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1px solid #777;
+  background-color: #000;
+  color: #fff;
+  height: 100%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-
-
-
-
-
-
-
-
-
+.HourMark {
+  font-size: 0.5rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #777;
+}
 
 .Dragover {
-    /* background-color: #111777; */
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  /* background-color: #111777; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.Footer {
+  font-size: 0.5rem;
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
 }
