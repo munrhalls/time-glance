@@ -25,6 +25,8 @@ body {
   border-right: 0.15rem solid #777;
   width: 35%;
   padding: 0 1.5rem 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 .PanelTitle {
   margin-bottom: 0.5rem;
@@ -41,6 +43,10 @@ body {
 }
 .ScrollBtns button {
   margin-left: 0.75rem;
+}
+
+.PanelItems {
+  overflow-y: scroll;
 }
 .PanelItem {
   margin: 1rem 0 2.5rem 0;

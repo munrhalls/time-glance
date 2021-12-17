@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "./Button";
 import { PanelItems } from "./PanelItems";
 
 export const Panel = ({ timeDecks, addNewTimeDeck }) => {
-  const ref = React.createRef();
+  const [scrollY, setScrollY] = useState(0);
 
-  const scrollUp = () => {
-    // ref.current.scroll(0, ref.current.scrollY + 108);
+  const scrollUp = (ref) => {
+    let y = scrollY + 50;
+    setScrollY(y);
   };
   const scrollDown = () => {};
   return (
@@ -17,8 +18,12 @@ export const Panel = ({ timeDecks, addNewTimeDeck }) => {
           <Button type="scrollUp" handlerFunc={scrollUp} />
           <Button type="scrollDown" handlerFunc={scrollDown} />
         </div>
-        <PanelItems timeDecks={timeDecks} addNewTimeDeck={addNewTimeDeck} />
       </div>
+      <PanelItems
+        timeDecks={timeDecks}
+        addNewTimeDeck={addNewTimeDeck}
+        scrollY={scrollY}
+      />
     </div>
   );
 };
