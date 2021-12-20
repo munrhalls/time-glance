@@ -16,14 +16,22 @@ export const TimeDeck = ({ timeDeck }) => {
       return [...timeCards, newTimeCard];
     });
   };
-  const delTimeCards = (id) => {
+  const delTimeCards = () => {
     console.log("Delete time cards.");
     setTimeCards((timeCards) => {
       return timeCards.filter((timeCard) => timeCard.marked !== true);
     });
   };
   const editTimeCards = () => {
-    console.log("Edit time cards.");
+    setTimeCards((timeCards) => {
+      return timeCards.map((timeCard) => {
+        if (timeCard.marked) {
+          timeCard.color = "white";
+        }
+        timeCard.marked = false;
+        return timeCard;
+      });
+    });
   };
   const markTimeCard = (id) => {
     const updatedCards = timeCards.map((timeCard) => {
@@ -40,7 +48,6 @@ export const TimeDeck = ({ timeDeck }) => {
       <Button type="addSquare" label="New Card." handlerFunc={addTimeCard} />
       <Button type="delSquare" label="Delete" handlerFunc={delTimeCards} />
       <Button type="editSquare" label="Edit." handlerFunc={editTimeCards} />
-
       {timeCards && timeCards.length
         ? timeCards.map((timeCard) => {
             return (
