@@ -14,6 +14,12 @@ export const Button = ({ type, label, handlerFunc }) => {
     if (type === "addSquare") {
       img = add;
     }
+    if (type === "delSquare") {
+      img = add;
+    }
+    if (type === "editSquare") {
+      img = add;
+    }
     if (type === "del") {
       img = del;
     }

@@ -107,6 +107,19 @@ body {
   color: goldenrod;
   border-color: goldenrod;
   height: 3rem;
+  width: 4rem;
+}
+.Btn.delSquare {
+  color: crimson;
+  border-color: crimson;
+  height: 3rem;
+  width: 4rem;
+}
+.Btn.editSquare {
+  color: teal;
+  border-color: teal;
+  height: 3rem;
+  width: 4rem;
 }
 .Btn.del {
   color: crimson;
