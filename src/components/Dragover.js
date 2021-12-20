@@ -10,7 +10,6 @@ export const Dragover = () => {
     const location = { y: e.clientY, x: e.clientX };
     setLocation(location);
   };
-  console.log(location);
   return (
     <div className="Dragover" onMouseMove={getCoords}>
       <div

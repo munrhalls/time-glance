@@ -14,8 +14,8 @@ export const Day = ({ day }) => {
   };
 
   const handleOnDrop = (e) => {
-    console.log("console logging DROP");
-    console.log(e.dataTransfer.getData("text/plain"));
+    const timeCard = e.dataTransfer.getData("text/plain");
+    console.log(timeCard);
   };
   return (
     <div className="Day" onDragOver={handleDragOver} onDrop={handleOnDrop}>

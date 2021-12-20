@@ -5,7 +5,6 @@ import { Button } from "./Button";
 export const TimeDeck = ({ timeDeck }) => {
   const [timeCards, setTimeCards] = useState([{}]);
   const addTimeCard = () => {
-    console.log("Add time card.");
     const newTimeCard = {
       id: timeDeck.name + "/" + timeCards.length + 1,
       color: "blue",
@@ -17,7 +16,6 @@ export const TimeDeck = ({ timeDeck }) => {
     });
   };
   const delTimeCards = () => {
-    console.log("Delete time cards.");
     setTimeCards((timeCards) => {
       return timeCards.filter((timeCard) => timeCard.marked !== true);
     });

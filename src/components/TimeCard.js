@@ -2,8 +2,8 @@ import React from "react";
 
 export const TimeCard = ({ timeCard, markTimeCard }) => {
   const handleDragStart = (e) => {
-    console.log("DragStart");
-    e.dataTransfer.setData("text/plain", e);
+    console.log(timeCard);
+    e.dataTransfer.setData("text", JSON.stringify(timeCard));
   };
 
   const setStyle = () => {
