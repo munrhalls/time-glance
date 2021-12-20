@@ -16,8 +16,11 @@ export const TimeDeck = ({ timeDeck }) => {
       return [...timeCards, newTimeCard];
     });
   };
-  const delTimeCards = () => {
+  const delTimeCards = (id) => {
     console.log("Delete time cards.");
+    setTimeCards((timeCards) => {
+      timeCards.filter(timeCard.id === id);
+    });
   };
   const editTimeCards = () => {
     console.log("Edit time cards.");

@@ -21,7 +21,7 @@ export const TimeCard = ({ timeCard, markTimeCard }) => {
           className="TimeCard"
           style={setStyle()}
           draggable={true}
-          // onDragStart={handleDragStart}
+          onDragStart={handleDragStart}
           onClick={() => markTimeCard(timeCard.id)}
         >
           {timeCard.duration}
