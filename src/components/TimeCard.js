@@ -1,7 +1,8 @@
 import React from "react";
 
-export const TimeCard = () => {
+export const TimeCard = ({ timeCard }) => {
   const handleDragStart = (e) => {
+    console.log(timeCard, timeCard.toString());
     e.dataTransfer.setData("text/plain", e);
   };
 

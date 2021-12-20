@@ -46,7 +46,7 @@ export const TimeDecks = () => {
 
       <div className="TimeDecksItems">
         {timeDecks.map((timeDeck) => {
-          return <TimeDeck timeDeck={timeDeck} key={timeDeck.id} />;
+          return <TimeDeck timeDeck={timeDeck} key={timeDeck.id + "1"} />;
         })}
       </div>
     </div>

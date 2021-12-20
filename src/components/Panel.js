@@ -14,7 +14,7 @@ export const Panel = ({ timeDecks, addNewTimeDeck, delTimeDeck }) => {
   return (
     <div className="Panel">
       <div className="PanelTopBtns">
-        <Button type="add" handlerFunc={addNewTimeDeck} />
+        <Button type="add" label="New deck." handlerFunc={addNewTimeDeck} />
         <div className="ScrollBtns">
           <Button type="scrollUp" handlerFunc={scrollUp} />
           <Button type="scrollDown" handlerFunc={scrollDown} />

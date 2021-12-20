@@ -13,8 +13,12 @@ export const PanelItems = ({ timeDecks, addNewTimeDeck, delTimeDeck }) => {
               style={{ backgroundColor: `${timeDeck.color}` }}
             ></div>
             <div className="PanelBtns">
-              <Button type="del" handlerFunc={() => delTimeDeck(timeDeck.id)} />
-              <Button type="edit" handlerFunc={addNewTimeDeck} />
+              <Button
+                type="del"
+                label="Delete."
+                handlerFunc={() => delTimeDeck(timeDeck.id)}
+              />
+              <Button type="edit" label="Edit." handlerFunc={addNewTimeDeck} />
             </div>
           </div>
         );

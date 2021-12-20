@@ -5,28 +5,23 @@ import edit from "./../resources/edit.png";
 import chevronDown from "./../resources/chevronDown.svg";
 import chevronUp from "./../resources/chevronUp.svg";
 
-export const Button = ({ type, handlerFunc }) => {
-  let img, label;
+export const Button = ({ type, label, handlerFunc }) => {
+  let img;
   const setResources = () => {
     if (type === "add") {
       img = add;
-      label = "New deck.";
     }
     if (type === "del") {
       img = del;
-      label = "Delete.";
     }
     if (type === "edit") {
       img = edit;
-      label = "Edit.";
     }
     if (type === "scrollDown") {
       img = chevronDown;
-      label = "";
     }
     if (type === "scrollUp") {
       img = chevronUp;
-      label = "";
     }
   };
   setResources();
