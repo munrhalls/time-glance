@@ -6,8 +6,12 @@ export const TimeCard = ({ timeCard, markTimeCard }) => {
     e.dataTransfer.setData("text/plain", e);
   };
 
-  const setBgColor = () => {
-    return timeCard.marked ? "green" : timeCard.color;
+  const setStyle = () => {
+    return {
+      backgroundColor: `${timeCard.marked ? "green" : timeCard.color}`,
+      border: `${timeCard.marked ? "6px solid green" : "none"}`,
+      zIndex: "1",
+    };
   };
 
   return (
@@ -15,7 +19,7 @@ export const TimeCard = ({ timeCard, markTimeCard }) => {
       {timeCard && timeCard.id ? (
         <div
           className="TimeCard"
-          style={{ backgroundColor: `${setBgColor()}`, zIndex: "1" }}
+          style={setStyle()}
           draggable={true}
           // onDragStart={handleDragStart}
           onClick={() => markTimeCard(timeCard.id)}
