@@ -20,7 +20,25 @@ body {
   width: 100%;
   max-height: 40vh;
 }
+.TimeDecksItems {
+  width: 60%;
+}
+.TimeDeck {
+  border: 1px solid #fff;
+  height: 3rem;
+  width: 100%;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
 
+.TimeCard {
+  border: 1px solid #777;
+  border-radius: 2.5px;
+  cursor: pointer;
+  height: 100%;
+  width: 2.5rem;
+}
+/***/
 .Panel {
   border-right: 0.15rem solid #777;
   font-size: 0.5rem;
@@ -61,25 +79,7 @@ body {
 .PanelBtns {
   display: flex;
 }
-.TimeDecksItems {
-  width: 60%;
-}
-.TimeDeck {
-  border: 1px solid #fff;
-  height: 3rem;
-  width: 100%;
-  margin: 0.5rem;
-  padding: 0.5rem;
-}
-
-.TimeCard {
-  border: 1px solid #777;
-  border-radius: 2.5px;
-  cursor: pointer;
-  height: 100%;
-  width: 2.5rem;
-}
-
+/***/
 .Btn {
   background-color: transparent;
   border: 1px solid #777;

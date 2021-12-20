@@ -22,7 +22,7 @@ export const TimeDecks = () => {
   ];
 
   const [timeDecks, setTimeDecks] = useState(decks);
-  const addNewTimeDeck = (e) => {
+  const addNewTimeDeck = () => {
     const newTimeDeck = {
       id: timeDecks.length + 1,
       name: "New deck of time cards!",
@@ -30,10 +30,19 @@ export const TimeDecks = () => {
     };
     setTimeDecks([...timeDecks, newTimeDeck]);
   };
+  const delTimeDeck = (id) => {
+    setTimeDecks((timeDecks) => {
+      return timeDecks.filter((timeDeck) => timeDeck.id !== id);
+    });
+  };
 
   return (
     <div className="TimeDecks">
-      <Panel timeDecks={timeDecks} addNewTimeDeck={addNewTimeDeck} />
+      <Panel
+        timeDecks={timeDecks}
+        addNewTimeDeck={addNewTimeDeck}
+        delTimeDeck={delTimeDeck}
+      />
 
       <div className="TimeDecksItems">
         {timeDecks.map((timeDeck) => {

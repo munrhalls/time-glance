@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button } from "./Button";
 import { PanelItems } from "./PanelItems";
 
-export const Panel = ({ timeDecks, addNewTimeDeck }) => {
+export const Panel = ({ timeDecks, addNewTimeDeck, delTimeDeck }) => {
   const [visibleDecks, setVisibleDecks] = [
     timeDecks[0],
     timeDecks[1],
@@ -20,7 +20,11 @@ export const Panel = ({ timeDecks, addNewTimeDeck }) => {
           <Button type="scrollDown" handlerFunc={scrollDown} />
         </div>
       </div>
-      <PanelItems timeDecks={timeDecks} addNewTimeDeck={addNewTimeDeck} />
+      <PanelItems
+        timeDecks={timeDecks}
+        addNewTimeDeck={addNewTimeDeck}
+        delTimeDeck={delTimeDeck}
+      />
     </div>
   );
 };
