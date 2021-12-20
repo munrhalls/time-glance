@@ -1,6 +1,6 @@
 import React from "react";
 
-export const TimeCard = ({ timeCard, markTimeCard }) => {
+export const TimeCard = ({ timeCard, markTimeCard, style }) => {
   const handleDragStart = (e) => {
     console.log(timeCard);
     e.dataTransfer.setData("text", JSON.stringify(timeCard));
@@ -20,7 +20,7 @@ export const TimeCard = ({ timeCard, markTimeCard }) => {
         <div
           className="TimeCard"
           style={setStyle()}
-          draggable={true}
+          draggable={true}  
           onDragStart={handleDragStart}
           onClick={() => markTimeCard(timeCard.id)}
         >

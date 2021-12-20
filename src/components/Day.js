@@ -49,7 +49,7 @@ export const Day = ({ day }) => {
                 }}
                 key={"day-" + day + "-card-" + timeCard.id}
               >
-                timecard
+                {timeCard.duration}
               </div>
             );
           })}
