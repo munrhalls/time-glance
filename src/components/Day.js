@@ -57,7 +57,7 @@ export const Day = ({ day }) => {
           })}
           {HourRows.map((hourRow) => {
             return (
-              <div className="HourRow" hourRow={hourRow} key={hourRow}></div>
+              <div hourrow={hourRow} className="HourRow" key={hourRow}></div>
             );
           })}
         </div>
