@@ -19,7 +19,7 @@ export const TimeDeck = ({ timeDeck }) => {
   const delTimeCards = (id) => {
     console.log("Delete time cards.");
     setTimeCards((timeCards) => {
-      timeCards.filter(timeCard.id === id);
+      return timeCards.filter((timeCard) => timeCard.marked !== true);
     });
   };
   const editTimeCards = () => {
@@ -41,15 +41,17 @@ export const TimeDeck = ({ timeDeck }) => {
       <Button type="delSquare" label="Delete" handlerFunc={delTimeCards} />
       <Button type="editSquare" label="Edit." handlerFunc={editTimeCards} />
 
-      {timeCards.map((timeCard) => {
-        return (
-          <TimeCard
-            timeCard={timeCard}
-            key={timeCard.id + "1"}
-            markTimeCard={markTimeCard}
-          />
-        );
-      })}
+      {timeCards && timeCards.length
+        ? timeCards.map((timeCard) => {
+            return (
+              <TimeCard
+                timeCard={timeCard}
+                key={timeCard.id + "1"}
+                markTimeCard={markTimeCard}
+              />
+            );
+          })
+        : ""}
     </div>
   );
 };
