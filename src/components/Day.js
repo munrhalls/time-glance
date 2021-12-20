@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 export const Day = ({ day }) => {
+  const [timeCards, setTimeCards] = useState([]);
   const hourMarks = [4, 8, 12, 16, 20, 24];
   const HourRows = [...Array(24).keys()];
   const calcMargin = (hourMark) => {
@@ -16,8 +17,11 @@ export const Day = ({ day }) => {
   const handleOnDrop = (e) => {
     const timeCardJSONStr = e.dataTransfer.getData("text/plain");
     const timeCard = JSON.parse(timeCardJSONStr);
-    console.log(timeCard);
+    console.log(timeCard.duration);
+    const dropHour = e.target.getAttribute("hourRow");
+    setTimeCards([...timeCards, timeCard]);
   };
+
   return (
     <div className="Day" onDragOver={handleDragOver} onDrop={handleOnDrop}>
       <div className="DayTitle">{day}</div>
@@ -37,8 +41,24 @@ export const Day = ({ day }) => {
           })}
         </div>
         <div className="HourRows">
-          {HourRows.map((HourRow) => {
-            return <div className="HourRow" key={HourRow}></div>;
+          {timeCards.map((timeCard) => {
+            return (
+              <div
+                className="DayTimeCard"
+                style={{
+                  backgroundColor: `${timeCard.color}`,
+                  top: `${timeCard.duration}`,
+                }}
+                key={"day-" + day + "-card-" + timeCard.id}
+              >
+                timecard
+              </div>
+            );
+          })}
+          {HourRows.map((hourRow) => {
+            return (
+              <div className="HourRow" hourRow={hourRow} key={hourRow}></div>
+            );
           })}
         </div>
       </div>
