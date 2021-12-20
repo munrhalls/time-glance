@@ -6,9 +6,8 @@ export const TimeCard = ({ timeCard, markTimeCard }) => {
     e.dataTransfer.setData("text/plain", e);
   };
 
-  const handleOnClick = () => {
-    console.log(timeCard);
-    markTimeCard(timeCard.id);
+  const setBgColor = () => {
+    return timeCard.marked ? "green" : timeCard.color;
   };
 
   return (
@@ -16,10 +15,10 @@ export const TimeCard = ({ timeCard, markTimeCard }) => {
       {timeCard && timeCard.id ? (
         <div
           className="TimeCard"
-          style={{ backgroundColor: "orange", zIndex: "1" }}
+          style={{ backgroundColor: `${setBgColor()}`, zIndex: "1" }}
           draggable={true}
           // onDragStart={handleDragStart}
-          onClick={handleOnClick}
+          onClick={() => markTimeCard(timeCard.id)}
         >
           {timeCard.duration}
         </div>

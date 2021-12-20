@@ -7,7 +7,7 @@ export const TimeDeck = ({ timeDeck }) => {
   const addTimeCard = () => {
     console.log("Add time card.");
     const newTimeCard = {
-      id: timeCards.length + 1,
+      id: timeDeck.name + "/" + timeCards.length + 1,
       color: "blue",
       duration: 1,
       marked: false,
@@ -23,8 +23,13 @@ export const TimeDeck = ({ timeDeck }) => {
     console.log("Edit time cards.");
   };
   const markTimeCard = (id) => {
-    console.log(id);
-    const card = timeCards.find((timeCard) => timeCard.id === id);
+    const updatedCards = timeCards.map((timeCard) => {
+      if (timeCard.id === id) {
+        timeCard.marked = !timeCard.marked;
+      }
+      return timeCard;
+    });
+    setTimeCards(updatedCards);
   };
   return (
     <div className="TimeDeck" style={{ position: "relative" }}>
