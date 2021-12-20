@@ -18,7 +18,7 @@ export const PanelItems = ({ timeDecks, addNewTimeDeck, delTimeDeck }) => {
                 label="Delete."
                 handlerFunc={() => delTimeDeck(timeDeck.id)}
               />
-              <Button type="edit" label="Edit." handlerFunc={addNewTimeDeck} />
+              <Button type="edit" label="Move." handlerFunc={addNewTimeDeck} />
             </div>
           </div>
         );
