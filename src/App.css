@@ -30,6 +30,7 @@ body {
   margin: 0.5rem;
   padding: 0.5rem;
   display: flex;
+  align-items: center;
 }
 
 .TimeCard {
@@ -101,6 +102,11 @@ body {
 }
 .Btn.add {
   color: goldenrod;
+}
+.Btn.addSquare {
+  color: goldenrod;
+  border-color: goldenrod;
+  height: 3rem;
 }
 .Btn.del {
   color: crimson;
