@@ -17,8 +17,9 @@ export const Day = ({ day }) => {
   const handleOnDrop = (e) => {
     const timeCardJSONStr = e.dataTransfer.getData("text/plain");
     const timeCard = JSON.parse(timeCardJSONStr);
-    console.log(timeCard.duration);
     const dropHour = e.target.getAttribute("hourRow");
+    console.log(dropHour);
+    timeCard.dropHour = dropHour / 2;
     setTimeCards([...timeCards, timeCard]);
   };
 
@@ -29,12 +30,8 @@ export const Day = ({ day }) => {
         <div className="HourMarks">
           {hourMarks.map((hourMark, index) => {
             return (
-              <div
-                className="HourMark"
-                key={hourMark}
-                style={{ marginTop: `${calcMargin(hourMark)}rem` }}
-              >
-                {" "}
+              <div className="HourMark" key={hourMark}>
+                {/* {" "} */}
                 {hourMark}
               </div>
             );
@@ -47,7 +44,8 @@ export const Day = ({ day }) => {
                 className="DayTimeCard"
                 style={{
                   backgroundColor: `${timeCard.color}`,
-                  top: `${timeCard.duration}`,
+                  marginTop: `${timeCard.dropHour}rem`,
+                  height: `${timeCard.duration / 2}rem`,
                 }}
                 key={"day-" + day + "-card-" + timeCard.id}
               >

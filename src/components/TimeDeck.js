@@ -8,7 +8,7 @@ export const TimeDeck = ({ timeDeck }) => {
     const newTimeCard = {
       id: timeDeck.name + "/" + timeCards.length + 1,
       color: "blue",
-      duration: 1,
+      duration: 4,
       marked: false,
     };
     setTimeCards((timeCards) => {
