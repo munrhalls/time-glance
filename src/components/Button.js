@@ -10,7 +10,7 @@ export const Button = ({ type, handlerFunc }) => {
   const setResources = () => {
     if (type === "add") {
       img = add;
-      label = "Add new deck.";
+      label = "New deck.";
     }
     if (type === "del") {
       img = del;

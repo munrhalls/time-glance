@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Button } from "./Button";
 
-export const PanelItems = ({ timeDecks, addNewTimeDeck, scrollY }) => {
+export const PanelItems = ({ timeDecks, addNewTimeDeck }) => {
   return (
     <div className="PanelItems">
       {timeDecks.map((timeDeck, i) => {
@@ -11,9 +11,7 @@ export const PanelItems = ({ timeDecks, addNewTimeDeck, scrollY }) => {
               className="PanelDeck"
               key={timeDeck.id}
               style={{ backgroundColor: `${timeDeck.color}` }}
-            >
-              {timeDeck.name}
-            </div>
+            ></div>
             <div className="PanelBtns">
               <Button type="del" handlerFunc={addNewTimeDeck} />
               <Button type="edit" handlerFunc={addNewTimeDeck} />

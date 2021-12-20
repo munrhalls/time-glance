@@ -50,10 +50,12 @@ body {
   width: 9rem;
 }
 .PanelDeck {
-  min-height: 3rem;
+  font-size: 0.6rem;
   border-radius: 2.5px;
+  width: 7.5rem;
+  padding: 0.25rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 .PanelBtns {
@@ -88,7 +90,6 @@ body {
   align-items: center;
 }
 .Btn label {
-  color: #fff;
   margin-left: 0.5rem;
 }
 .BtnImg {
@@ -96,6 +97,15 @@ body {
   border-radius: 50%;
   padding: 1px;
   width: 0.75rem;
+}
+.Btn.add {
+  color: goldenrod;
+}
+.Btn.del {
+  color: crimson;
+}
+.Btn.edit {
+  color: teal;
 }
 
 .Schedule {

@@ -16,7 +16,7 @@ export const TimeDecks = () => {
     },
     {
       id: 3,
-      name: "Study, training and practice.",
+      name: "Study, training and practice. Practice, practice, practice.",
       color: "purple",
     },
   ];
