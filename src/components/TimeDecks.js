@@ -20,8 +20,8 @@ export const TimeDecks = () => {
       color: "purple",
     },
   ];
-  const [timeDecks, setTimeDecks] = useState(decks);
 
+  const [timeDecks, setTimeDecks] = useState(decks);
   const addNewTimeDeck = (e) => {
     const newTimeDeck = {
       id: timeDecks.length + 1,
@@ -30,6 +30,7 @@ export const TimeDecks = () => {
     };
     setTimeDecks([...timeDecks, newTimeDeck]);
   };
+
   return (
     <div className="TimeDecks">
       <Panel timeDecks={timeDecks} addNewTimeDeck={addNewTimeDeck} />

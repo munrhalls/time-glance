@@ -33,7 +33,7 @@ export const Button = ({ type, handlerFunc }) => {
   return (
     <button className={`Btn ${type}`} onClick={handlerFunc}>
       <img className="BtnImg" src={img} alt="Add symbol image."></img>
-      <label>{label}</label>
+      {label ? <label>{label}</label> : ""}
     </button>
   );
 };

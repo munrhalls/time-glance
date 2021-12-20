@@ -3,13 +3,14 @@ import { Button } from "./Button";
 import { PanelItems } from "./PanelItems";
 
 export const Panel = ({ timeDecks, addNewTimeDeck }) => {
-  const [scrollY, setScrollY] = useState(0);
+  const [visibleDecks, setVisibleDecks] = [
+    timeDecks[0],
+    timeDecks[1],
+    timeDecks[2],
+  ];
+  const scrollDown = () => [];
+  const scrollUp = () => [];
 
-  const scrollUp = (ref) => {
-    let y = scrollY + 50;
-    setScrollY(y);
-  };
-  const scrollDown = () => {};
   return (
     <div className="Panel">
       <div className="PanelTopBtns">
@@ -19,11 +20,7 @@ export const Panel = ({ timeDecks, addNewTimeDeck }) => {
           <Button type="scrollDown" handlerFunc={scrollDown} />
         </div>
       </div>
-      <PanelItems
-        timeDecks={timeDecks}
-        addNewTimeDeck={addNewTimeDeck}
-        scrollY={scrollY}
-      />
+      <PanelItems timeDecks={timeDecks} addNewTimeDeck={addNewTimeDeck} />
     </div>
   );
 };
