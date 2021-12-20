@@ -14,7 +14,8 @@ export const Day = ({ day }) => {
   };
 
   const handleOnDrop = (e) => {
-    const timeCard = e.dataTransfer.getData("text/plain");
+    const timeCardJSONStr = e.dataTransfer.getData("text/plain");
+    const timeCard = JSON.parse(timeCardJSONStr);
     console.log(timeCard);
   };
   return (
