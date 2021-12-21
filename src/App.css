@@ -87,16 +87,17 @@ body {
   align-items: center;
 }
 .EditTimeCardsMenu {
+  backgroundcolor: #000;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
-.NumBtnRow {
+.NumBtnsRow {
   display: flex;
 }
-.NumBtnCol {
+.NumBtn {
   color: #fff;
   border: 1px solid #777;
   font-size: 1rem;
