@@ -81,9 +81,15 @@ body {
   display: flex;
 }
 /***/
+.TimeCardsMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .Btn {
   background-color: transparent;
   border: 1px solid #777;
+  cursor: pointer;
   font-size: 0.5rem;
   height: 1.25rem;
   margin: 0.5rem 0.25rem 0.5rem 0;
