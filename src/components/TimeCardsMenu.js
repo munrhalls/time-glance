@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "./Button";
+import { EditTimeCardsMenu } from "./EditTimeCardsMenu";
 
 export const TimeCardsMenu = ({ timeCards, setTimeCards, timeDeck }) => {
+  const [editMode, setEditMode] = useState(false);
+
   const addTimeCard = () => {
     const newTimeCard = {
       id: timeDeck.name + "/" + timeCards.length + 1,
@@ -18,6 +21,9 @@ export const TimeCardsMenu = ({ timeCards, setTimeCards, timeDeck }) => {
       return timeCards.filter((timeCard) => timeCard.marked !== true);
     });
   };
+  const openEditMenu = () => {
+    setEditMode((editMode) => !editMode);
+  };
   const editTimeCards = () => {
     setTimeCards((timeCards) => {
       return timeCards.map((timeCard) => {
@@ -32,9 +38,19 @@ export const TimeCardsMenu = ({ timeCards, setTimeCards, timeDeck }) => {
 
   return (
     <div className="TimeCardsMenu">
-      <Button type="addSquare" label="New Card." handlerFunc={addTimeCard} />
-      <Button type="delSquare" label="Delete" handlerFunc={delTimeCards} />
-      <Button type="editSquare" label="Edit." handlerFunc={editTimeCards} />
+      {editMode ? (
+        <EditTimeCardsMenu />
+      ) : (
+        <>
+          <Button
+            type="addSquare"
+            label="New Card."
+            handlerFunc={addTimeCard}
+          />
+          <Button type="delSquare" label="Delete" handlerFunc={delTimeCards} />
+          <Button type="editSquare" label="Edit." handlerFunc={openEditMenu} />
+        </>
+      )}
     </div>
   );
 };
