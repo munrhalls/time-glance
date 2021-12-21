@@ -24,22 +24,22 @@ export const TimeCardsMenu = ({ timeCards, setTimeCards, timeDeck }) => {
   const openEditMenu = () => {
     setEditMode((editMode) => !editMode);
   };
-  const editTimeCards = () => {
-    setTimeCards((timeCards) => {
-      return timeCards.map((timeCard) => {
-        if (timeCard.marked) {
-          timeCard.color = "white";
-        }
-        timeCard.marked = false;
-        return timeCard;
-      });
-    });
+  const editTimeCards = (num) => {
+    console.log(num);
+    // setTimeCards((timeCards) => {
+    //   return timeCards.map((timeCard) => {
+    //     if (timeCard.marked) {
+    //       timeCard.duration = num;
+    //     }
+    //     return timeCard;
+    //   });
+    // });
   };
 
   return (
     <div className="TimeCardsMenu">
       {editMode ? (
-        <EditTimeCardsMenu />
+        <EditTimeCardsMenu editTimeCards={editTimeCards} />
       ) : (
         <>
           <Button
