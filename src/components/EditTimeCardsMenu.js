@@ -11,13 +11,28 @@ export const EditTimeCardsMenu = ({ editTimeCards, closeEditMenu }) => {
     }
     nums.push(numsForRow);
   });
+
   console.log(nums);
   return (
     <div className="EditTimeCardsMenu">
-      {numRows.map((row) => {
+      {nums.map((row) => {
         return (
-          <div className="RowNumBtns" style={{ color: "#fff" }}>
-            Num Row {row}
+          <div
+            className="NumBtnRow"
+            style={{ color: "#fff", display: "flex" }}
+            key={row + Math.random()}
+          >
+            {row.map((num) => {
+              return (
+                <div
+                  className="NumBtnCol"
+                  style={{ display: "flex", border: "1px solid #fff" }}
+                  key={num + Math.random()}
+                >
+                  {num}
+                </div>
+              );
+            })}
           </div>
         );
       })}

@@ -93,6 +93,17 @@ body {
   align-items: center;
   flex-wrap: wrap;
 }
+.NumBtnRow {
+  display: flex;
+}
+.NumBtnCol {
+  color: #fff;
+  border: 1px solid #777;
+  font-size: 1rem;
+  width: 1rem;
+  padding: 0 0.15rem 0 0.15rem;
+  margin: 0.15rem;
+}
 .Btn {
   background-color: transparent;
   border: 1px solid #777;
