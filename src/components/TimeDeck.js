@@ -51,7 +51,7 @@ export const TimeDeck = ({ timeDeck }) => {
             return (
               <TimeCard
                 timeCard={timeCard}
-                key={timeCard.id + "1"}
+                key={timeCard.id + Math.random()}
                 markTimeCard={markTimeCard}
               />
             );
