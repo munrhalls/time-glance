@@ -4,6 +4,7 @@ import del from "./../resources/del.png";
 import edit from "./../resources/edit.png";
 import chevronDown from "./../resources/chevronDown.svg";
 import chevronUp from "./../resources/chevronUp.svg";
+import exit from "./../resources/exit.svg";
 
 export const Button = ({ type, label, handlerFunc }) => {
   let img;
@@ -32,11 +33,20 @@ export const Button = ({ type, label, handlerFunc }) => {
     if (type === "scrollUp") {
       img = chevronUp;
     }
+    if (type === "exit") {
+      img = exit;
+    }
+    if (type === "num") {
+    }
   };
   setResources();
   return (
     <button className={`Btn ${type}`} onClick={handlerFunc}>
-      <img className="BtnImg" src={img} alt="Add symbol image."></img>
+      {img ? (
+        <img className="BtnImg" src={img} alt={"Image not displayed."}></img>
+      ) : (
+        ""
+      )}
       {label ? <label>{label}</label> : ""}
     </button>
   );

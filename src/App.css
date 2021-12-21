@@ -86,6 +86,11 @@ body {
   justify-content: center;
   align-items: center;
 }
+.EditTimeCardsMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .Btn {
   background-color: transparent;
   border: 1px solid #777;
@@ -126,11 +131,23 @@ body {
   height: 3rem;
   width: 4rem;
 }
+.Btn.exit {
+  color: darkred;
+  border: 1px solid darkred;
+}
 .Btn.del {
   color: crimson;
 }
 .Btn.edit {
   color: teal;
+}
+.Btn.num {
+  color: #fff;
+}
+.Btn.num label {
+  margin: 0;
+  padding: 0.5rem;
+  text-align: center;
 }
 
 .Schedule {

@@ -6,8 +6,10 @@ export const EditTimeCardsMenu = () => {
 
   return (
     <div className="EditTimeCardsMenu">
-      {nums.map((num) => num)}
-      <Button type="exit" label="Exit." />
+      {nums.map((num) => (
+        <Button type="num" label={num} key={num + Math.random()} />
+      ))}
+      <Button type="exit" label="Close." />
     </div>
   );
 };

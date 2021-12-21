@@ -9,6 +9,7 @@ export const Footer = () => {
           <a href="https://www.svgrepo.com/" title="SVG Repo">
             SVG Repo
           </a>
+          Huge thanks for awesome icons!
         </div>
         Icons made by{" "}
         <a href="https://www.flaticon.com/authors/bayu015" title="bayu015">
