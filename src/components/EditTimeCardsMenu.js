@@ -1,5 +1,13 @@
 import React from "react";
+import { Button } from "./Button";
 
 export const EditTimeCardsMenu = () => {
-  return <div className="EditTimeCardsMenu">Edit time cards.</div>;
+  const nums = [...Array(10).keys()];
+
+  return (
+    <div className="EditTimeCardsMenu">
+      {nums.map((num) => num)}
+      <Button type="exit" label="Exit." />
+    </div>
+  );
 };
