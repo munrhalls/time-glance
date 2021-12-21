@@ -20,7 +20,7 @@ export const TimeCard = ({ timeCard, markTimeCard, style }) => {
         <div
           className="TimeCard"
           style={setStyle()}
-          draggable={true}  
+          draggable={true}
           onDragStart={handleDragStart}
           onClick={() => markTimeCard(timeCard.id)}
         >

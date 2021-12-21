@@ -22,7 +22,10 @@ export const TimeCardsMenu = ({ timeCards, setTimeCards, timeDeck }) => {
     });
   };
   const openEditMenu = () => {
-    setEditMode((editMode) => !editMode);
+    setEditMode(() => true);
+  };
+  const closeEditMenu = () => {
+    setEditMode(() => false);
   };
   const editTimeCards = (num) => {
     console.log(num);
@@ -40,7 +43,10 @@ export const TimeCardsMenu = ({ timeCards, setTimeCards, timeDeck }) => {
   return (
     <div className="TimeCardsMenu">
       {editMode ? (
-        <EditTimeCardsMenu editTimeCards={editTimeCards} />
+        <EditTimeCardsMenu
+          editTimeCards={editTimeCards}
+          closeEditMenu={closeEditMenu}
+        />
       ) : (
         <>
           <Button

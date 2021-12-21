@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "./Button";
 
-export const EditTimeCardsMenu = ({ editTimeCards }) => {
-  const nums = [...Array(10).keys()];
+export const EditTimeCardsMenu = ({ editTimeCards, closeEditMenu }) => {
+  const nums = [...Array(24).keys()].map((el) => el + 1);
 
   return (
     <div className="EditTimeCardsMenu">
@@ -14,7 +14,7 @@ export const EditTimeCardsMenu = ({ editTimeCards }) => {
           key={num + Math.random()}
         />
       ))}
-      <Button type="exit" label="Close." />
+      <Button type="exit" label="Close." handlerFunc={closeEditMenu} />
     </div>
   );
 };
