@@ -26,14 +26,15 @@ export const TimeCardsMenu = ({ timeCards, setTimeCards, timeDeck }) => {
   };
   const editTimeCards = (num) => {
     console.log(num);
-    // setTimeCards((timeCards) => {
-    //   return timeCards.map((timeCard) => {
-    //     if (timeCard.marked) {
-    //       timeCard.duration = num;
-    //     }
-    //     return timeCard;
-    //   });
-    // });
+    const duration = Number(num);
+    setTimeCards((timeCards) => {
+      return timeCards.map((timeCard) => {
+        if (timeCard.marked) {
+          timeCard.duration = duration;
+        }
+        return timeCard;
+      });
+    });
   };
 
   return (
