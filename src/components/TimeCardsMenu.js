@@ -59,7 +59,7 @@ export const TimeCardsMenu = ({ timeCards, setTimeCards, timeDeck }) => {
           <Button type="editSquare" label="Edit." handlerFunc={openEditMenu} />
           <div className="MarkerNote">
             <span className="Note">Click a card to mark it.</span>
-            <img src={cursor} className="Symbol" />
+            <img src={cursor} className="MarkerNoteSymbol" />
           </div>
         </>
       )}
