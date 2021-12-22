@@ -5,6 +5,8 @@ import edit from "./../resources/edit.png";
 import chevronDown from "./../resources/chevronDown.svg";
 import chevronUp from "./../resources/chevronUp.svg";
 import exit from "./../resources/exit.svg";
+import chevronLeft from "./../resources/chevronLeft.svg";
+import chevronRight from "./../resources/chevronRight.svg";
 
 export const Button = ({ type, label, handlerFunc }) => {
   let img;
@@ -32,6 +34,12 @@ export const Button = ({ type, label, handlerFunc }) => {
     }
     if (type === "scrollUp") {
       img = chevronUp;
+    }
+    if (type === "scrollLeft") {
+      img = chevronLeft;
+    }
+    if (type === "scrollRight") {
+      img = chevronRight;
     }
     if (type === "exit") {
       img = exit;
