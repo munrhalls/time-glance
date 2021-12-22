@@ -3,10 +3,10 @@ import { Button } from "./Button";
 
 export const EditTimeCardsMenu = ({ editTimeCards, closeEditMenu }) => {
   const nums = [];
-  [0, 4, 8, 12, 16, 20].forEach((row) => {
+  [1, 7, 13, 19].forEach((row) => {
     const numsForRow = [];
-    for (let i = row; i < row + 4; i++) {
-      numsForRow.push(i + 1);
+    for (let i = row; i < row + 6; i++) {
+      numsForRow.push(i);
     }
     nums.push(numsForRow);
   });
