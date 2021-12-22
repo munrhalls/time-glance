@@ -132,6 +132,7 @@ body {
   align-items: center;
 }
 .Btn label {
+  cursor: pointer;
   margin-left: 0.5rem;
 }
 .BtnImg {
@@ -178,6 +179,9 @@ body {
   height: 2.5rem;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .Btn.num label {
   margin: 0;

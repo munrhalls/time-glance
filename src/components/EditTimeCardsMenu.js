@@ -23,7 +23,7 @@ export const EditTimeCardsMenu = ({ editTimeCards, closeEditMenu }) => {
             <Button
               type="num"
               label={num}
-              handlerFunc={() => editTimeCards(1)}
+              handlerFunc={() => editTimeCards(num)}
             />
           );
         })}
