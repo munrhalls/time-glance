@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "./Button";
 import { EditTimeCardsMenu } from "./EditTimeCardsMenu";
+import cursor from "./../resources/cursor.svg";
 
 export const TimeCardsMenu = ({ timeCards, setTimeCards, timeDeck }) => {
   const [editMode, setEditMode] = useState(false);
@@ -56,6 +57,10 @@ export const TimeCardsMenu = ({ timeCards, setTimeCards, timeDeck }) => {
           />
           <Button type="delSquare" label="Delete" handlerFunc={delTimeCards} />
           <Button type="editSquare" label="Edit." handlerFunc={openEditMenu} />
+          <div className="MarkerNote">
+            <span className="Note">Click a card to mark it.</span>
+            <img src={cursor} className="Symbol" />
+          </div>
         </>
       )}
     </div>
