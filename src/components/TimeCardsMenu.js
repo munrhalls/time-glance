@@ -10,11 +10,10 @@ export const TimeCardsMenu = ({ timeCards, setTimeCards, timeDeck }) => {
     ? true
     : false;
   const [editMode, setEditMode] = useState(false);
-
   const addTimeCard = () => {
     const newTimeCard = {
       id: timeDeck.name + "/" + timeCards.length + 1,
-      color: "blue",
+      color: timeDeck.color,
       duration: 1,
       marked: false,
     };

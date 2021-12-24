@@ -22,11 +22,20 @@ export const TimeDecks = () => {
   ];
 
   const [timeDecks, setTimeDecks] = useState(decks);
+  const getRandomColor = () => {
+    function randomIntFromInterval(min, max) {
+      // min and max included
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    const randomNum = randomIntFromInterval(0, 2);
+    const colors = ["blue", "green", "red"];
+    return colors[randomNum];
+  };
   const addNewTimeDeck = () => {
     const newTimeDeck = {
       id: timeDecks.length + 1,
       name: "New deck of time cards!",
-      color: "Blue",
+      color: getRandomColor(),
     };
     setTimeDecks([...timeDecks, newTimeDeck]);
   };
