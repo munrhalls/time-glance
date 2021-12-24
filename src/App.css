@@ -153,6 +153,10 @@ body {
   display: flex;
   align-items: center;
 }
+button.Btn[disabled] {
+  border-color: gray;
+  color: gray;
+}
 .Btn label {
   cursor: pointer;
   margin-left: 0.5rem;

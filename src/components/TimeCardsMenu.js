@@ -4,6 +4,11 @@ import { EditTimeCardsMenu } from "./EditTimeCardsMenu";
 import cursor from "./../resources/cursor.svg";
 
 export const TimeCardsMenu = ({ timeCards, setTimeCards, timeDeck }) => {
+  const editModeAvailable = timeCards.find(
+    (timeCard) => timeCard.marked === true
+  )
+    ? true
+    : false;
   const [editMode, setEditMode] = useState(false);
 
   const addTimeCard = () => {
@@ -55,8 +60,19 @@ export const TimeCardsMenu = ({ timeCards, setTimeCards, timeDeck }) => {
             label="New Card."
             handlerFunc={addTimeCard}
           />
-          <Button type="delSquare" label="Delete" handlerFunc={delTimeCards} />
-          <Button type="editSquare" label="Edit." handlerFunc={openEditMenu} />
+
+          <Button
+            type="delSquare"
+            label="Delete"
+            disabled={!editModeAvailable}
+            handlerFunc={delTimeCards}
+          />
+          <Button
+            type="editSquare"
+            label="Edit."
+            disabled={!editModeAvailable}
+            handlerFunc={openEditMenu}
+          />
           <div className="MarkerNote">
             <span className="Note">Click a card to mark it.</span>
             <img src={cursor} className="MarkerNoteSymbol" />

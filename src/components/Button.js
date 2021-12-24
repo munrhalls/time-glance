@@ -8,7 +8,7 @@ import exit from "./../resources/exit.svg";
 import chevronLeft from "./../resources/chevronLeft.svg";
 import chevronRight from "./../resources/chevronRight.svg";
 
-export const Button = ({ type, label, handlerFunc }) => {
+export const Button = ({ type, label, handlerFunc, disabled }) => {
   let img;
   const setResources = () => {
     if (type === "add") {
@@ -49,7 +49,7 @@ export const Button = ({ type, label, handlerFunc }) => {
   };
   setResources();
   return (
-    <button className={`Btn ${type}`} onClick={handlerFunc}>
+    <button className={`Btn ${type}`} onClick={handlerFunc} disabled={disabled}>
       {img ? (
         <img className="BtnImg" src={img} alt={"Image not displayed."}></img>
       ) : (
