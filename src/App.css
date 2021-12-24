@@ -90,11 +90,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-right: 1px solid #777;
+  margin-right: 0.5rem;
 }
 .MarkerNote {
   display: flex;
   flex-direction: column;
   width: 3rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 .MarkerNoteSymbol {
   color: rgb(6, 8, 6);
@@ -111,7 +115,6 @@ body {
 }
 .EditTimeCardsMenu {
   backgroundcolor: #000;
-  border-right: 1px solid #777;
   padding-right: 1.5rem;
   margin-right: 1.5rem;
   display: flex;
@@ -176,20 +179,20 @@ button.Btn[disabled] {
 .Btn.addSquare {
   color: goldenrod;
   border-color: goldenrod;
-  height: 3rem;
-  width: 4rem;
+  height: 1.15rem;
+  width: 4.5rem;
 }
 .Btn.delSquare {
   color: crimson;
   border-color: crimson;
-  height: 3rem;
-  width: 4rem;
+  height: 1.15rem;
+  width: 4.5rem;
 }
 .Btn.editSquare {
   color: teal;
   border-color: teal;
-  height: 3rem;
-  width: 4rem;
+  height: 1.15rem;
+  width: 4.5rem;
 }
 .Btn.scrollLeft {
   height: 2.5rem;
