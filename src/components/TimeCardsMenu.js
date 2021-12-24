@@ -15,7 +15,7 @@ export const TimeCardsMenu = ({ timeCards, setTimeCards, timeDeck }) => {
     const newTimeCard = {
       id: timeDeck.name + "/" + timeCards.length + 1,
       color: "blue",
-      duration: 24,
+      duration: 1,
       marked: false,
     };
     setTimeCards((timeCards) => {
