@@ -10,7 +10,9 @@ export const TimeCard = ({ timeCard, markTimeCard, style }) => {
     return {
       backgroundColor: `${timeCard.marked ? "green" : timeCard.color}`,
       border: `${timeCard.marked ? "6px solid green" : "none"}`,
-      fontSize: `${1 / timeCard.duration}rem`,
+      fontSize: `${0.51 + 0.07 * timeCard.duration}rem`,
+      height: `${0.51 + 0.14 * timeCard.duration}rem`,
+      width: `${0.51 + 0.14 * timeCard.duration}rem`,
       zIndex: "1",
     };
   };
