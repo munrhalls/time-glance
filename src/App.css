@@ -107,6 +107,7 @@ body {
 .MarkerNote .Note {
   color: green;
   font-size: 0.5rem;
+  margin-top: -0.5rem;
 }
 .EditTimeCardsMenu {
   backgroundcolor: #000;
@@ -125,7 +126,11 @@ body {
   padding-bottom: 0.25rem;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+}
+.NumBtnsHelperNoteText {
+  margin-top: 0.05rem;
+  margin-left: 0.25rem;
 }
 .NumBtnsRow {
   display: flex;

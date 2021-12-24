@@ -27,7 +27,7 @@ export const EditTimeCardsMenu = ({ editTimeCards, closeEditMenu }) => {
             src={cursor}
             alt="Cursor image did not load."
           />
-          <div>
+          <div className="NumBtnsHelperNoteText">
             Click to edit <span className="SpanItalicize"> marked </span> cards.
           </div>
         </div>
