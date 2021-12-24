@@ -10,6 +10,7 @@ export const TimeCard = ({ timeCard, markTimeCard, style }) => {
     return {
       backgroundColor: `${timeCard.marked ? "green" : timeCard.color}`,
       border: `${timeCard.marked ? "6px solid green" : "none"}`,
+      fontSize: `${1 / timeCard.duration}rem`,
       zIndex: "1",
     };
   };
@@ -24,7 +25,7 @@ export const TimeCard = ({ timeCard, markTimeCard, style }) => {
           onDragStart={handleDragStart}
           onClick={() => markTimeCard(timeCard.id)}
         >
-          {timeCard.duration}
+          <span className="TimeCardDurationMark">{timeCard.duration}</span>
         </div>
       ) : (
         ""

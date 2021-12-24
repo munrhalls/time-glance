@@ -17,7 +17,9 @@ export const EditTimeCardsMenu = ({ editTimeCards, closeEditMenu }) => {
 
   return (
     <div className="EditTimeCardsMenu">
-      <Button type="scrollLeft" handlerFunc={scrollLeft}></Button>
+      <div className="Column flexEnd">
+        <Button type="scrollLeft" handlerFunc={scrollLeft}></Button>
+      </div>
       <div className="Column">
         <div className="NumBtnsHelperNote">
           <img
@@ -42,8 +44,9 @@ export const EditTimeCardsMenu = ({ editTimeCards, closeEditMenu }) => {
           })}
         </div>
       </div>
-
-      <Button type="scrollRight" handlerFunc={scrollRight}></Button>
+      <div className="Column flexEnd">
+        <Button type="scrollRight" handlerFunc={scrollRight}></Button>
+      </div>
 
       <Button type="exit" label="Close." handlerFunc={closeEditMenu} />
     </div>

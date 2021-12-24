@@ -44,12 +44,15 @@ export const Day = ({ day }) => {
                 className="DayTimeCard"
                 style={{
                   backgroundColor: `${timeCard.color}`,
+                  fontSize: `${0.51 + 0.1 * timeCard.duration}rem`,
                   marginTop: `${timeCard.dropHour}rem`,
                   height: `${timeCard.duration / 2}rem`,
                 }}
                 key={"day-" + day + "-card-" + timeCard.id}
               >
-                {timeCard.duration}
+                <span className="DayTimeCardDurationMark">
+                  {timeCard.duration}
+                </span>
               </div>
             );
           })}
