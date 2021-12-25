@@ -16,8 +16,9 @@ export const Schedule = () => {
           <div className="TitleStripHoursTitle">hours</div>
         </div>
         <div className="Weeks">
-          {weeks.map((week) => (
+          {weeks.map((week, i) => (
             <div className="Week" key={week}>
+              Week {i}
               {month.map((day, index) => {
                 return <Day day={day} key={day} />;
               })}
