@@ -25,16 +25,6 @@ export const Day = ({ day }) => {
     <div className="Day" onDragOver={handleDragOver} onDrop={handleOnDrop}>
       <div className="DayTitle">{day}</div>
       <div className="DayHours">
-        <div className="HourMarks">
-          {hourMarks.map((hourMark, index) => {
-            return (
-              <div className="HourMark" key={hourMark}>
-                {/* {" "} */}
-                {hourMark}
-              </div>
-            );
-          })}
-        </div>
         <div className="HourRows">
           {timeCards.map((timeCard) => {
             return (
@@ -46,6 +36,7 @@ export const Day = ({ day }) => {
                   fontSize: `${0.8 + 0.07 * timeCard.duration}rem`,
                   marginTop: `${timeCard.dropHour - 0.05}rem`,
                   height: `${timeCard.duration}rem`,
+                  border: "2px solid #000",
                 }}
                 key={"day-" + day + "-card-" + timeCard.id}
               >
