@@ -17,9 +17,7 @@ export const Day = ({ day }) => {
   const handleOnDrop = (e) => {
     const timeCardJSONStr = e.dataTransfer.getData("text/plain");
     const timeCard = JSON.parse(timeCardJSONStr);
-    const dropHour = e.target.getAttribute("hourRow");
-    console.log(dropHour);
-    timeCard.dropHour = dropHour / 2;
+    timeCard.dropHour = e.target.getAttribute("hourRow");
     setTimeCards([...timeCards, timeCard]);
   };
 
@@ -45,8 +43,8 @@ export const Day = ({ day }) => {
                 className="DayTimeCard"
                 style={{
                   backgroundColor: `${timeCard.color}`,
-                  fontSize: `${0.76 + 0.1 * timeCard.duration}rem`,
-                  marginTop: `${timeCard.dropHour}rem`,
+                  fontSize: `${0.8 + 0.07 * timeCard.duration}rem`,
+                  marginTop: `${timeCard.dropHour - 0.05}rem`,
                   height: `${timeCard.duration}rem`,
                 }}
                 key={"day-" + day + "-card-" + timeCard.id}
