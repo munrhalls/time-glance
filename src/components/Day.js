@@ -41,12 +41,13 @@ export const Day = ({ day }) => {
           {timeCards.map((timeCard) => {
             return (
               <div
+                draggable={true}
                 className="DayTimeCard"
                 style={{
                   backgroundColor: `${timeCard.color}`,
-                  fontSize: `${0.51 + 0.1 * timeCard.duration}rem`,
+                  fontSize: `${0.76 + 0.1 * timeCard.duration}rem`,
                   marginTop: `${timeCard.dropHour}rem`,
-                  height: `${timeCard.duration / 2}rem`,
+                  height: `${timeCard.duration}rem`,
                 }}
                 key={"day-" + day + "-card-" + timeCard.id}
               >
