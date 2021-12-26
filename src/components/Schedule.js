@@ -4,6 +4,17 @@ import { Day } from "./Day";
 export const Schedule = () => {
   const month = [...Array(7).keys()].map((i) => i + 1);
   const weeks = [...Array(5).keys()].map((i) => i + 1);
+  const dateNow = new Date();
+  const year = dateNow.getFullYear();
+  const monthNum = dateNow.getMonth();
+  const firstOfMonth = new Date(year, monthNum - 1, 1);
+  const lastOfMonth = new Date(year, monthNum, 0);
+
+  console.log(firstOfMonth);
+  console.log(lastOfMonth);
+
+  // get month num
+  //
 
   return (
     <div className="Schedule">
